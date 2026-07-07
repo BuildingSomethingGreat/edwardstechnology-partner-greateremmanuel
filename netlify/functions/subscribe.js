@@ -72,6 +72,7 @@ exports.handler = async (event) => {
           records: [
             {
               fields: {
+                Name: fullName,
                 'First Name': firstName,
                 'Last Name': lastName,
                 Email: email,
