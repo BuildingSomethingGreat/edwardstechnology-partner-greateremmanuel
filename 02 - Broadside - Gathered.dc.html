@@ -234,13 +234,16 @@
         <sc-if value="{{ cal.hasSel }}" hint-placeholder-val="{{ true }}">
           <div style="display:flex;flex-direction:column;gap:12px">
             <sc-for list="{{ cal.selEvents }}" as="e" hint-placeholder-count="2">
-              <div style="display:flex;gap:14px;border:2px solid #2E2822;padding:16px 16px;background:#221C17">
+              <div onClick="{{ e.onClick }}" title="{{ e.hint }}" style="display:flex;gap:14px;border:2px solid #2E2822;padding:16px 16px;background:#221C17;cursor:{{ e.cursor }};transition:border-color .12s,transform .12s" style-hover="{{ e.hoverStyle }}">
                 <div style="width:5px;flex-shrink:0;background:{{ e.barColor }}"></div>
                 <div style="flex:1">
                   <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:{{ e.barColor }};margin-bottom:5px">{{ e.kindLabel }} · {{ e.time }}</div>
                   <div style="font-family:'Anton';font-size:21px;text-transform:uppercase;line-height:1">{{ e.title }}</div>
                   <div style="font-family:'Space Mono',monospace;font-size:11px;color:#9A8E7C;margin-top:5px">{{ e.min }}</div>
                 </div>
+                <sc-if value="{{ e.hasLink }}" hint-placeholder-val="{{ false }}">
+                  <div style="align-self:center;flex-shrink:0;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:{{ e.barColor }}">Details&nbsp;↗</div>
+                </sc-if>
               </div>
             </sc-for>
           </div>
@@ -354,21 +357,23 @@
         <h3 style="font-family:'Anton';font-size:28px;text-transform:uppercase;margin-bottom:6px">Send a Message</h3>
         <p style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#7A6F5E;margin-bottom:22px">FORM NO. 01 — WE REPLY WITHIN 48 HRS</p>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
-          <input id="gc-first" placeholder="First Name" style="background:transparent;border:2px solid #1A1613;border-radius:0;padding:14px 15px;color:#1A1613;font-size:15px;font-family:'Space Mono',monospace;outline:none" style-focus="border-color:#E0531E">
-          <input id="gc-last" placeholder="Last Name" style="background:transparent;border:2px solid #1A1613;border-radius:0;padding:14px 15px;color:#1A1613;font-size:15px;font-family:'Space Mono',monospace;outline:none" style-focus="border-color:#E0531E">
+          <input placeholder="First Name" value="{{ form.first }}" onInput="{{ form.onFirst }}" style="background:transparent;border:2px solid #1A1613;border-radius:0;padding:14px 15px;color:#1A1613;font-size:15px;font-family:'Space Mono',monospace;outline:none" style-focus="border-color:#E0531E">
+          <input placeholder="Last Name" value="{{ form.last }}" onInput="{{ form.onLast }}" style="background:transparent;border:2px solid #1A1613;border-radius:0;padding:14px 15px;color:#1A1613;font-size:15px;font-family:'Space Mono',monospace;outline:none" style-focus="border-color:#E0531E">
         </div>
-        <input id="gc-email" type="email" placeholder="Email Address" style="width:100%;background:transparent;border:2px solid #1A1613;border-radius:0;padding:14px 15px;color:#1A1613;font-size:15px;font-family:'Space Mono',monospace;outline:none;margin-bottom:12px" style-focus="border-color:#E0531E">
-        <select id="gc-reason" style="width:100%;background:transparent;border:2px solid #1A1613;border-radius:0;padding:14px 15px;color:#3A332B;font-size:15px;font-family:'Space Mono',monospace;outline:none;margin-bottom:12px" style-focus="border-color:#E0531E">
+        <input type="email" placeholder="Email Address" value="{{ form.email }}" onInput="{{ form.onEmail }}" style="width:100%;background:transparent;border:2px solid #1A1613;border-radius:0;padding:14px 15px;color:#1A1613;font-size:15px;font-family:'Space Mono',monospace;outline:none;margin-bottom:12px" style-focus="border-color:#E0531E">
+        <select value="{{ form.reason }}" onChange="{{ form.onReason }}" style="width:100%;background:transparent;border:2px solid #1A1613;border-radius:0;padding:14px 15px;color:#3A332B;font-size:15px;font-family:'Space Mono',monospace;outline:none;margin-bottom:12px" style-focus="border-color:#E0531E">
           <option>I'm new — planning a visit</option>
           <option>Prayer request</option>
           <option>Get involved / volunteer</option>
           <option>General question</option>
         </select>
-        <textarea id="gc-message" placeholder="Your message" rows="4" style="width:100%;background:transparent;border:2px solid #1A1613;border-radius:0;padding:14px 15px;color:#1A1613;font-size:15px;font-family:'Space Mono',monospace;outline:none;resize:vertical;margin-bottom:16px" style-focus="border-color:#E0531E"></textarea>
+        <textarea placeholder="Your message" rows="4" value="{{ form.message }}" onInput="{{ form.onMessage }}" style="width:100%;background:transparent;border:2px solid #1A1613;border-radius:0;padding:14px 15px;color:#1A1613;font-size:15px;font-family:'Space Mono',monospace;outline:none;resize:vertical;margin-bottom:16px" style-focus="border-color:#E0531E"></textarea>
         <!-- Honeypot: hidden from humans, bots fill it. Do not remove. -->
-        <input id="gc-company" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" placeholder="Company">
-        <button id="gc-submit" type="button" style="width:100%;background:#E0531E;color:#ECE3D0;font-family:'Anton';font-size:17px;letter-spacing:1px;padding:16px;border:2px solid #1A1613;cursor:pointer" style-hover="background:#1A1613">SEND MESSAGE →</button>
-        <p id="gc-status" style="display:none;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.5px;margin:14px 0 0;line-height:1.5"></p>
+        <input tabindex="-1" autocomplete="off" aria-hidden="true" value="{{ form.company }}" onInput="{{ form.onCompany }}" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" placeholder="Company">
+        <button type="button" onClick="{{ form.submit }}" style="width:100%;background:#E0531E;color:#ECE3D0;font-family:'Anton';font-size:17px;letter-spacing:1px;padding:16px;border:2px solid #1A1613;cursor:pointer" style-hover="background:#1A1613">{{ form.buttonLabel }}</button>
+        <sc-if value="{{ form.status }}" hint-placeholder-val="{{ false }}">
+          <p style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.5px;margin:14px 0 0;line-height:1.5;color:{{ form.statusColor }}">{{ form.status }}</p>
+        </sc-if>
       </div>
     </div>
   </section>
@@ -466,18 +471,20 @@ class Component extends DCLogic {
   state = {
     loading: true, loaderFade: false, welcome: false, open: false, i: 0,
     calYear: 2025, calMonth: 5, selKey: '2025-5-14',
+    events: {},
+    // contact / subscribe form
+    fFirst: '', fLast: '', fEmail: '', fReason: "I'm new — planning a visit",
+    fMessage: '', fCompany: '', fStatus: '', fStatusColor: '#9A8E7C',
+    fSending: false, fDone: false,
   };
 
   MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
   DOW = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 
+  // Special / one-off events come from Airtable (see componentDidMount).
+  // Recurring Sunday worship & Wednesday study are generated in eventsFor().
   special() {
-    return {
-      '2025-5-14': [{ time: '6:00 PM',  title: 'Faith Walk & Talk',    min: 'Singles Ministry',  kind: 'special' }],
-      '2025-5-21': [{ time: '7:30 PM',  title: 'Bowling Night',        min: 'Marriage Ministry', kind: 'special' }],
-      '2025-5-28': [{ time: '11:00 AM', title: 'Beautiful Bloom Tea',  min: "Women's Ministry",  kind: 'special' }],
-      '2025-6-18': [{ time: 'All Weekend', title: 'MMV 1st Annual Cruise', min: 'Marriage Ministry', kind: 'special' }],
-    };
+    return this.state.events || {};
   }
   kindColor(k) { return k === 'worship' ? '#2E6E73' : k === 'study' ? '#6B2E91' : '#E0531E'; }
   kindLabel(k) { return k === 'worship' ? 'Worship' : k === 'study' ? 'Bible Study' : 'Special'; }
@@ -522,6 +529,89 @@ class Component extends DCLogic {
     this.setState({ calMonth: m, calYear: y, selKey: null });
   }
 
+  async loadEvents() {
+    try {
+      const res = await fetch('/api/events');
+      if (!res.ok) return;
+      const data = await res.json();
+      if (!data || !data.ok || !Array.isArray(data.events)) return;
+      const map = {};
+      for (const ev of data.events) {
+        if (!ev.date) continue;
+        const parts = String(ev.date).split('-').map(Number); // [YYYY, MM(1-based), DD]
+        if (parts.length < 3 || parts.some(isNaN)) continue;
+        const key = parts[0] + '-' + (parts[1] - 1) + '-' + parts[2]; // month -> 0-indexed
+        (map[key] = map[key] || []).push({
+          time: ev.time || '', title: ev.title || '', min: ev.min || '',
+          kind: ev.kind || 'special', link: ev.link || '',
+        });
+      }
+      this.setState({ events: map });
+    } catch (_) {
+      // Offline / no backend (e.g. GitHub Pages) — calendar keeps recurring events only.
+    }
+  }
+
+  // ---- Contact / subscribe form ----
+  submitForm() {
+    if (this.state.fSending) return;
+    const first = this.state.fFirst.trim();
+    const email = this.state.fEmail.trim();
+    if (!first) return this.setState({ fStatus: 'Please enter your first name.', fStatusColor: '#E0531E' });
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
+      return this.setState({ fStatus: 'Please enter a valid email address.', fStatusColor: '#E0531E' });
+
+    this.setState({ fSending: true, fStatus: '' });
+    fetch('/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        firstName: first,
+        lastName: this.state.fLast.trim(),
+        email,
+        reason: this.state.fReason,
+        message: this.state.fMessage.trim(),
+        company: this.state.fCompany, // honeypot
+      }),
+    })
+      .then(r => r.json().catch(() => ({ ok: r.ok })))
+      .then(data => {
+        if (data && data.ok) {
+          this.setState({
+            fSending: false, fDone: true,
+            fFirst: '', fLast: '', fEmail: '', fMessage: '',
+            fStatus: '✦ Thank you — check your inbox for a confirmation. We reply within 48 hrs.',
+            fStatusColor: '#8FBF9F',
+          });
+        } else {
+          this.setState({
+            fSending: false,
+            fStatus: (data && data.error) || 'Something went wrong. Please try again.',
+            fStatusColor: '#E0531E',
+          });
+        }
+      })
+      .catch(() => this.setState({
+        fSending: false,
+        fStatus: 'Network error — please try again in a moment.',
+        fStatusColor: '#E0531E',
+      }));
+  }
+
+  formData() {
+    return {
+      first: this.state.fFirst, onFirst: (e) => this.setState({ fFirst: e.target.value }),
+      last: this.state.fLast, onLast: (e) => this.setState({ fLast: e.target.value }),
+      email: this.state.fEmail, onEmail: (e) => this.setState({ fEmail: e.target.value }),
+      reason: this.state.fReason, onReason: (e) => this.setState({ fReason: e.target.value }),
+      message: this.state.fMessage, onMessage: (e) => this.setState({ fMessage: e.target.value }),
+      company: this.state.fCompany, onCompany: (e) => this.setState({ fCompany: e.target.value }),
+      status: this.state.fStatus, statusColor: this.state.fStatusColor,
+      buttonLabel: this.state.fSending ? 'SENDING…' : this.state.fDone ? 'MESSAGE SENT ✓' : 'SEND MESSAGE →',
+      submit: () => this.submitForm(),
+    };
+  }
+
   calData() {
     const label = this.MONTHS[this.state.calMonth] + ' ' + this.state.calYear;
     let selLabel = 'Pick a Date', selEvents = [], msg = 'Tap any highlighted day to see the gatherings planned.';
@@ -530,7 +620,19 @@ class Component extends DCLogic {
       const dt = new Date(y, m, d);
       selLabel = this.DOW[dt.getDay()] + ', ' + this.MONTHS[m] + ' ' + d;
       const evs = this.eventsFor(y, m, d);
-      selEvents = evs.map(e => ({ time: e.time, title: e.title, min: e.min, barColor: this.kindColor(e.kind), kindLabel: this.kindLabel(e.kind) }));
+      selEvents = evs.map(e => {
+        const barColor = this.kindColor(e.kind);
+        const hasLink = !!e.link;
+        return {
+          time: e.time, title: e.title, min: e.min, barColor,
+          kindLabel: this.kindLabel(e.kind),
+          hasLink,
+          cursor: hasLink ? 'pointer' : 'default',
+          hint: hasLink ? 'Open event details' : '',
+          hoverStyle: hasLink ? ('border-color:' + barColor + ';transform:translateY(-2px)') : '',
+          onClick: hasLink ? () => window.open(e.link, '_blank', 'noopener,noreferrer') : () => {},
+        };
+      });
       msg = evs.length ? '' : 'No gatherings scheduled — but you are always welcome. Join us Sundays 10AM & Wednesdays 7PM.';
     }
     return {
@@ -547,6 +649,8 @@ class Component extends DCLogic {
       loading: false,
       welcome: (this.props.showWelcome ?? true),
     }), 2100);
+
+    this.loadEvents();
 
     this._key = (e) => {
       if (e.key === 'Escape') {
@@ -589,6 +693,7 @@ class Component extends DCLogic {
       welcome: this.state.welcome,
       dismissWelcome: () => this.setState({ welcome: false }),
       cal: this.calData(),
+      form: this.formData(),
       gallery: items.map((it, idx) => ({ ...it, onClick: () => this.setState({ open: true, i: idx }) })),
       thumbs: items.map((it, idx) => ({
         src: it.src,
@@ -607,67 +712,6 @@ class Component extends DCLogic {
     };
   }
 }
-</script>
-
-<!-- Gathered contact/subscribe form → Netlify function (/api/subscribe) -->
-<script>
-(function () {
-  var btn = document.getElementById('gc-submit');
-  if (!btn) return;
-  var status = document.getElementById('gc-status');
-  var val = function (id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; };
-  var show = function (msg, color) {
-    if (!status) return;
-    status.textContent = msg;
-    status.style.color = color;
-    status.style.display = 'block';
-  };
-
-  btn.addEventListener('click', function () {
-    var payload = {
-      firstName: val('gc-first'),
-      lastName: val('gc-last'),
-      email: val('gc-email'),
-      reason: val('gc-reason'),
-      message: val('gc-message'),
-      company: val('gc-company') // honeypot
-    };
-
-    if (!payload.firstName) { show('Please enter your first name.', '#E0531E'); return; }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email)) { show('Please enter a valid email address.', '#E0531E'); return; }
-
-    var original = btn.textContent;
-    btn.disabled = true;
-    btn.textContent = 'SENDING…';
-    show('', '#1A1613');
-    status.style.display = 'none';
-
-    fetch('/api/subscribe', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    })
-      .then(function (r) { return r.json().catch(function () { return { ok: r.ok }; }); })
-      .then(function (data) {
-        if (data && data.ok) {
-          show('✦ Thank you — check your inbox for a confirmation. We reply within 48 hrs.', '#2E6E73');
-          ['gc-first', 'gc-last', 'gc-email', 'gc-message'].forEach(function (id) {
-            var el = document.getElementById(id); if (el) el.value = '';
-          });
-          btn.textContent = 'MESSAGE SENT ✓';
-        } else {
-          show((data && data.error) || 'Something went wrong. Please try again.', '#E0531E');
-          btn.disabled = false;
-          btn.textContent = original;
-        }
-      })
-      .catch(function () {
-        show('Network error — please try again in a moment.', '#E0531E');
-        btn.disabled = false;
-        btn.textContent = original;
-      });
-  });
-})();
 </script>
 </body>
 </html>

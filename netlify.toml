@@ -13,3 +13,9 @@
   from = "/api/subscribe"
   to = "/.netlify/functions/subscribe"
   status = 200
+
+# Clean URL for the calendar events feed: GET /api/events
+[[redirects]]
+  from = "/api/events"
+  to = "/.netlify/functions/events"
+  status = 200
