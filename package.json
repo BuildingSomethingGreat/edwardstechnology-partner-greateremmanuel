@@ -1,0 +1,12 @@
+{
+  "name": "edwardstechnology-partner-greateremmanuel",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Greater Emmanuel church website — static pages + Netlify function for the Gathered contact/subscribe form.",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "dev": "netlify dev"
+  }
+}

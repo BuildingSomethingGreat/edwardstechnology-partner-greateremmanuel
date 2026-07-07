@@ -1,0 +1,15 @@
+# Netlify configuration
+# Static site (the .dc.html pages) + one serverless function for form handling.
+
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+# Clean URL for the form endpoint: POST /api/subscribe
+[[redirects]]
+  from = "/api/subscribe"
+  to = "/.netlify/functions/subscribe"
+  status = 200

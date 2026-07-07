@@ -1,0 +1,14 @@
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/
+
+# Netlify
+.netlify/
+
+# OS / editor cruft
+.DS_Store
+*.log

@@ -354,18 +354,21 @@
         <h3 style="font-family:'Anton';font-size:28px;text-transform:uppercase;margin-bottom:6px">Send a Message</h3>
         <p style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#7A6F5E;margin-bottom:22px">FORM NO. 01 — WE REPLY WITHIN 48 HRS</p>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
-          <input placeholder="First Name" style="background:transparent;border:2px solid #1A1613;border-radius:0;padding:14px 15px;color:#1A1613;font-size:15px;font-family:'Space Mono',monospace;outline:none" style-focus="border-color:#E0531E">
-          <input placeholder="Last Name" style="background:transparent;border:2px solid #1A1613;border-radius:0;padding:14px 15px;color:#1A1613;font-size:15px;font-family:'Space Mono',monospace;outline:none" style-focus="border-color:#E0531E">
+          <input id="gc-first" placeholder="First Name" style="background:transparent;border:2px solid #1A1613;border-radius:0;padding:14px 15px;color:#1A1613;font-size:15px;font-family:'Space Mono',monospace;outline:none" style-focus="border-color:#E0531E">
+          <input id="gc-last" placeholder="Last Name" style="background:transparent;border:2px solid #1A1613;border-radius:0;padding:14px 15px;color:#1A1613;font-size:15px;font-family:'Space Mono',monospace;outline:none" style-focus="border-color:#E0531E">
         </div>
-        <input placeholder="Email Address" style="width:100%;background:transparent;border:2px solid #1A1613;border-radius:0;padding:14px 15px;color:#1A1613;font-size:15px;font-family:'Space Mono',monospace;outline:none;margin-bottom:12px" style-focus="border-color:#E0531E">
-        <select style="width:100%;background:transparent;border:2px solid #1A1613;border-radius:0;padding:14px 15px;color:#3A332B;font-size:15px;font-family:'Space Mono',monospace;outline:none;margin-bottom:12px" style-focus="border-color:#E0531E">
+        <input id="gc-email" type="email" placeholder="Email Address" style="width:100%;background:transparent;border:2px solid #1A1613;border-radius:0;padding:14px 15px;color:#1A1613;font-size:15px;font-family:'Space Mono',monospace;outline:none;margin-bottom:12px" style-focus="border-color:#E0531E">
+        <select id="gc-reason" style="width:100%;background:transparent;border:2px solid #1A1613;border-radius:0;padding:14px 15px;color:#3A332B;font-size:15px;font-family:'Space Mono',monospace;outline:none;margin-bottom:12px" style-focus="border-color:#E0531E">
           <option>I'm new — planning a visit</option>
           <option>Prayer request</option>
           <option>Get involved / volunteer</option>
           <option>General question</option>
         </select>
-        <textarea placeholder="Your message" rows="4" style="width:100%;background:transparent;border:2px solid #1A1613;border-radius:0;padding:14px 15px;color:#1A1613;font-size:15px;font-family:'Space Mono',monospace;outline:none;resize:vertical;margin-bottom:16px" style-focus="border-color:#E0531E"></textarea>
-        <button style="width:100%;background:#E0531E;color:#ECE3D0;font-family:'Anton';font-size:17px;letter-spacing:1px;padding:16px;border:2px solid #1A1613;cursor:pointer" style-hover="background:#1A1613">SEND MESSAGE →</button>
+        <textarea id="gc-message" placeholder="Your message" rows="4" style="width:100%;background:transparent;border:2px solid #1A1613;border-radius:0;padding:14px 15px;color:#1A1613;font-size:15px;font-family:'Space Mono',monospace;outline:none;resize:vertical;margin-bottom:16px" style-focus="border-color:#E0531E"></textarea>
+        <!-- Honeypot: hidden from humans, bots fill it. Do not remove. -->
+        <input id="gc-company" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" placeholder="Company">
+        <button id="gc-submit" type="button" style="width:100%;background:#E0531E;color:#ECE3D0;font-family:'Anton';font-size:17px;letter-spacing:1px;padding:16px;border:2px solid #1A1613;cursor:pointer" style-hover="background:#1A1613">SEND MESSAGE →</button>
+        <p id="gc-status" style="display:none;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.5px;margin:14px 0 0;line-height:1.5"></p>
       </div>
     </div>
   </section>
@@ -604,6 +607,67 @@ class Component extends DCLogic {
     };
   }
 }
+</script>
+
+<!-- Gathered contact/subscribe form → Netlify function (/api/subscribe) -->
+<script>
+(function () {
+  var btn = document.getElementById('gc-submit');
+  if (!btn) return;
+  var status = document.getElementById('gc-status');
+  var val = function (id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; };
+  var show = function (msg, color) {
+    if (!status) return;
+    status.textContent = msg;
+    status.style.color = color;
+    status.style.display = 'block';
+  };
+
+  btn.addEventListener('click', function () {
+    var payload = {
+      firstName: val('gc-first'),
+      lastName: val('gc-last'),
+      email: val('gc-email'),
+      reason: val('gc-reason'),
+      message: val('gc-message'),
+      company: val('gc-company') // honeypot
+    };
+
+    if (!payload.firstName) { show('Please enter your first name.', '#E0531E'); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email)) { show('Please enter a valid email address.', '#E0531E'); return; }
+
+    var original = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'SENDING…';
+    show('', '#1A1613');
+    status.style.display = 'none';
+
+    fetch('/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+      .then(function (r) { return r.json().catch(function () { return { ok: r.ok }; }); })
+      .then(function (data) {
+        if (data && data.ok) {
+          show('✦ Thank you — check your inbox for a confirmation. We reply within 48 hrs.', '#2E6E73');
+          ['gc-first', 'gc-last', 'gc-email', 'gc-message'].forEach(function (id) {
+            var el = document.getElementById(id); if (el) el.value = '';
+          });
+          btn.textContent = 'MESSAGE SENT ✓';
+        } else {
+          show((data && data.error) || 'Something went wrong. Please try again.', '#E0531E');
+          btn.disabled = false;
+          btn.textContent = original;
+        }
+      })
+      .catch(function () {
+        show('Network error — please try again in a moment.', '#E0531E');
+        btn.disabled = false;
+        btn.textContent = original;
+      });
+  });
+})();
 </script>
 </body>
 </html>
