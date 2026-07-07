@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  @font-face{font-family:'Anton';font-style:normal;font-weight:400;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/anton/files/anton-latin-400-normal.woff2) format('woff2')}
+  @font-face{font-family:'Archivo';font-style:normal;font-weight:500;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/archivo/files/archivo-latin-500-normal.woff2) format('woff2')}
+  @font-face{font-family:'Archivo';font-style:normal;font-weight:700;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/archivo/files/archivo-latin-700-normal.woff2) format('woff2')}
+  @font-face{font-family:'Space Mono';font-style:normal;font-weight:400;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/space-mono/files/space-mono-latin-400-normal.woff2) format('woff2')}
+  @font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/space-mono/files/space-mono-latin-700-normal.woff2) format('woff2')}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:#ECE3D0;color:#1A1613;font-family:'Archivo',sans-serif;-webkit-font-smoothing:antialiased}
+  ::selection{background:#E0531E;color:#ECE3D0}
+  a{color:inherit;text-decoration:none}
+  .grain{position:fixed;inset:0;z-index:9999;pointer-events:none;mix-blend-mode:multiply;opacity:.10;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:160px 160px}
+  .card{transition:transform .16s ease,box-shadow .16s ease}
+  .card:hover{transform:translateY(-6px)}
+  @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr) !important}}
+  @media(max-width:600px){.grid{grid-template-columns:1fr !important}.wrap{padding:40px 18px 60px !important}}
+</style>
+</helmet>
+
+<div class="grain"></div>
+<div class="wrap" style="max-width:1180px;margin:0 auto;padding:56px 30px 76px">
+
+  <!-- ticker -->
+  <div style="background:#1A1613;color:#ECE3D0;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:9px 18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:34px">
+    <span>EST. HOUSTON, TX</span><span>VOL. MMXXV — THE BROADSIDE SERIES</span><span style="color:#E0531E">● SELECT A CUT</span>
+  </div>
+
+  <!-- masthead -->
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:44px">
+    <div style="display:flex;align-items:center;gap:14px">
+      <img src="assets/logo-ge.png" alt="Greater Emmanuel" style="width:56px;height:56px;object-fit:contain;display:block">
+      <div style="line-height:1.1">
+        <div style="font-family:'Anton';font-size:22px;letter-spacing:.5px;text-transform:uppercase">Greater Emmanuel FWC</div>
+        <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#6B2E91">Website Design Concepts</div>
+      </div>
+    </div>
+    <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#7A6F5E;text-align:right">Design No. 02 · Six Variations</div>
+  </div>
+
+  <!-- title -->
+  <div style="border-top:2px solid #1A1613;border-bottom:2px solid #1A1613;padding:30px 0 34px;margin-bottom:44px">
+    <div style="font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#E0531E;margin-bottom:14px">The Broadside Series —</div>
+    <h1 style="font-family:'Anton';font-size:clamp(52px,9vw,116px);line-height:.82;letter-spacing:-1px;text-transform:uppercase">Same Gospel,<br>Six Cuts.</h1>
+    <p style="max-width:640px;font-size:17px;line-height:1.6;color:#3A332B;margin-top:24px">One retro-print system — burnt orange, cream, giant condensed type, duotone photos — pressed six different ways. Open any edition to explore the full page. Pick the palette and energy that feels most like Greater Emmanuel.</p>
+  </div>
+
+  <!-- grid -->
+  <div class="grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:26px">
+
+    <!-- 01 GATHERED (new) -->
+    <a href="02 - Broadside - Gathered.dc.html" class="card" style="display:block;background:#ECE3D0;border:2px solid #1A1613;box-shadow:9px 9px 0 rgba(46,110,115,.5)">
+      <div style="position:relative;height:212px;overflow:hidden;border-bottom:2px solid #1A1613;background:#ECE3D0">
+        <div style="position:absolute;top:0;left:0;right:0;height:58%;background:#1A1613;overflow:hidden">
+          <div style="position:absolute;inset:0;background:repeating-linear-gradient(115deg,#241d16 0 10px,#1A1613 10px 20px);opacity:.6"></div>
+          <div style="position:absolute;inset:0;background:#E0531E;mix-blend-mode:multiply;opacity:.35"></div>
+        </div>
+        <div style="position:absolute;top:14px;left:16px;font-family:'Anton';font-size:30px;line-height:.82;text-transform:uppercase;color:#ECE3D0;z-index:2">Love<br>Lives<br>Here</div>
+        <div style="position:absolute;top:12px;right:14px;background:#E0531E;color:#ECE3D0;font-family:'Space Mono',monospace;font-size:9px;font-weight:700;letter-spacing:1.5px;padding:4px 8px;z-index:2">NEW ✦</div>
+        <div style="position:absolute;left:16px;bottom:14px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#2E6E73;z-index:2">Bishop Titus &amp; Lady Tammy</div>
+      </div>
+      <div style="padding:22px 22px 24px">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px">
+          <h3 style="font-family:'Anton';font-size:26px;text-transform:uppercase">Gathered</h3>
+          <div style="display:flex;gap:6px"><span style="width:14px;height:14px;background:#E0531E"></span><span style="width:14px;height:14px;background:#2E6E73"></span><span style="width:14px;height:14px;background:#6B2E91"></span></div>
+        </div>
+        <p style="font-size:14px;line-height:1.55;color:#6E6353;margin-bottom:16px">Congregation hero, a working events calendar, gallery lightbox, plus a loader and welcome intro.</p>
+        <span style="font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#E0531E">Open Concept →</span>
+      </div>
+    </a>
+
+    <!-- 02 ASCENSION -->
+    <a href="02 - Broadside.dc.html" class="card" style="display:block;background:#ECE3D0;border:2px solid #1A1613;box-shadow:9px 9px 0 rgba(107,46,145,.5)">
+      <div style="position:relative;height:212px;overflow:hidden;border-bottom:2px solid #1A1613;background:#ECE3D0">
+        <div style="position:absolute;top:0;left:0;right:0;height:58%;background:#1A1613;overflow:hidden">
+          <div style="position:absolute;inset:0;background:linear-gradient(115deg,#1A1613,#6B2E91 140%);opacity:.9"></div>
+        </div>
+        <div style="position:absolute;top:14px;left:16px;font-family:'Anton';font-size:30px;line-height:.82;text-transform:uppercase;color:#ECE3D0;z-index:2">Love<br>Lives<br>Here</div>
+        <div style="position:absolute;top:12px;right:14px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1px;color:#E8B04B;z-index:2">✦</div>
+        <div style="position:absolute;left:16px;bottom:12px;font-family:'Anton';font-size:20px;text-transform:uppercase;color:#E0531E;z-index:2">Ascension</div>
+      </div>
+      <div style="padding:22px 22px 24px">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px">
+          <h3 style="font-family:'Anton';font-size:26px;text-transform:uppercase">Ascension</h3>
+          <div style="display:flex;gap:6px"><span style="width:14px;height:14px;background:#E0531E"></span><span style="width:14px;height:14px;background:#6B2E91"></span><span style="width:14px;height:14px;background:#1A1613"></span></div>
+        </div>
+        <p style="font-size:14px;line-height:1.55;color:#6E6353;margin-bottom:16px">Full photographic hero with purple accents and the Ascension capital-campaign giving section.</p>
+        <span style="font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#E0531E">Open Concept →</span>
+      </div>
+    </a>
+
+    <!-- 03 ORIGINAL -->
+    <a href="02 - Broadside (Original).dc.html" class="card" style="display:block;background:#ECE3D0;border:2px solid #1A1613;box-shadow:9px 9px 0 rgba(224,83,30,.45)">
+      <div style="position:relative;height:212px;overflow:hidden;border-bottom:2px solid #1A1613;background:#ECE3D0">
+        <div style="position:absolute;top:0;left:0;right:0;height:58%;background:#E0531E"></div>
+        <div style="position:absolute;top:26px;left:50%;transform:translateX(-50%);font-family:'Anton';font-size:64px;line-height:.7;color:#ECE3D0;z-index:1">GE</div>
+        <div style="position:absolute;top:14px;left:16px;font-family:'Anton';font-size:26px;line-height:.82;text-transform:uppercase;color:#1A1613;z-index:2">Love<br>Lives<br>Here</div>
+        <div style="position:absolute;top:14px;right:16px;font-family:'Space Mono',monospace;font-size:13px;color:#1A1613;z-index:2">+</div>
+      </div>
+      <div style="padding:22px 22px 24px">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px">
+          <h3 style="font-family:'Anton';font-size:26px;text-transform:uppercase">Original</h3>
+          <div style="display:flex;gap:6px"><span style="width:14px;height:14px;background:#E0531E"></span><span style="width:14px;height:14px;background:#2E6E73"></span><span style="width:14px;height:14px;background:#ECE3D0;border:1px solid #1A1613"></span></div>
+        </div>
+        <p style="font-size:14px;line-height:1.55;color:#6E6353;margin-bottom:16px">The first cut. Split-color poster hero, ghost monogram, and cool teal accents on cream.</p>
+        <span style="font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#E0531E">Open Concept →</span>
+      </div>
+    </a>
+
+    <!-- 04 CATHEDRAL -->
+    <a href="02 - Broadside - Cathedral.dc.html" class="card" style="display:block;background:#ECE3D0;border:2px solid #1A1613;box-shadow:9px 9px 0 rgba(122,46,145,.45)">
+      <div style="position:relative;height:212px;overflow:hidden;border-bottom:2px solid #1A1613;background:#ECE3D0">
+        <div style="position:absolute;top:0;left:0;right:0;height:58%;background:#7A2E91"></div>
+        <div style="position:absolute;top:14px;left:16px;font-family:'Anton';font-size:30px;line-height:.82;text-transform:uppercase;color:#ECE3D0;z-index:2">Love<br>Lives<br>Here</div>
+        <div style="position:absolute;top:12px;right:14px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1px;color:#E8B04B;z-index:2">✦</div>
+      </div>
+      <div style="padding:22px 22px 24px">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px">
+          <h3 style="font-family:'Anton';font-size:26px;text-transform:uppercase">Cathedral</h3>
+          <div style="display:flex;gap:6px"><span style="width:14px;height:14px;background:#7A2E91"></span><span style="width:14px;height:14px;background:#E8B04B"></span><span style="width:14px;height:14px;background:#1A1613"></span></div>
+        </div>
+        <p style="font-size:14px;line-height:1.55;color:#6E6353;margin-bottom:16px">Sanctuary purple and gold. Reverent, rich, and warm — the most classic of the set.</p>
+        <span style="font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#7A2E91">Open Concept →</span>
+      </div>
+    </a>
+
+    <!-- 05 NIGHTFALL -->
+    <a href="02 - Broadside - Nightfall.dc.html" class="card" style="display:block;background:#241436;border:2px solid #241436;box-shadow:9px 9px 0 rgba(224,83,30,.45)">
+      <div style="position:relative;height:212px;overflow:hidden;border-bottom:2px solid #E0531E;background:#241436">
+        <div style="position:absolute;top:0;left:0;right:0;height:58%;background:linear-gradient(150deg,#3a2158,#241436)"></div>
+        <div style="position:absolute;top:14px;left:16px;font-family:'Anton';font-size:30px;line-height:.82;text-transform:uppercase;color:#ECE3D0;z-index:2">Love<br>Lives<br><span style="color:#E0531E">Here</span></div>
+        <div style="position:absolute;top:-16px;right:-16px;width:88px;height:88px;border-radius:50%;background:radial-gradient(circle,rgba(224,83,30,.5),transparent 70%);z-index:1"></div>
+      </div>
+      <div style="padding:22px 22px 24px">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px">
+          <h3 style="font-family:'Anton';font-size:26px;text-transform:uppercase;color:#ECE3D0">Nightfall</h3>
+          <div style="display:flex;gap:6px"><span style="width:14px;height:14px;background:#241436;border:1px solid #6B4E8A"></span><span style="width:14px;height:14px;background:#E0531E"></span><span style="width:14px;height:14px;background:#ECE3D0"></span></div>
+        </div>
+        <p style="font-size:14px;line-height:1.55;color:#B9AAD0;margin-bottom:16px">After-hours indigo. Dark, moody canvas with a burnt-orange glow. Youth-forward.</p>
+        <span style="font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#E0531E">Open Concept →</span>
+      </div>
+    </a>
+
+    <!-- 06 ROYAL -->
+    <a href="02 - Broadside - Royal.dc.html" class="card" style="display:block;background:#ECE3D0;border:2px solid #1A1613;box-shadow:9px 9px 0 rgba(107,46,145,.45)">
+      <div style="position:relative;height:212px;overflow:hidden;border-bottom:2px solid #1A1613;background:#ECE3D0">
+        <div style="position:absolute;top:0;left:0;right:0;height:58%;background:#6B2E91"></div>
+        <div style="position:absolute;top:14px;left:16px;font-family:'Anton';font-size:30px;line-height:.82;text-transform:uppercase;color:#ECE3D0;z-index:2">Love<br>Lives<br>Here</div>
+        <div style="position:absolute;top:12px;right:14px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1px;color:#E8B04B;z-index:2">✦</div>
+      </div>
+      <div style="padding:22px 22px 24px">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px">
+          <h3 style="font-family:'Anton';font-size:26px;text-transform:uppercase">Royal</h3>
+          <div style="display:flex;gap:6px"><span style="width:14px;height:14px;background:#6B2E91"></span><span style="width:14px;height:14px;background:#E8B04B"></span><span style="width:14px;height:14px;background:#1A1613"></span></div>
+        </div>
+        <p style="font-size:14px;line-height:1.55;color:#6E6353;margin-bottom:16px">Regal purple with gold highlights. Stately, celebratory, and dignified.</p>
+        <span style="font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#6B2E91">Open Concept →</span>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- footer note -->
+  <div style="margin-top:46px;border:2px solid #1A1613;background:#1A1613;color:#ECE3D0;padding:28px 30px;display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap">
+    <div style="display:flex;align-items:center;gap:14px">
+      <span style="display:grid;place-items:center;width:44px;height:44px;background:#ECE3D0;border-radius:50%"><img src="assets/logo-ge.png" style="width:32px;height:32px;object-fit:contain"></span>
+      <div>
+        <div style="font-family:'Anton';font-size:17px;text-transform:uppercase">Every edition includes</div>
+        <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#9A8E7C;margin-top:3px">Contact form · Blog · Gallery · Events · Give</div>
+      </div>
+    </div>
+    <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#9A8E7C">© 2025 — Love Lives Here</span>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

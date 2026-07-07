@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style data-omelette-print-defaults>
+@media print {
+  @page { margin: 0.5in; }
+  h1, h2, h3, h4, h5, h6 { break-after: avoid; }
+  figure, table, pre, blockquote, img, svg, tr, [class~="card" i] { break-inside: avoid; }
+  img, svg { max-width: 100%; }
+  p { orphans: 3; widows: 3; }
+}
+</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* embedded for static capture */
+  @font-face{font-family:'Anton';font-style:normal;font-weight:400;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/anton/files/anton-latin-400-normal.woff2) format('woff2')}
+  @font-face{font-family:'Archivo';font-style:normal;font-weight:400;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/archivo/files/archivo-latin-400-normal.woff2) format('woff2')}
+  @font-face{font-family:'Archivo';font-style:normal;font-weight:500;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/archivo/files/archivo-latin-500-normal.woff2) format('woff2')}
+  @font-face{font-family:'Archivo';font-style:normal;font-weight:600;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/archivo/files/archivo-latin-600-normal.woff2) format('woff2')}
+  @font-face{font-family:'Archivo';font-style:normal;font-weight:700;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/archivo/files/archivo-latin-700-normal.woff2) format('woff2')}
+  @font-face{font-family:'Archivo';font-style:normal;font-weight:800;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/archivo/files/archivo-latin-800-normal.woff2) format('woff2')}
+  @font-face{font-family:'Space Mono';font-style:normal;font-weight:400;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/space-mono/files/space-mono-latin-400-normal.woff2) format('woff2')}
+  @font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/space-mono/files/space-mono-latin-700-normal.woff2) format('woff2')}
+  @font-face{font-family:'Syne';font-style:normal;font-weight:700;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/syne/files/syne-latin-700-normal.woff2) format('woff2')}
+  @font-face{font-family:'Syne';font-style:normal;font-weight:800;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/syne/files/syne-latin-800-normal.woff2) format('woff2')}
+  @font-face{font-family:'Space Grotesk';font-style:normal;font-weight:400;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk/files/space-grotesk-latin-400-normal.woff2) format('woff2')}
+  @font-face{font-family:'Space Grotesk';font-style:normal;font-weight:500;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk/files/space-grotesk-latin-500-normal.woff2) format('woff2')}
+  @font-face{font-family:'Space Grotesk';font-style:normal;font-weight:700;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk/files/space-grotesk-latin-700-normal.woff2) format('woff2')}
+    *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:#ECE3D0;color:#1A1613;font-family:'Archivo',sans-serif;-webkit-font-smoothing:antialiased}
+  ::selection{background:#E0531E;color:#ECE3D0}
+  a{color:inherit;text-decoration:none}
+  .grain{position:fixed;inset:0;z-index:9999;pointer-events:none;mix-blend-mode:multiply;opacity:.10;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:160px 160px}
+</style>
+</helmet>
+
+<div class="grain"></div>
+<div style="max-width:1280px;margin:0 auto;position:relative;background:#ECE3D0">
+
+  <!-- ticker -->
+  <div style="background:#1A1613;color:#ECE3D0;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:8px 28px;display:flex;justify-content:space-between">
+    <span>EST. HOUSTON, TX</span><span>VOL. MMXXV — ISSUE NO. 01</span><span style="color:#E0531E">● LOVE LIVES HERE</span>
+  </div>
+
+  <!-- nav -->
+  <header style="position:sticky;top:0;z-index:50;background:#ECE3D0;border-bottom:2px solid #1A1613">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:14px 28px">
+      <a href="#top" style="display:flex;align-items:center;gap:12px">
+        <span style="display:grid;place-items:center;width:42px;height:42px;background:#1A1613;color:#ECE3D0;font-family:'Anton';font-size:20px">GE</span>
+        <span style="display:flex;flex-direction:column;line-height:1.05">
+          <span style="font-family:'Anton';font-size:18px;letter-spacing:.5px">GREATER EMMANUEL</span>
+          <span style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:3px;color:#7A6F5E;text-transform:uppercase">Family Worship Center</span>
+        </span>
+      </a>
+      <nav style="display:flex;align-items:center;gap:26px;font-family:'Space Mono',monospace;font-size:12.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase">
+        <a href="#believe" style-hover="color:#E0531E">Believe</a>
+        <a href="#pastors" style-hover="color:#E0531E">Leaders</a>
+        <a href="#events" style-hover="color:#E0531E">Events</a>
+        <a href="#gallery" style-hover="color:#E0531E">Gallery</a>
+        <a href="#visit" style-hover="color:#E0531E">Visit</a>
+      </nav>
+      <a href="#give" style="background:#E0531E;color:#ECE3D0;font-family:'Anton';font-size:15px;letter-spacing:1px;padding:11px 22px" style-hover="background:#1A1613">GIVE →</a>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section id="top" style="position:relative;height:780px;overflow:hidden;border-bottom:2px solid #1A1613">
+    <div style="position:absolute;inset:0;background:linear-gradient(#E0531E 0 55%,#ECE3D0 55% 100%)"></div>
+    <!-- ghost monogram -->
+    <div style="position:absolute;top:120px;left:50%;transform:translateX(-50%);font-family:'Anton';font-size:300px;line-height:.74;letter-spacing:-10px;color:#ECE3D0;opacity:.92;z-index:1;white-space:nowrap">PREACH</div>
+    <!-- corner metadata -->
+    <div style="position:absolute;top:26px;left:28px;z-index:4;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#1A1613;line-height:1.7">
+      <div>CONCEPT</div><div style="opacity:.65">WORSHIP CENTER</div>
+    </div>
+    <div style="position:absolute;top:26px;right:28px;z-index:4;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#1A1613;text-align:right;line-height:1.7">
+      <div>2025 &nbsp;//&nbsp; DESIGN NO. 02</div><div style="opacity:.65">APOSTOLIC · PENTECOSTAL</div>
+    </div>
+    <span style="position:absolute;top:120px;left:50%;margin-left:-300px;z-index:4;font-family:'Space Mono',monospace;font-size:20px;color:#1A1613">+</span>
+    <span style="position:absolute;top:120px;left:50%;margin-left:288px;z-index:4;font-family:'Space Mono',monospace;font-size:20px;color:#1A1613">+</span>
+
+    <!-- photo duotone -->
+    <div style="position:absolute;bottom:0;left:50%;transform:translateX(-44%);width:680px;height:620px;z-index:2;display:flex;align-items:flex-end;justify-content:center">
+      <img src="assets/man-sitting.png" style="display:block;width:100%;height:100%;object-fit:contain;object-position:bottom center;mix-blend-mode:multiply;filter:grayscale(1) contrast(1.12) brightness(1.05)">
+    </div>
+
+    <!-- headline -->
+    <div style="position:absolute;left:28px;top:300px;z-index:3;max-width:340px">
+      <div style="font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#1A1613;margin-bottom:10px">Worship Experience —</div>
+      <h1 style="font-family:'Anton';font-size:96px;line-height:.84;letter-spacing:-1px;text-transform:uppercase;color:#1A1613">Love<br>Lives<br>Here</h1>
+    </div>
+    <div style="position:absolute;right:28px;bottom:38px;z-index:3;max-width:280px;text-align:right">
+      <p style="font-family:'Space Mono',monospace;font-size:12.5px;line-height:1.8;letter-spacing:.5px;text-transform:uppercase;color:#1A1613">A family of believers that magnify God's presence in triumphant worship. Sundays 10AM — pull up a seat.</p>
+      <a href="#visit" style="display:inline-flex;margin-top:16px;background:#1A1613;color:#ECE3D0;font-family:'Anton';font-size:15px;letter-spacing:1px;padding:13px 24px">PLAN YOUR VISIT →</a>
+    </div>
+  </section>
+
+  <!-- ============ TICKER STRIP ============ -->
+  <div style="overflow:hidden;background:#2E6E73;color:#ECE3D0;border-bottom:2px solid #1A1613;padding:13px 0">
+    <div style="display:flex;gap:30px;white-space:nowrap;font-family:'Anton';font-size:22px;letter-spacing:1px;text-transform:uppercase">
+      <span>Triumphant Worship ✦</span><span style="color:#E8B04B">The Word Unfiltered ✦</span><span>A Family For All ✦</span><span style="color:#E8B04B">Houston, Texas ✦</span><span>Love Lives Here ✦</span><span style="color:#E8B04B">Sundays 10AM ✦</span>
+    </div>
+  </div>
+
+  <!-- ============ BELIEVE ============ -->
+  <section id="believe" style="padding:72px 28px;border-bottom:2px solid #1A1613">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:46px">
+      <h2 style="font-family:'Anton';font-size:clamp(40px,7vw,92px);line-height:.84;text-transform:uppercase">What We<br>Believe</h2>
+      <span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#7A6F5E">FILED UNDER — DOCTRINE / 03 ENTRIES</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid #1A1613">
+      <div style="padding:30px 26px 30px 0;border-right:2px solid #1A1613">
+        <div style="font-family:'Anton';font-size:84px;line-height:.8;color:#E0531E">01</div>
+        <h3 style="font-family:'Anton';font-size:26px;text-transform:uppercase;margin:16px 0 10px">Triumphant Worship</h3>
+        <p style="font-size:15.5px;line-height:1.6;color:#3A332B">We magnify God's presence with everything in us — voices lifted, hearts open, breakthrough expected every time we gather.</p>
+      </div>
+      <div style="padding:30px 26px;border-right:2px solid #1A1613">
+        <div style="font-family:'Anton';font-size:84px;line-height:.8;color:#2E6E73">02</div>
+        <h3 style="font-family:'Anton';font-size:26px;text-transform:uppercase;margin:16px 0 10px">The Word, Unfiltered</h3>
+        <p style="font-size:15.5px;line-height:1.6;color:#3A332B">The Bible is the inspired Word of God and our only authority for faith and life — preached with zeal and zero compromise.</p>
+      </div>
+      <div style="padding:30px 0 30px 26px">
+        <div style="font-family:'Anton';font-size:84px;line-height:.8;color:#E0531E">03</div>
+        <h3 style="font-family:'Anton';font-size:26px;text-transform:uppercase;margin:16px 0 10px">A Family For All</h3>
+        <p style="font-size:15.5px;line-height:1.6;color:#3A332B">From every walk of life, we belong to one another. Love lives here — and there's room at the table for your whole household.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PASTORS ============ -->
+  <section id="pastors" style="position:relative;overflow:hidden;border-bottom:2px solid #1A1613;background:#1A1613;color:#ECE3D0">
+    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Anton';font-size:clamp(90px,20vw,300px);line-height:.8;letter-spacing:-6px;color:#E0531E;white-space:nowrap;z-index:1">THE WORD</div>
+    <div style="position:relative;z-index:2;display:grid;grid-template-columns:1fr 1.05fr;gap:0;align-items:end">
+      <div style="height:560px;overflow:hidden;background:#E0531E">
+        <img src="assets/pastors-formal.jpeg" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center 22%;mix-blend-mode:multiply;filter:grayscale(1) contrast(1.1) brightness(1.05)">
+        <div style="position:absolute"></div>
+      </div>
+      <div style="padding:54px 44px">
+        <div style="display:flex;gap:24px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#E8B04B;margin-bottom:18px">
+          <span>TITLE — SENIOR PASTORS</span><span style="color:#9A8E7C">DESIGN NO. 02</span>
+        </div>
+        <h2 style="font-family:'Anton';font-size:clamp(34px,4.2vw,56px);line-height:.94;text-transform:uppercase;margin-bottom:18px">Bishop Titus &amp;<br>Lady Tammy Stewart</h2>
+        <p style="font-size:16px;line-height:1.7;color:#C9BFAD;margin-bottom:16px">Bishop Titus B. Stewart is a "preacher's preacher" whose unorthodox creativity reaches people from every walk of life. He is passionate about building God's people in order to build God's Kingdom.</p>
+        <p style="font-size:16px;line-height:1.7;color:#C9BFAD;margin-bottom:28px">Alongside Lady Tammy Stewart, they lead Greater Emmanuel with vision, integrity, and humility.</p>
+        <a href="#" style="display:inline-flex;background:#E0531E;color:#ECE3D0;font-family:'Anton';font-size:15px;letter-spacing:1px;padding:13px 26px" style-hover="background:#ECE3D0;color:#1A1613">READ THEIR STORY →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EVENTS & FLYERS ============ -->
+  <section id="events" style="padding:72px 28px;border-bottom:2px solid #1A1613">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:42px">
+      <h2 style="font-family:'Anton';font-size:clamp(44px,8vw,108px);line-height:.82;text-transform:uppercase">Events<br>&amp; Flyers</h2>
+      <a href="#" style="font-family:'Space Mono',monospace;font-size:12.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border-bottom:2px solid #1A1613;padding-bottom:4px">View Full Calendar →</a>
+    </div>
+    <div style="display:grid;grid-template-columns:1.15fr 1fr;gap:0;border:2px solid #1A1613">
+      <!-- featured flyer -->
+      <div style="position:relative;overflow:hidden;min-height:460px;background:#E0531E;border-right:2px solid #1A1613;padding:32px;display:flex;flex-direction:column;justify-content:space-between;color:#1A1613">
+        <div style="display:flex;justify-content:space-between;align-items:start;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase">
+          <span style="background:#1A1613;color:#ECE3D0;padding:7px 13px">★ FEATURED FLYER</span>
+          <span style="opacity:.7">[ DROP ARTWORK ]</span>
+        </div>
+        <div>
+          <p style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px">Marriage Ministry — Set Sail</p>
+          <h3 style="font-family:'Anton';font-size:clamp(40px,5.2vw,68px);line-height:.86;text-transform:uppercase">MMV 1st<br>Annual Cruise</h3>
+          <p style="font-size:15px;line-height:1.55;margin:16px 0 22px;max-width:360px">Worship, fellowship, and getaway on the open water. Set sail with the Greater Emmanuel family.</p>
+          <a href="#" style="display:inline-flex;background:#1A1613;color:#ECE3D0;font-family:'Anton';font-size:14px;letter-spacing:1px;padding:13px 24px" style-hover="background:#2E6E73">RESERVE A CABIN →</a>
+        </div>
+      </div>
+      <!-- list -->
+      <div style="display:flex;flex-direction:column">
+        <div style="display:flex;gap:18px;align-items:center;padding:22px 24px;border-bottom:2px solid #1A1613" style-hover="background:#E0531E">
+          <div style="text-align:center;flex-shrink:0;width:58px"><div style="font-family:'Anton';font-size:38px;line-height:.85;color:#E0531E">14</div><div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#7A6F5E">Jun</div></div>
+          <div style="flex:1"><h4 style="font-family:'Anton';font-size:20px;text-transform:uppercase">Faith Walk &amp; Talk</h4><p style="font-family:'Space Mono',monospace;font-size:12px;color:#7A6F5E;margin-top:3px">SINGLES · 6:00 PM</p></div>
+          <span style="font-size:20px">→</span>
+        </div>
+        <div style="display:flex;gap:18px;align-items:center;padding:22px 24px;border-bottom:2px solid #1A1613" style-hover="background:#E0531E">
+          <div style="text-align:center;flex-shrink:0;width:58px"><div style="font-family:'Anton';font-size:38px;line-height:.85;color:#E0531E">21</div><div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#7A6F5E">Jun</div></div>
+          <div style="flex:1"><h4 style="font-family:'Anton';font-size:20px;text-transform:uppercase">Bowling Night</h4><p style="font-family:'Space Mono',monospace;font-size:12px;color:#7A6F5E;margin-top:3px">MARRIAGE · 7:30 PM</p></div>
+          <span style="font-size:20px">→</span>
+        </div>
+        <div style="display:flex;gap:18px;align-items:center;padding:22px 24px;border-bottom:2px solid #1A1613" style-hover="background:#E0531E">
+          <div style="text-align:center;flex-shrink:0;width:58px"><div style="font-family:'Anton';font-size:38px;line-height:.85;color:#E0531E">28</div><div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#7A6F5E">Jun</div></div>
+          <div style="flex:1"><h4 style="font-family:'Anton';font-size:20px;text-transform:uppercase">Beautiful Bloom Tea</h4><p style="font-family:'Space Mono',monospace;font-size:12px;color:#7A6F5E;margin-top:3px">WOMEN · 11:00 AM</p></div>
+          <span style="font-size:20px">→</span>
+        </div>
+        <div style="display:flex;gap:18px;align-items:center;padding:22px 24px;background:#2E6E73;color:#ECE3D0">
+          <div style="text-align:center;flex-shrink:0;width:58px"><div style="font-family:'Anton';font-size:24px;line-height:.9;color:#E8B04B">SUN</div><div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#A9D3D6">10AM</div></div>
+          <div style="flex:1"><h4 style="font-family:'Anton';font-size:20px;text-transform:uppercase">Worship Experience</h4><p style="font-family:'Space Mono',monospace;font-size:12px;color:#A9D3D6;margin-top:3px">WEEKLY · IN-PERSON + ONLINE</p></div>
+          <span style="font-size:20px">→</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY ============ -->
+  <section id="gallery" style="padding:72px 28px;border-bottom:2px solid #1A1613">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:34px">
+      <div style="display:flex;align-items:baseline;gap:18px">
+        <h2 style="font-family:'Anton';font-size:clamp(40px,6vw,80px);line-height:.84;text-transform:uppercase">The Gallery</h2>
+        <span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#7A6F5E">PLATES 01–05</span>
+      </div>
+      <a href="#" style="font-family:'Space Mono',monospace;font-size:12.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border-bottom:2px solid #1A1613;padding-bottom:4px">Watch Sermons →</a>
+    </div>
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr;grid-auto-rows:200px;gap:12px">
+      <div style="grid-row:span 2;position:relative;overflow:hidden;background:#E0531E;border:2px solid #1A1613"><img src="assets/worship-team.jpeg" style="display:block;width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;filter:grayscale(1) contrast(1.1)"><div style="position:absolute;inset:0;background:#2E6E73;mix-blend-mode:screen;pointer-events:none"></div></div>
+      <div style="position:relative;overflow:hidden;background:#E0531E;border:2px solid #1A1613"><img src="assets/bishop-preaching.jpeg" style="display:block;width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;filter:grayscale(1) contrast(1.1)"><div style="position:absolute;inset:0;background:#2E6E73;mix-blend-mode:screen;pointer-events:none"></div></div>
+      <div style="position:relative;overflow:hidden;background:#E0531E;border:2px solid #1A1613"><img src="assets/pastors-seated.jpeg" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center 15%;mix-blend-mode:multiply;filter:grayscale(1) contrast(1.1)"><div style="position:absolute;inset:0;background:#2E6E73;mix-blend-mode:screen;pointer-events:none"></div></div>
+      <div style="position:relative;overflow:hidden;background:#E0531E;border:2px solid #1A1613"><img src="assets/pastors-red.jpeg" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center 18%;mix-blend-mode:multiply;filter:grayscale(1) contrast(1.1)"><div style="position:absolute;inset:0;background:#2E6E73;mix-blend-mode:screen;pointer-events:none"></div></div>
+      <div style="position:relative;overflow:hidden;background:#1A1613;border:2px solid #1A1613;display:grid;place-items:center"><span style="font-family:'Anton';font-size:22px;text-transform:uppercase;color:#ECE3D0;text-align:center;line-height:1">+ View<br>Gallery</span></div>
+    </div>
+  </section>
+
+  <!-- ============ GIVE ============ -->
+  <section id="give" style="position:relative;overflow:hidden;background:#E0531E;border-bottom:2px solid #1A1613;color:#1A1613;padding:64px 28px">
+    <div style="position:absolute;right:-30px;bottom:-90px;font-family:'Anton';font-size:340px;line-height:.7;color:#1A1613;opacity:.08;z-index:1">$</div>
+    <div style="position:relative;z-index:2;display:grid;grid-template-columns:1.4fr 1fr;gap:44px;align-items:center">
+      <div>
+        <span style="font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase">[ GIVE — SOW INTO THE VISION ]</span>
+        <h2 style="font-family:'Anton';font-size:clamp(44px,7vw,96px);line-height:.82;text-transform:uppercase;margin:14px 0 16px">Fund The<br>Movement</h2>
+        <p style="font-size:17px;line-height:1.55;max-width:440px;font-weight:500">Your generosity fuels ministry that reaches Houston and beyond. Give securely online, by text, or in person.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <a href="#" style="display:flex;align-items:center;justify-content:space-between;background:#1A1613;color:#ECE3D0;font-family:'Anton';font-size:18px;letter-spacing:1px;padding:20px 26px" style-hover="background:#2E6E73">GIVE ONLINE <span>→</span></a>
+        <a href="#" style="display:flex;align-items:center;justify-content:space-between;background:#ECE3D0;color:#1A1613;font-family:'Anton';font-size:18px;letter-spacing:1px;padding:20px 26px;border:2px solid #1A1613" style-hover="background:#2E6E73;color:#ECE3D0">TEXT "GIVE" TO 77026 <span>→</span></a>
+        <p style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;text-align:center;margin-top:4px">Tithes · Offerings · Building · Missions</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="visit" style="padding:72px 28px;border-bottom:2px solid #1A1613">
+    <div style="display:grid;grid-template-columns:1fr 1.1fr;gap:52px">
+      <div>
+        <span style="font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#E0531E">[ Plan Your Visit ]</span>
+        <h2 style="font-family:'Anton';font-size:clamp(40px,5.5vw,76px);line-height:.84;text-transform:uppercase;margin:14px 0 30px">We'd Love<br>To Meet You</h2>
+        <div style="display:flex;flex-direction:column;gap:0;border-top:2px solid #1A1613">
+          <div style="display:flex;gap:18px;padding:18px 0;border-bottom:2px solid #1A1613"><span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#7A6F5E;width:110px;flex-shrink:0;padding-top:3px">Gather</span><span style="font-size:16.5px;line-height:1.5">Sundays · 10:00 AM Worship<br>Wednesdays · 7:00 PM Bible Study</span></div>
+          <div style="display:flex;gap:18px;padding:18px 0;border-bottom:2px solid #1A1613"><span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#7A6F5E;width:110px;flex-shrink:0;padding-top:3px">Locate</span><span style="font-size:16.5px;line-height:1.5">3915 Kelley Street<br>Houston, TX 77026</span></div>
+          <div style="display:flex;gap:18px;padding:18px 0"><span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#7A6F5E;width:110px;flex-shrink:0;padding-top:3px">Connect</span><span style="font-size:16.5px;line-height:1.5">(713) 671-9994<br>info@greateremmanuel.org</span></div>
+        </div>
+      </div>
+      <div style="border:2px solid #1A1613;padding:34px;background:#ECE3D0">
+        <h3 style="font-family:'Anton';font-size:28px;text-transform:uppercase;margin-bottom:6px">Send a Message</h3>
+        <p style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#7A6F5E;margin-bottom:22px">FORM NO. 01 — WE REPLY WITHIN 48 HRS</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
+          <input placeholder="First Name" style="background:transparent;border:2px solid #1A1613;border-radius:0;padding:14px 15px;color:#1A1613;font-size:15px;font-family:'Space Mono',monospace;outline:none" style-focus="border-color:#E0531E">
+          <input placeholder="Last Name" style="background:transparent;border:2px solid #1A1613;border-radius:0;padding:14px 15px;color:#1A1613;font-size:15px;font-family:'Space Mono',monospace;outline:none" style-focus="border-color:#E0531E">
+        </div>
+        <input placeholder="Email Address" style="width:100%;background:transparent;border:2px solid #1A1613;border-radius:0;padding:14px 15px;color:#1A1613;font-size:15px;font-family:'Space Mono',monospace;outline:none;margin-bottom:12px" style-focus="border-color:#E0531E">
+        <select style="width:100%;background:transparent;border:2px solid #1A1613;border-radius:0;padding:14px 15px;color:#3A332B;font-size:15px;font-family:'Space Mono',monospace;outline:none;margin-bottom:12px" style-focus="border-color:#E0531E">
+          <option>I'm new — planning a visit</option>
+          <option>Prayer request</option>
+          <option>Get involved / volunteer</option>
+          <option>General question</option>
+        </select>
+        <textarea placeholder="Your message" rows="4" style="width:100%;background:transparent;border:2px solid #1A1613;border-radius:0;padding:14px 15px;color:#1A1613;font-size:15px;font-family:'Space Mono',monospace;outline:none;resize:vertical;margin-bottom:16px" style-focus="border-color:#E0531E"></textarea>
+        <button style="width:100%;background:#E0531E;color:#ECE3D0;font-family:'Anton';font-size:17px;letter-spacing:1px;padding:16px;border:2px solid #1A1613;cursor:pointer" style-hover="background:#1A1613">SEND MESSAGE →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="background:#1A1613;color:#ECE3D0;padding:44px 28px 36px">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap">
+      <div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+          <span style="display:grid;place-items:center;width:38px;height:38px;background:#E0531E;color:#1A1613;font-family:'Anton';font-size:17px">GE</span>
+          <span style="font-family:'Anton';font-size:18px;letter-spacing:.5px">GREATER EMMANUEL FWC</span>
+        </div>
+        <p style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#9A8E7C;line-height:1.7">3915 Kelley St, Houston TX 77026<br>© 2025 — Love Lives Here</p>
+      </div>
+      <div style="display:flex;gap:22px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:1px;text-transform:uppercase">
+        <a href="#" style-hover="color:#E0531E">YouTube</a>
+        <a href="#" style-hover="color:#E0531E">Instagram</a>
+        <a href="#" style-hover="color:#E0531E">Facebook</a>
+      </div>
+      <div style="text-align:right">
+        <div style="width:180px;height:46px;margin-left:auto;background:repeating-linear-gradient(90deg,#ECE3D0 0 2px,transparent 2px 4px,#ECE3D0 4px 7px,transparent 7px 9px,#ECE3D0 9px 11px,transparent 11px 15px,#ECE3D0 15px 18px,transparent 18px 20px)"></div>
+        <p style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:2px;color:#9A8E7C;margin-top:8px">270 / 365 — ISSUE 01</p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script>
+(async () => {
+  if (!document.title || !document.title.trim()) document.title = "02 - Broadside";
+  // Prepend so page-supplied @page / break rules (deck-stage's margin:0,
+  // author CSS) keep source-order precedence over the baseline.
+  const baseCss = document.createElement('style');
+  baseCss.textContent = "@media print {\n  figure, table { break-inside: avoid; }\n  *, *::before, *::after {\n    print-color-adjust: exact; -webkit-print-color-adjust: exact;\n    backdrop-filter: none !important; -webkit-backdrop-filter: none !important;\n    animation-delay: -99s !important; animation-duration: .001s !important;\n    animation-iteration-count: 1 !important; animation-fill-mode: both !important;\n    animation-play-state: running !important; transition-duration: 0s !important;\n  }\n}";
+  document.head.prepend(baseCss);
+  if (document.readyState === 'loading') {
+    await new Promise((r) => document.addEventListener('DOMContentLoaded', r, { once: true }));
+  }
+  let ds = document.querySelector('deck-stage');
+  // whenDefined never resolves when nothing registers the element, so only
+  // await it when a <deck-stage> tag exists (and race a timeout regardless).
+  if (ds && !customElements.get('deck-stage')) {
+    try {
+      await Promise.race([
+        customElements.whenDefined('deck-stage'),
+        new Promise((r) => setTimeout(r, 3000)),
+      ]);
+    } catch (e) {}
+    ds = document.querySelector('deck-stage');
+  }
+  // dc-runtime assigns window.DCLogic at init and mounts into #dc-root on
+  // DOMContentLoaded; settle on that subtree so React has rendered before
+  // print(). Non-DC pages fall through to weighing body.
+  const isDc = !ds && 'DCLogic' in window;
+  const settleRoot = ds || (isDc ? document.getElementById('dc-root') : null) || document.body;
+  if (settleRoot) {
+    // Weigh only content children — skip script/style/template so inline
+    // Babel/CSS doesn't register as stable "content" before the framework
+    // has mounted anything.
+    const MEDIA = 'img,svg,canvas,video,picture,iframe,embed,object';
+    const weigh = () => {
+      let text = 0, media = 0;
+      for (const c of settleRoot.children) {
+        const t = c.tagName;
+        if (t === 'SCRIPT' || t === 'STYLE' || t === 'TEMPLATE') continue;
+        text += (c.textContent || '').trim().length;
+        media += c.querySelectorAll(MEDIA).length + (c.matches(MEDIA) ? 1 : 0);
+      }
+      return text + media * 100;
+    };
+    // "Non-zero and stable" alone is not sufficient to mean rendered: generic
+    // body can carry a static shell while async main content is pending, and
+    // #dc-root can carry the root DC's static text while child refs are still
+    // .sc-placeholder boxes. Gate generic on readyState 'complete', and never
+    // accept stability while a dc-runtime placeholder is present.
+    const isGeneric = settleRoot === document.body;
+    const deadline = Date.now() + 15000;
+    let last = -1, stable = 0;
+    while (Date.now() < deadline) {
+      const n = weigh();
+      const ready =
+        (!isGeneric || document.readyState === 'complete') &&
+        !settleRoot.querySelector('.sc-placeholder');
+      if (n > 0 && n === last && ready) { if (++stable >= 2) break; } else { stable = 0; }
+      last = n;
+      await new Promise((r) => setTimeout(r, 250));
+    }
+  }
+  // Project support.js may predate runtime default-seeding; push via bridge.
+  if (isDc && window.__dcSetProps && window.__dcRootName) {
+    try {
+      const dpEl = document.querySelector('script[data-dc-script]');
+      const meta = JSON.parse((dpEl && dpEl.getAttribute('data-props')) || '{}');
+      const bag = {};
+      for (const k in meta)
+        if (k[0] !== '$' && meta[k] && meta[k].default !== undefined)
+          bag[k] = meta[k].default;
+      if (Object.keys(bag).length) {
+        window.__dcSetProps(window.__dcRootName(), bag);
+        await new Promise((r) => setTimeout(r, 50));
+      }
+    } catch (e) {}
+  }
+  // Reveal content gated on scroll or visibility before printing. Lazy <img>,
+  // IntersectionObserver fade-ins, and collapsed <details> don't render while
+  // off-screen, so a long page would print with them blank or closed. Open
+  // every <details>, force native-lazy images eager, and scroll the document
+  // through its full height to trip lazy-load + IO; then wait (bounded) for the
+  // newly-triggered images. Inert for deck-stage (slides aren't scroll-gated).
+  try {
+    for (const d of document.querySelectorAll('details')) d.open = true;
+    for (const img of document.querySelectorAll('img[loading="lazy"]'))
+      img.loading = 'eager';
+    const scroller = document.scrollingElement || document.documentElement;
+    const full = Math.max(scroller.scrollHeight, document.body.scrollHeight);
+    const step = window.innerHeight || 800;
+    for (let y = 0; y <= full; y += step) {
+      window.scrollTo(0, y);
+      await new Promise((r) => requestAnimationFrame(r));
+    }
+    window.scrollTo(0, 0);
+    await Promise.race([
+      Promise.all(
+        [...document.images].map((img) =>
+          img.complete
+            ? null
+            : new Promise((res) => {
+                img.addEventListener('load', res, { once: true });
+                img.addEventListener('error', res, { once: true });
+              })
+        )
+      ),
+      new Promise((r) => setTimeout(r, 4000)),
+    ]);
+  } catch (e) {}
+  try { await document.fonts.ready; } catch (e) {}
+  // Jump every animation to its end state so print() never captures a slide
+  // mid-entrance. Ordering matters: the 0s-transition style must be live
+  // BEFORE data-deck-active is set so attribute-keyed transitions don't
+  // start a (now-0s) run from the pre-active base.
+  const st = document.createElement('style');
+  st.textContent = '*,*::before,*::after{animation-delay:-99s !important;animation-duration:.001s !important;animation-iteration-count:1 !important;animation-fill-mode:both !important;animation-play-state:running !important;transition-duration:0s !important}';
+  document.head.appendChild(st);
+  for (const d of document.querySelectorAll('deck-stage')) {
+    for (const c of d.children) {
+      const t = c.tagName;
+      if (t === 'SCRIPT' || t === 'STYLE' || t === 'TEMPLATE') continue;
+      c.setAttribute('data-deck-active', '');
+    }
+  }
+  // Re-append deck-stage's @page last so no author @page can add a margin and
+  // spill each full-bleed slide onto two sheets. Backstop for old copies.
+  if (ds) {
+    let pg = document.getElementById('deck-stage-print-page');
+    if (!pg) {
+      pg = document.createElement('style');
+      pg.textContent = '@page{size:' + (+ds.getAttribute('width') || 1920) +
+        'px ' + (+ds.getAttribute('height') || 1080) + 'px;margin:0}';
+    }
+    document.body.appendChild(pg);
+  }
+  try {
+    const sweep = () => {
+      for (const a of document.getAnimations()) {
+        try { a.finish(); } catch (e) {
+          try { a.currentTime = (a.effect && a.effect.getComputedTiming().duration) || 0; a.pause(); } catch (e2) {}
+        }
+      }
+    };
+    sweep();
+    await new Promise((r) => requestAnimationFrame(r));
+    sweep();
+    await new Promise((r) => requestAnimationFrame(r));
+  } catch (e) {}
+  // Size the PDF page to the rendered design unless the file opted into
+  // standard paper via @page{size:letter|A4|…}. Decks own their own @page.
+  // Wrappers (body, …) lose padding+margin so the frame sits at (0,0); the
+  // frame itself loses only margin — its padding is INSIDE the measured
+  // rect and must stay, or content shifts and leaves a gap at bottom/right.
+  var __m = null;
+  try { __m = (() => {
+  var STAMP = true;
+  var docEl = document.documentElement;
+  var doc = { width: docEl.scrollWidth, height: docEl.scrollHeight };
+
+  var ds = document.querySelector('deck-stage');
+  if (ds) {
+    var dw = Number(ds.getAttribute('width')) || 1920;
+    var dh = Number(ds.getAttribute('height')) || 1080;
+    var n = typeof ds.length === 'number' ? ds.length : ds.children.length;
+    var idx = typeof ds.index === 'number' ? ds.index : 0;
+    var frames = [];
+    for (var i = 0; i < n; i++) frames.push({ left: 0, top: 0, width: dw, height: dh });
+    return { kind: 'deck', source: 'declared', doc: doc, frames: frames,
+      authored: frames.map(function(){return{width:true,height:true}}),
+      deck: { width: dw, height: dh, slideCount: n, index: idx },
+      signals: { paperPage: false, pxPage: false } };
+  }
+
+  // Declared kind: a doc-page tag names the kind outright, so no signal
+  // heuristics run (like the deck branch above, signals report false —
+  // they describe inferred classifications only). The tag alone is not
+  // trusted: the element must have upgraded (shadowRoot present), so a
+  // leftover tag whose script was deleted falls through to the heuristics
+  // that handle plain markup.
+  var stageSx = window.scrollX || 0, stageSy = window.scrollY || 0;
+  var dp = document.querySelector('doc-page');
+  if (dp && dp.shadowRoot) {
+    // Crop to the sheet, not the host — the desk around it is screen-only
+    // chrome that must not land in PNG exports.
+    var sheet = dp.shadowRoot.querySelector('.sheet');
+    var sr = (sheet || dp).getBoundingClientRect();
+    return { kind: 'paper-doc', source: 'declared', doc: doc,
+      frames: [{ left: sr.left + stageSx, top: sr.top + stageSy,
+        width: sr.width, height: sr.height }],
+      authored: [{ width: false, height: false }],
+      signals: { paperPage: false, pxPage: false } };
+  }
+  var paperPage = false, pxPage = false;
+  var eachRule = function (fn) {
+    for (var s = 0; s < document.styleSheets.length; s++) {
+      var rs; try { rs = document.styleSheets[s].cssRules; } catch (e) { continue; }
+      for (var r = 0; r < rs.length; r++) {
+        fn(rs[r]);
+        if (rs[r].cssRules) for (var n = 0; n < rs[r].cssRules.length; n++) fn(rs[r].cssRules[n]);
+      }
+    }
+  };
+  eachRule(function (r) {
+    if (r.type !== 6) return;
+    var m = /\bsize\s*:\s*([^;}]+)/i.exec(r.cssText || '');
+    if (!m) return;
+    if (/\b(letter|a[3-5]|legal|ledger)\b/i.test(m[1])) paperPage = true;
+    if (/\d+(?:\.\d+)?px\b/i.test(m[1])) pxPage = true;
+  });
+  var signals = { paperPage: paperPage, pxPage: pxPage };
+
+  var pxVal = function (v) {
+    var m = /^(\d+(?:\.\d+)?)px$/.exec(v || ''); return m ? +m[1] : 0;
+  };
+  var authoredPx = function (el, prop) {
+    if (pxVal(el.style[prop])) return true;
+    var attr = el.getAttribute(prop);
+    if (attr && /^\d+$/.test(attr)) return true;
+    var hit = false;
+    eachRule(function (r) {
+      if (hit || r.type !== 1 || !r.style) return;
+      try { if (el.matches(r.selectorText) && pxVal(r.style[prop])) hit = true; } catch (e) {}
+    });
+    return hit;
+  };
+
+  var el = document.body, rootPxW = false;
+  for (;;) {
+    var kids = [];
+    for (var c = 0; c < el.children.length; c++) {
+      var t = el.children[c].tagName;
+      if (t !== 'SCRIPT' && t !== 'STYLE' && t !== 'TEMPLATE') kids.push(el.children[c]);
+    }
+    if (kids.length !== 1 || !(kids[0] instanceof HTMLElement)) break;
+    if (STAMP) el.setAttribute('data-om-frame-wrap', '');
+    el = kids[0];
+    rootPxW = authoredPx(el, 'width');
+    if (rootPxW) break;
+  }
+  if (!rootPxW) rootPxW = authoredPx(el, 'width');
+
+  // @page{size:letter} alone is a flowing doc; with a px-width root it's a
+  // fixed sheet pretending to be paper — fall through and size to render.
+  if (paperPage && !rootPxW) {
+    return { kind: 'paper-doc', source: 'inferred', doc: doc, signals: signals,
+      frames: [{ left: 0, top: 0, width: doc.width, height: doc.height }],
+      authored: [{ width: false, height: false }] };
+  }
+
+  var sx = window.scrollX || 0, sy = window.scrollY || 0;
+  var rectOf = function (e) {
+    var r = e.getBoundingClientRect();
+    var oy; try { oy = getComputedStyle(e).overflowY; } catch (err) {}
+    var h = oy === 'visible' ? Math.max(r.height, e.scrollHeight || 0) : r.height;
+    return { left: r.left + sx, top: r.top + sy, width: r.width, height: h };
+  };
+
+  // Multi-frame: ≥2 visible non-fixed children, each with authored px width
+  // AND height, all within ±2px of each other. Off unless the page opts in
+  // via data-om-multi-frame on the stop element — guards against card grids
+  // and pricing tables that match the geometry but aren't separate canvases.
+  if (el.hasAttribute('data-om-multi-frame')) {
+    var cands = [];
+    for (var k = 0; k < el.children.length; k++) {
+      var ch = el.children[k];
+      var cs; try { cs = getComputedStyle(ch); } catch (e) { continue; }
+      if (cs.display === 'none' || cs.visibility === 'hidden' || cs.position === 'fixed') continue;
+      var rc = rectOf(ch);
+      if (rc.width < 2 || rc.height < 2) continue;
+      if (!authoredPx(ch, 'width') || !authoredPx(ch, 'height')) continue;
+      cands.push(rc);
+    }
+    if (cands.length >= 2) {
+      var w0 = cands[0].width, h0 = cands[0].height, ok = true;
+      for (var q = 1; q < cands.length; q++)
+        if (Math.abs(cands[q].width - w0) > 2 || Math.abs(cands[q].height - h0) > 2) ok = false;
+      if (ok) return { kind: 'multi-frame', source: 'inferred', doc: doc, signals: signals,
+        frames: cands, authored: cands.map(function(){return{width:true,height:true}}) };
+    }
+  }
+
+  if (STAMP) el.setAttribute('data-om-frame', '');
+  return { kind: 'single-canvas', source: 'inferred', doc: doc, signals: signals,
+    frames: [rectOf(el)],
+    authored: [{ width: rootPxW, height: authoredPx(el, 'height') }] };
+})(); } catch (e) {}
+  var frame = null;
+  if (__m && __m.kind === 'single-canvas') {
+    var f = __m.frames && __m.frames[0];
+    if (f && f.width >= 200 && f.height >= 200) {
+      frame = f;
+      var fst = document.createElement('style');
+      fst.textContent = '@media print{@page{size:' + Math.ceil(f.width) + 'px ' +
+        Math.ceil(f.height) + 'px;margin:0}' +
+        'html,body,[data-om-frame-wrap]{padding:0!important;margin:0!important;background:none!important}' +
+        '[data-om-frame]{margin:0!important}}';
+      document.body.appendChild(fst);
+    }
+  }
+  // Relax break-inside on oversized elements. An element taller than a
+  // printable page can't honor break-inside: avoid — browsers either overflow
+  // it or push it whole to the next page, leaving a blank gap, then break it
+  // anyway at an arbitrary point. After the final layout (content revealed,
+  // animations jumped), find elements taller than a page that still compute
+  // break-inside: avoid and reset them to auto, so the browser breaks them at
+  // their children's boundaries instead (children keep their own avoid). PAGE_PX
+  // is a conservative portrait estimate at 96 CSS px/in — Letter/A4 usable
+  // height minus our 0.5in margins — so only clearly-oversized elements are
+  // touched and under-page elements still stay whole. Skipped for decks (slides
+  // are sized to the page) and for fixed-size canvases (frame set, or an author
+  // px-based @page) — runs as before for flowing docs on letter/A4.
+  try {
+    if (!ds && !frame && !(__m && __m.signals && __m.signals.pxPage)) {
+      const PAGE_PX = 1024;
+      // Our print defaults add a real @page margin only when the source has
+      // no @page of its own; computed style can't tell us (it reports screen
+      // media), so read the injected rule directly.
+      const defaults = document.querySelector('style[data-omelette-print-defaults]');
+      const pageInset = /@page\s*\{[^}]*margin/.test(defaults ? defaults.textContent || '' : '');
+      const SEL = 'section,article,figure,table,pre,blockquote,[class~="card" i],[class~="page" i],[class~="sheet" i]';
+      for (const el of document.body.querySelectorAll(SEL)) {
+        if (el instanceof HTMLElement && el.offsetHeight > PAGE_PX) {
+          el.setAttribute('data-om-oversized', '');
+          // Fake-paged docs simulate sheets with over-tall break-after:page
+          // boxes; honoring the break spills half-blank pages and ends a
+          // colored box mid-sheet. Flow them, and (only when we own the page
+          // inset) drop the redundant padding/background via the rule below.
+          const cs = getComputedStyle(el);
+          if (cs.breakAfter === 'page' || cs.pageBreakAfter === 'always') {
+            el.setAttribute('data-om-fakepage', '');
+          }
+        }
+      }
+      const ost = document.createElement('style');
+      ost.textContent = '@media print{' +
+        '[data-om-oversized]{break-inside:auto !important;page-break-inside:auto !important}' +
+        '[data-om-fakepage]{break-after:auto !important;page-break-after:auto !important}' +
+        (pageInset ? '[data-om-fakepage]{padding:0 !important;background:none !important}' : '') +
+        '}';
+      document.head.appendChild(ost);
+    }
+  } catch (e) {}
+  // macOS Preview renders Skia-PDF Luminosity soft-masks as opaque grey boxes;
+  // swap the CSS that triggers them for Preview-safe forms.
+  try {
+    for (const el of document.body.querySelectorAll('*')) {
+      const cs = getComputedStyle(el);
+
+      if (cs.boxShadow !== 'none' && cs.filter === 'none') {
+        const outs = [], kept = [];
+        for (const s of cs.boxShadow.split(/,(?![^(]*[)])/)) {
+          const t = s.trim();
+          const m = t.match(/^(rgba?[(][^)]+[)]) (-?[0-9.]+px) (-?[0-9.]+px) ([0-9.]+px) -?[0-9.]+px$/);
+          if (m && parseFloat(m[4]) > 0) outs.push('drop-shadow(' + m[2] + ' ' + m[3] + ' ' + m[4] + ' ' + m[1] + ')');
+          else kept.push(t);
+        }
+        if (outs.length) {
+          el.style.setProperty('filter', outs.join(' '), 'important');
+          el.style.setProperty('box-shadow', kept.join(', ') || 'none', 'important');
+        }
+      }
+
+      const mask = cs.maskImage && cs.maskImage !== 'none' ? cs.maskImage : cs.webkitMaskImage;
+      if (mask && mask !== 'none' && cs.filter === 'none') el.style.setProperty('filter', 'opacity(1)', 'important');
+    }
+  } catch (e) {}
+  setTimeout(() => { try { window.print(); } catch (e) {} }, 200);
+})();
+</script>
+</body>
+</html>

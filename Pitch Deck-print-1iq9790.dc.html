@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style data-omelette-print-defaults>
+@media print {
+  @page { margin: 0; }
+  body { padding: 0.5in; box-sizing: border-box; }
+  h1, h2, h3, h4, h5, h6 { break-after: avoid; }
+  figure, table, pre, blockquote, img, svg, tr, [class~="card" i] { break-inside: avoid; }
+  img, svg { max-width: 100%; }
+  p { orphans: 3; widows: 3; }
+}
+</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Archivo:wght@400;500;600;700;800&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Archivo',sans-serif;-webkit-font-smoothing:antialiased}
+  .kick{font-family:'Space Mono',monospace;font-size:16px;letter-spacing:4px;text-transform:uppercase;color:#F0654A}
+  .mono{font-family:'Space Mono',monospace}
+</style>
+</helmet>
+
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%" data-uneditable="">
+
+  <!-- ===== 1. COVER ===== -->
+  <section data-label="Cover" data-speaker-notes="Open the pitch. Greater Emmanuel FWC — three bold website directions, all built for Wix. Content pulled from their current site." style="position:relative;width:1920px;height:1080px;background:#0F0B16;color:#F2EBDD;overflow:hidden;padding:96px 110px;display:flex;flex-direction:column;justify-content:space-between">
+    <div style="position:absolute;top:-160px;right:-120px;width:680px;height:680px;border-radius:50%;background:radial-gradient(circle,rgba(240,101,74,.32),transparent 64%)"></div>
+    <div style="position:absolute;bottom:-220px;left:-160px;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(141,99,255,.18),transparent 66%)"></div>
+    <div style="position:relative;display:flex;align-items:center;justify-content:space-between">
+      <div style="border-radius: 12px; padding: 14px 22px; display: flex; align-items: center; background-color: #f2ebdd00"><img src="assets/edwards-logo.png" style="display: block; width: 306px; height: 81px"></div>
+      <span class="mono" style="font-size: 16px; letter-spacing: 3px; text-transform: uppercase; color: #8A8198; display: none">Design Studio · 2025</span>
+    </div>
+    <div style="position:relative">
+      <div class="kick" style="margin-bottom:30px">Website Design Concepts</div>
+      <h1 style="font-family:'Anton';font-size:188px;line-height:.84;letter-spacing:-2px;text-transform:uppercase">Greater<br>Emmanuel</h1>
+      <p style="font-family:'Anton';font-size:46px;letter-spacing:1px;text-transform:uppercase;color:#F0654A;margin-top:18px">Family Worship Center</p>
+      <p style="font-size:25px;color:#C3BBD0;max-width:920px;margin-top:30px;line-height:1.5">Three bold, contemporary directions for a custom church experience — every one engineered to live on Wix.</p>
+    </div>
+    <div style="position:relative;display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(242,235,221,.16);padding-top:28px">
+      <span class="mono" style="font-size:17px;letter-spacing:2px;text-transform:uppercase;color:#F0654A">● Love Lives Here</span>
+      <span class="mono" style="font-size:16px;letter-spacing:2px;color:#8A8198">Houston, TX · greateremmanuel.com</span>
+    </div>
+  </section>
+
+  <!-- ===== 2. THE BRIEF ===== -->
+  <section data-label="The Brief" data-speaker-notes="The brief: edgy, contemporary, bold, exciting, welcoming. Five must-have features. Three directions that each solve it differently." style="position:relative;width:1920px;height:1080px;background:#14101D;color:#F2EBDD;overflow:hidden;padding:96px 110px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center">
+    <div>
+      <div class="kick" style="margin-bottom:26px">The Brief</div>
+      <h2 style="font-family:'Anton';font-size:104px;line-height:.86;text-transform:uppercase">One church.<br>Three bold<br>takes.</h2>
+      <p style="font-size:24px;line-height:1.6;color:#C3BBD0;max-width:640px;margin-top:34px">A contemporary, welcoming home for Greater Emmanuel — exciting enough to turn heads, warm enough to feel like family. We pulled real voice and content from the current site, then pushed three distinct visual systems.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:36px">
+        <span class="mono" style="font-size:15px;letter-spacing:1px;text-transform:uppercase;border:1px solid rgba(240,101,74,.45);color:#F0654A;padding:10px 18px;border-radius:999px">Edgy</span>
+        <span class="mono" style="font-size:15px;letter-spacing:1px;text-transform:uppercase;border:1px solid rgba(240,101,74,.45);color:#F0654A;padding:10px 18px;border-radius:999px">Contemporary</span>
+        <span class="mono" style="font-size:15px;letter-spacing:1px;text-transform:uppercase;border:1px solid rgba(240,101,74,.45);color:#F0654A;padding:10px 18px;border-radius:999px">Bold</span>
+        <span class="mono" style="font-size:15px;letter-spacing:1px;text-transform:uppercase;border:1px solid rgba(240,101,74,.45);color:#F0654A;padding:10px 18px;border-radius:999px">Exciting</span>
+        <span class="mono" style="font-size:15px;letter-spacing:1px;text-transform:uppercase;border:1px solid rgba(240,101,74,.45);color:#F0654A;padding:10px 18px;border-radius:999px">Welcoming</span>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <div style="background:#1C1726;border:1px solid rgba(242,235,221,.1);border-radius:20px;padding:38px 40px">
+        <div class="mono" style="font-size:15px;letter-spacing:2px;text-transform:uppercase;color:#8A8198;margin-bottom:22px">Must-have features</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px 28px">
+          <div style="display:flex;align-items:center;gap:14px;font-size:21px"><span style="color:#F0654A;font-family:'Anton'">01</span> Contact form</div>
+          <div style="display:flex;align-items:center;gap:14px;font-size:21px"><span style="color:#F0654A;font-family:'Anton'">02</span> Blog / news</div>
+          <div style="display:flex;align-items:center;gap:14px;font-size:21px"><span style="color:#F0654A;font-family:'Anton'">03</span> Portfolio gallery</div>
+          <div style="display:flex;align-items:center;gap:14px;font-size:21px"><span style="color:#F0654A;font-family:'Anton'">04</span> Events &amp; flyers</div>
+          <div style="display:flex;align-items:center;gap:14px;font-size:21px"><span style="color:#F0654A;font-family:'Anton'">05</span> Give / donate</div>
+          <div style="display:flex;align-items:center;gap:14px;font-size:21px;color:#8A8198"><span style="font-family:'Anton'">✦</span> Built on Wix</div>
+        </div>
+      </div>
+      <div style="background:#1C1726;border:1px solid rgba(242,235,221,.1);border-radius:20px;padding:38px 40px">
+        <div class="mono" style="font-size:15px;letter-spacing:2px;text-transform:uppercase;color:#8A8198;margin-bottom:22px">Three directions</div>
+        <div style="display:flex;flex-direction:column;gap:18px">
+          <div style="display:flex;align-items:center;gap:18px"><span style="width:18px;height:18px;border-radius:50%;background:#FF4D2E;flex-shrink:0"></span><span style="font-family:'Anton';font-size:24px;text-transform:uppercase;width:200px">01 Triumph</span><span style="font-size:18px;color:#C3BBD0">Bold dark editorial</span></div>
+          <div style="display:flex;align-items:center;gap:18px"><span style="width:18px;height:18px;border-radius:50%;background:#E0531E;flex-shrink:0"></span><span style="font-family:'Anton';font-size:24px;text-transform:uppercase;width:200px">02 Broadside</span><span style="font-size:18px;color:#C3BBD0">Retro print poster</span></div>
+          <div style="display:flex;align-items:center;gap:18px"><span style="width:18px;height:18px;border-radius:50%;background:#C6FF3D;flex-shrink:0"></span><span style="font-family:'Anton';font-size:24px;text-transform:uppercase;width:200px">03 After Dark</span><span style="font-size:18px;color:#C3BBD0">Edgy concert energy</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3. TRIUMPH INTRO ===== -->
+  <section data-label="01 Triumph" data-speaker-notes="Direction 01 Triumph. Bold editorial — dark canvas, electric coral, oversized condensed Anton type. Magazine energy, confident and modern." style="position:relative;width:1920px;height:1080px;background:#141110;color:#F4EFE7;overflow:hidden;padding:90px 96px;display:grid;grid-template-columns:0.92fr 1.08fr;gap:72px;align-items:center">
+    <div>
+      <div class="mono" style="font-size:16px;letter-spacing:4px;text-transform:uppercase;color:#FF4D2E;margin-bottom:24px">Direction 01</div>
+      <h2 style="font-family:'Anton';font-size:150px;line-height:.82;text-transform:uppercase">Triumph</h2>
+      <p style="font-size:23px;line-height:1.6;color:#C9C1B7;max-width:560px;margin-top:28px">A bold, dark editorial system. Oversized condensed type, electric coral, and full-bleed worship imagery give the brand magazine-grade confidence — modern, cinematic, unmistakably alive.</p>
+      <div style="display:flex;gap:14px;margin-top:34px">
+        <div style="width:64px;height:64px;border-radius:12px;background:#141110;border:1px solid rgba(244,239,231,.25)"></div>
+        <div style="width:64px;height:64px;border-radius:12px;background:#FF4D2E"></div>
+        <div style="width:64px;height:64px;border-radius:12px;background:#F4EFE7"></div>
+        <div style="width:64px;height:64px;border-radius:12px;background:#9A9088"></div>
+        <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding-left:10px"><span style="font-family:'Anton';font-size:24px;text-transform:uppercase;line-height:1">Anton</span><span class="mono" style="font-size:13px;color:#9A9088;letter-spacing:1px">+ Archivo body</span></div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:30px">
+        <span class="mono" style="font-size:14px;letter-spacing:1px;text-transform:uppercase;background:rgba(255,77,46,.14);color:#FF4D2E;padding:9px 16px;border-radius:8px">Bold</span>
+        <span class="mono" style="font-size:14px;letter-spacing:1px;text-transform:uppercase;background:rgba(255,77,46,.14);color:#FF4D2E;padding:9px 16px;border-radius:8px">Editorial</span>
+        <span class="mono" style="font-size:14px;letter-spacing:1px;text-transform:uppercase;background:rgba(255,77,46,.14);color:#FF4D2E;padding:9px 16px;border-radius:8px">Cinematic</span>
+      </div>
+    </div>
+    <div style="border-radius:16px;overflow:hidden;background:#000;box-shadow:0 50px 100px -28px rgba(0,0,0,.7);border:1px solid rgba(244,239,231,.12)">
+      <div style="height:42px;background:#241f1c;display:flex;align-items:center;gap:9px;padding:0 18px">
+        <span style="width:12px;height:12px;border-radius:50%;background:#ff5f57"></span><span style="width:12px;height:12px;border-radius:50%;background:#febc2e"></span><span style="width:12px;height:12px;border-radius:50%;background:#28c840"></span>
+        <div class="mono" style="margin-left:14px;flex:1;background:#15110f;border-radius:7px;padding:6px 14px;font-size:13px;color:#9A9088;letter-spacing:.5px">greateremmanuel.org</div>
+      </div>
+      <div style="width:900px;height:828px;overflow:hidden"><img src="assets/shots/tri-home.png" alt="Triumph homepage" style="display:block;width:900px;height:828px;object-fit:cover;object-position:top"></div>
+    </div>
+  </section>
+
+  <!-- ===== 4. TRIUMPH SECTIONS ===== -->
+  <section data-label="01 Triumph — Screens" data-speaker-notes="Triumph in detail: leaders, the events and flyers module, and the media gallery. Every required feature has a home." style="position:relative;width:1920px;height:1080px;background:#1C1815;color:#F4EFE7;overflow:hidden;padding:74px 96px">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:40px">
+      <h3 style="font-family:'Anton';font-size:64px;text-transform:uppercase;line-height:.9">01 — Inside the experience</h3>
+      <span class="mono" style="font-size:15px;letter-spacing:2px;text-transform:uppercase;color:#9A9088">Leaders · Events · Gallery</span>
+    </div>
+    <div style="display:flex;gap:30px;justify-content:center">
+      <div style="border-radius:14px;overflow:hidden;background:#000;box-shadow:0 40px 80px -30px rgba(0,0,0,.7);border:1px solid rgba(244,239,231,.1)">
+        <div style="height:34px;background:#241f1c;display:flex;align-items:center;gap:7px;padding:0 14px"><span style="width:9px;height:9px;border-radius:50%;background:#ff5f57"></span><span style="width:9px;height:9px;border-radius:50%;background:#febc2e"></span><span style="width:9px;height:9px;border-radius:50%;background:#28c840"></span><div class="mono" style="margin-left:10px;flex:1;font-size:11px;color:#9A9088">/leaders</div></div>
+        <div style="width:512px;height:740px;overflow:hidden"><img src="assets/shots/tri-pastors.png" alt="Triumph leaders" style="display:block;width:512px;height:740px;object-fit:cover;object-position:top"></div>
+      </div>
+      <div style="border-radius:14px;overflow:hidden;background:#000;box-shadow:0 40px 80px -30px rgba(0,0,0,.7);border:1px solid rgba(244,239,231,.1)">
+        <div style="height:34px;background:#241f1c;display:flex;align-items:center;gap:7px;padding:0 14px"><span style="width:9px;height:9px;border-radius:50%;background:#ff5f57"></span><span style="width:9px;height:9px;border-radius:50%;background:#febc2e"></span><span style="width:9px;height:9px;border-radius:50%;background:#28c840"></span><div class="mono" style="margin-left:10px;flex:1;font-size:11px;color:#9A9088">/events</div></div>
+        <div style="width:512px;height:740px;overflow:hidden"><img src="assets/shots/tri-events.png" alt="Triumph events" style="display:block;width:512px;height:740px;object-fit:cover;object-position:top"></div>
+      </div>
+      <div style="border-radius:14px;overflow:hidden;background:#000;box-shadow:0 40px 80px -30px rgba(0,0,0,.7);border:1px solid rgba(244,239,231,.1)">
+        <div style="height:34px;background:#241f1c;display:flex;align-items:center;gap:7px;padding:0 14px"><span style="width:9px;height:9px;border-radius:50%;background:#ff5f57"></span><span style="width:9px;height:9px;border-radius:50%;background:#febc2e"></span><span style="width:9px;height:9px;border-radius:50%;background:#28c840"></span><div class="mono" style="margin-left:10px;flex:1;font-size:11px;color:#9A9088">/media</div></div>
+        <div style="width:512px;height:740px;overflow:hidden"><img src="assets/shots/tri-media.png" alt="Triumph media" style="display:block;width:512px;height:740px;object-fit:cover;object-position:top"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 5. BROADSIDE INTRO ===== -->
+  <section data-label="02 Broadside" data-speaker-notes="Direction 02 Broadside. Retro concept-poster aesthetic — burnt orange, cream and teal, duotone photography, giant type and paper grain. The loudest, most art-directed option." style="position:relative;width:1920px;height:1080px;background:#ECE3D0;color:#1A1613;overflow:hidden;padding:90px 96px;display:grid;grid-template-columns:0.92fr 1.08fr;gap:72px;align-items:center">
+    <div>
+      <div class="mono" style="font-size:16px;letter-spacing:4px;text-transform:uppercase;color:#E0531E;margin-bottom:24px">Direction 02</div>
+      <h2 style="font-family:'Anton';font-size:142px;line-height:.82;text-transform:uppercase">Broadside</h2>
+      <p style="font-size:23px;line-height:1.6;color:#3A332B;max-width:560px;margin-top:28px">A retro print-poster system inspired by concept broadsides — burnt orange, cream and teal, duotone photography, monospace metadata, registration marks and paper grain. The boldest, most collectible take.</p>
+      <div style="display:flex;gap:14px;margin-top:34px">
+        <div style="width:64px;height:64px;border-radius:12px;background:#E0531E"></div>
+        <div style="width:64px;height:64px;border-radius:12px;background:#ECE3D0;border:1px solid rgba(26,22,19,.25)"></div>
+        <div style="width:64px;height:64px;border-radius:12px;background:#2E6E73"></div>
+        <div style="width:64px;height:64px;border-radius:12px;background:#1A1613"></div>
+        <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding-left:10px"><span style="font-family:'Anton';font-size:24px;text-transform:uppercase;line-height:1">Anton</span><span class="mono" style="font-size:13px;color:#7A6F5E;letter-spacing:1px">+ Space Mono</span></div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:30px">
+        <span class="mono" style="font-size:14px;letter-spacing:1px;text-transform:uppercase;background:rgba(224,83,30,.16);color:#E0531E;padding:9px 16px;border-radius:8px">Retro</span>
+        <span class="mono" style="font-size:14px;letter-spacing:1px;text-transform:uppercase;background:rgba(224,83,30,.16);color:#E0531E;padding:9px 16px;border-radius:8px">Print</span>
+        <span class="mono" style="font-size:14px;letter-spacing:1px;text-transform:uppercase;background:rgba(224,83,30,.16);color:#E0531E;padding:9px 16px;border-radius:8px">Duotone</span>
+      </div>
+    </div>
+    <div style="border-radius:16px;overflow:hidden;background:#000;box-shadow:0 50px 100px -28px rgba(26,22,19,.45);border:2px solid #1A1613">
+      <div style="height:42px;background:#1A1613;display:flex;align-items:center;gap:9px;padding:0 18px">
+        <span style="width:12px;height:12px;border-radius:50%;background:#ff5f57"></span><span style="width:12px;height:12px;border-radius:50%;background:#febc2e"></span><span style="width:12px;height:12px;border-radius:50%;background:#28c840"></span>
+        <div class="mono" style="margin-left:14px;flex:1;background:#2a2420;border-radius:7px;padding:6px 14px;font-size:13px;color:#9A8E7C;letter-spacing:.5px">greateremmanuel.org</div>
+      </div>
+      <div style="width:900px;height:828px;overflow:hidden"><img src="assets/shots/bro-home.png" alt="Broadside homepage" style="display:block;width:900px;height:828px;object-fit:cover;object-position:top"></div>
+    </div>
+  </section>
+
+  <!-- ===== 6. BROADSIDE SECTIONS ===== -->
+  <section data-label="02 Broadside — Screens" data-speaker-notes="Broadside in detail: leaders with type-behind-photo, the events and flyers broadsheet, and the duotone gallery." style="position:relative;width:1920px;height:1080px;background:#1A1613;color:#ECE3D0;overflow:hidden;padding:74px 96px">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:40px">
+      <h3 style="font-family:'Anton';font-size:64px;text-transform:uppercase;line-height:.9">02 — Inside the experience</h3>
+      <span class="mono" style="font-size:15px;letter-spacing:2px;text-transform:uppercase;color:#9A8E7C">Leaders · Events · Gallery</span>
+    </div>
+    <div style="display:flex;gap:30px;justify-content:center">
+      <div style="border-radius:14px;overflow:hidden;background:#000;box-shadow:0 40px 80px -30px rgba(0,0,0,.6);border:2px solid #ECE3D0">
+        <div style="height:34px;background:#2a2420;display:flex;align-items:center;gap:7px;padding:0 14px"><span style="width:9px;height:9px;border-radius:50%;background:#ff5f57"></span><span style="width:9px;height:9px;border-radius:50%;background:#febc2e"></span><span style="width:9px;height:9px;border-radius:50%;background:#28c840"></span><div class="mono" style="margin-left:10px;flex:1;font-size:11px;color:#9A8E7C">/leaders</div></div>
+        <div style="width:512px;height:740px;overflow:hidden"><img src="assets/shots/bro-pastors.png" alt="Broadside leaders" style="display:block;width:512px;height:740px;object-fit:cover;object-position:top"></div>
+      </div>
+      <div style="border-radius:14px;overflow:hidden;background:#000;box-shadow:0 40px 80px -30px rgba(0,0,0,.6);border:2px solid #ECE3D0">
+        <div style="height:34px;background:#2a2420;display:flex;align-items:center;gap:7px;padding:0 14px"><span style="width:9px;height:9px;border-radius:50%;background:#ff5f57"></span><span style="width:9px;height:9px;border-radius:50%;background:#febc2e"></span><span style="width:9px;height:9px;border-radius:50%;background:#28c840"></span><div class="mono" style="margin-left:10px;flex:1;font-size:11px;color:#9A8E7C">/events</div></div>
+        <div style="width:512px;height:740px;overflow:hidden"><img src="assets/shots/bro-events.png" alt="Broadside events" style="display:block;width:512px;height:740px;object-fit:cover;object-position:top"></div>
+      </div>
+      <div style="border-radius:14px;overflow:hidden;background:#000;box-shadow:0 40px 80px -30px rgba(0,0,0,.6);border:2px solid #ECE3D0">
+        <div style="height:34px;background:#2a2420;display:flex;align-items:center;gap:7px;padding:0 14px"><span style="width:9px;height:9px;border-radius:50%;background:#ff5f57"></span><span style="width:9px;height:9px;border-radius:50%;background:#febc2e"></span><span style="width:9px;height:9px;border-radius:50%;background:#28c840"></span><div class="mono" style="margin-left:10px;flex:1;font-size:11px;color:#9A8E7C">/gallery</div></div>
+        <div style="width:512px;height:740px;overflow:hidden"><img src="assets/shots/bro-gallery.png" alt="Broadside gallery" style="display:block;width:512px;height:740px;object-fit:cover;object-position:top"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 7. AFTER DARK INTRO ===== -->
+  <section data-label="03 After Dark" data-speaker-notes="Direction 03 After Dark. Edgy concert energy — electric violet and acid lime, neon glow, marquee. Youth-forward, high-energy, made to stream." style="position:relative;width:1920px;height:1080px;background:#0B0712;color:#EDE9F5;overflow:hidden;padding:90px 96px;display:grid;grid-template-columns:0.92fr 1.08fr;gap:72px;align-items:center">
+    <div style="position:absolute;top:-120px;left:-80px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(141,99,255,.4),transparent 64%)"></div>
+    <div style="position:relative">
+      <div class="mono" style="font-size:16px;letter-spacing:4px;text-transform:uppercase;color:#C6FF3D;margin-bottom:24px">Direction 03</div>
+      <h2 style="font-family:'Anton';font-size:140px;line-height:.82;text-transform:uppercase;text-shadow:0 0 50px rgba(141,99,255,.6)">After<br>Dark</h2>
+      <p style="font-size:23px;line-height:1.6;color:#C5BCE0;max-width:560px;margin-top:28px">Edgy, after-hours concert energy. Electric violet and acid lime, neon glow, a scrolling marquee and gradient event flyers. Youth-forward and built to make streaming services feel like a moment.</p>
+      <div style="display:flex;gap:14px;margin-top:34px">
+        <div style="width:64px;height:64px;border-radius:12px;background:#0B0712;border:1px solid rgba(237,233,245,.25)"></div>
+        <div style="width:64px;height:64px;border-radius:12px;background:#8D63FF"></div>
+        <div style="width:64px;height:64px;border-radius:12px;background:#C6FF3D"></div>
+        <div style="width:64px;height:64px;border-radius:12px;background:#EDE9F5"></div>
+        <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding-left:10px"><span style="font-family:'Anton';font-size:24px;text-transform:uppercase;line-height:1">Syne</span><span class="mono" style="font-size:13px;color:#8A7FA8;letter-spacing:1px">+ Space Grotesk</span></div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:30px">
+        <span class="mono" style="font-size:14px;letter-spacing:1px;text-transform:uppercase;background:rgba(198,255,61,.14);color:#C6FF3D;padding:9px 16px;border-radius:8px">Neon</span>
+        <span class="mono" style="font-size:14px;letter-spacing:1px;text-transform:uppercase;background:rgba(198,255,61,.14);color:#C6FF3D;padding:9px 16px;border-radius:8px">High-energy</span>
+        <span class="mono" style="font-size:14px;letter-spacing:1px;text-transform:uppercase;background:rgba(198,255,61,.14);color:#C6FF3D;padding:9px 16px;border-radius:8px">Youth</span>
+      </div>
+    </div>
+    <div style="position:relative;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 50px 100px -28px rgba(141,99,255,.4);border:1px solid rgba(141,99,255,.4)">
+      <div style="height:42px;background:#16101f;display:flex;align-items:center;gap:9px;padding:0 18px">
+        <span style="width:12px;height:12px;border-radius:50%;background:#ff5f57"></span><span style="width:12px;height:12px;border-radius:50%;background:#febc2e"></span><span style="width:12px;height:12px;border-radius:50%;background:#28c840"></span>
+        <div class="mono" style="margin-left:14px;flex:1;background:#0d0916;border-radius:7px;padding:6px 14px;font-size:13px;color:#8A7FA8;letter-spacing:.5px">greateremmanuel.org</div>
+      </div>
+      <div style="width:900px;height:828px;overflow:hidden"><img src="assets/shots/dark-home.png" alt="After Dark homepage" style="display:block;width:900px;height:828px;object-fit:cover;object-position:top"></div>
+    </div>
+  </section>
+
+  <!-- ===== 8. AFTER DARK SECTIONS ===== -->
+  <section data-label="03 After Dark — Screens" data-speaker-notes="After Dark in detail: leaders over a full-bleed treatment, gradient event flyers, and the media feed." style="position:relative;width:1920px;height:1080px;background:#120C1E;color:#EDE9F5;overflow:hidden;padding:74px 96px">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:40px">
+      <h3 style="font-family:'Anton';font-size:64px;text-transform:uppercase;line-height:.9">03 — Inside the experience</h3>
+      <span class="mono" style="font-size:15px;letter-spacing:2px;text-transform:uppercase;color:#8A7FA8">Leaders · Events · Feed</span>
+    </div>
+    <div style="display:flex;gap:30px;justify-content:center">
+      <div style="border-radius:14px;overflow:hidden;background:#000;box-shadow:0 40px 80px -30px rgba(141,99,255,.4);border:1px solid rgba(141,99,255,.35)">
+        <div style="height:34px;background:#16101f;display:flex;align-items:center;gap:7px;padding:0 14px"><span style="width:9px;height:9px;border-radius:50%;background:#ff5f57"></span><span style="width:9px;height:9px;border-radius:50%;background:#febc2e"></span><span style="width:9px;height:9px;border-radius:50%;background:#28c840"></span><div class="mono" style="margin-left:10px;flex:1;font-size:11px;color:#8A7FA8">/leaders</div></div>
+        <div style="width:512px;height:740px;overflow:hidden"><img src="assets/shots/dark-pastors.png" alt="After Dark leaders" style="display:block;width:512px;height:740px;object-fit:cover;object-position:top"></div>
+      </div>
+      <div style="border-radius:14px;overflow:hidden;background:#000;box-shadow:0 40px 80px -30px rgba(141,99,255,.4);border:1px solid rgba(141,99,255,.35)">
+        <div style="height:34px;background:#16101f;display:flex;align-items:center;gap:7px;padding:0 14px"><span style="width:9px;height:9px;border-radius:50%;background:#ff5f57"></span><span style="width:9px;height:9px;border-radius:50%;background:#febc2e"></span><span style="width:9px;height:9px;border-radius:50%;background:#28c840"></span><div class="mono" style="margin-left:10px;flex:1;font-size:11px;color:#8A7FA8">/events</div></div>
+        <div style="width:512px;height:740px;overflow:hidden"><img src="assets/shots/dark-events.png" alt="After Dark events" style="display:block;width:512px;height:740px;object-fit:cover;object-position:top"></div>
+      </div>
+      <div style="border-radius:14px;overflow:hidden;background:#000;box-shadow:0 40px 80px -30px rgba(141,99,255,.4);border:1px solid rgba(141,99,255,.35)">
+        <div style="height:34px;background:#16101f;display:flex;align-items:center;gap:7px;padding:0 14px"><span style="width:9px;height:9px;border-radius:50%;background:#ff5f57"></span><span style="width:9px;height:9px;border-radius:50%;background:#febc2e"></span><span style="width:9px;height:9px;border-radius:50%;background:#28c840"></span><div class="mono" style="margin-left:10px;flex:1;font-size:11px;color:#8A7FA8">/gallery</div></div>
+        <div style="width:512px;height:740px;overflow:hidden"><img src="assets/shots/dark-gallery.png" alt="After Dark gallery" style="display:block;width:512px;height:740px;object-fit:cover;object-position:top"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 9. BUILT TO SCALE ===== -->
+  <section data-label="Built to Scale" data-speaker-notes="Each direction is a system, not a single page. Here's the Triumph theme extended to a Blog and News page — the same type, color and grid carry to every new page you add in Wix: sermons, ministries, about, give." style="position:relative;width:1920px;height:1080px;background:#141110;color:#F4EFE7;overflow:hidden;padding:74px 96px;display:grid;grid-template-columns:0.78fr 1.22fr;gap:64px;align-items:center">
+    <div>
+      <div class="mono" style="font-size:16px;letter-spacing:4px;text-transform:uppercase;color:#FF4D2E;margin-bottom:24px">Built to scale</div>
+      <h2 style="font-family:'Anton';font-size:96px;line-height:.84;text-transform:uppercase">One system,<br>every page.</h2>
+      <p style="font-size:23px;line-height:1.6;color:#C9C1B7;max-width:520px;margin-top:28px">Each direction is a complete design system — not a one-off homepage. The same type, color and grid roll out to every new page you add in Wix. Here's the Triumph theme as a future <strong style="color:#F4EFE7">Blog &amp; News</strong> page.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:32px">
+        <span class="mono" style="font-size:14px;letter-spacing:1px;text-transform:uppercase;border:1px solid rgba(244,239,231,.22);padding:10px 16px;border-radius:999px">Sermons</span>
+        <span class="mono" style="font-size:14px;letter-spacing:1px;text-transform:uppercase;border:1px solid rgba(244,239,231,.22);padding:10px 16px;border-radius:999px">Ministries</span>
+        <span class="mono" style="font-size:14px;letter-spacing:1px;text-transform:uppercase;border:1px solid rgba(244,239,231,.22);padding:10px 16px;border-radius:999px">About</span>
+        <span class="mono" style="font-size:14px;letter-spacing:1px;text-transform:uppercase;border:1px solid rgba(244,239,231,.22);padding:10px 16px;border-radius:999px">Event detail</span>
+        <span class="mono" style="font-size:14px;letter-spacing:1px;text-transform:uppercase;border:1px solid rgba(244,239,231,.22);padding:10px 16px;border-radius:999px">Give</span>
+      </div>
+    </div>
+    <div style="border-radius:16px;overflow:hidden;background:#000;box-shadow:0 50px 100px -28px rgba(0,0,0,.7);border:1px solid rgba(244,239,231,.12)">
+      <div style="height:42px;background:#241f1c;display:flex;align-items:center;gap:9px;padding:0 18px">
+        <span style="width:12px;height:12px;border-radius:50%;background:#ff5f57"></span><span style="width:12px;height:12px;border-radius:50%;background:#febc2e"></span><span style="width:12px;height:12px;border-radius:50%;background:#28c840"></span>
+        <div class="mono" style="margin-left:14px;flex:1;background:#15110f;border-radius:7px;padding:6px 14px;font-size:13px;color:#9A9088;letter-spacing:.5px">greateremmanuel.org/blog</div>
+      </div>
+      <div style="width:1060px;height:828px;overflow:hidden"><img src="assets/shots/blog-home.png" alt="Triumph blog page" style="display:block;width:1060px;height:828px;object-fit:cover;object-position:top"></div>
+    </div>
+  </section>
+
+  <!-- ===== 10. CLOSING ===== -->
+  <section data-label="Next Steps" data-speaker-notes="Recap: three directions, all Wix-ready. Pick one to take to full build, or mix elements. Next we lock the direction, map the Wix structure, and design the inner pages." style="position:relative;width:1920px;height:1080px;background:#0F0B16;color:#F2EBDD;overflow:hidden;padding:96px 110px;display:flex;flex-direction:column;justify-content:space-between">
+    <div style="position:absolute;bottom:-200px;right:-140px;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(240,101,74,.28),transparent 66%)"></div>
+    <div style="position: relative; display: flex; align-items: center; justify-content: space-between">
+      <div style="border-radius: 12px; padding: 12px 20px; display: flex; align-items: center; background-color: #f2ebdd00; width: 293px; height: 100px"><img src="assets/edwards-logo.png" style="display: block; width: 100%"></div>
+      <span class="mono" style="font-size: 16px; letter-spacing: 3px; text-transform: uppercase; color: #8A8198; display: none">Next Steps</span>
+    </div>
+    <div style="position:relative">
+      <div class="kick" style="margin-bottom:26px">Where to from here</div>
+      <h2 style="font-family:'Anton';font-size:128px;line-height:.84;text-transform:uppercase;max-width:1400px">Pick a lane.<br>We'll build it out.</h2>
+      <div style="display:flex;gap:22px;margin-top:48px">
+        <div style="flex:1;background:#1C1726;border:1px solid rgba(242,235,221,.1);border-radius:18px;padding:30px 32px"><div style="display:flex;align-items:center;gap:12px;margin-bottom:14px"><span style="width:16px;height:16px;border-radius:50%;background:#FF4D2E"></span><span style="font-family:'Anton';font-size:30px;text-transform:uppercase">Triumph</span></div><p style="font-size:18px;color:#C3BBD0;line-height:1.5">Bold dark editorial. Confident &amp; cinematic.</p></div>
+        <div style="flex:1;background:#1C1726;border:1px solid rgba(242,235,221,.1);border-radius:18px;padding:30px 32px"><div style="display:flex;align-items:center;gap:12px;margin-bottom:14px"><span style="width:16px;height:16px;border-radius:50%;background:#E0531E"></span><span style="font-family:'Anton';font-size:30px;text-transform:uppercase">Broadside</span></div><p style="font-size:18px;color:#C3BBD0;line-height:1.5">Retro print poster. Loud &amp; collectible.</p></div>
+        <div style="flex:1;background:#1C1726;border:1px solid rgba(242,235,221,.1);border-radius:18px;padding:30px 32px"><div style="display:flex;align-items:center;gap:12px;margin-bottom:14px"><span style="width:16px;height:16px;border-radius:50%;background:#C6FF3D"></span><span style="font-family:'Anton';font-size:30px;text-transform:uppercase">After Dark</span></div><p style="font-size:18px;color:#C3BBD0;line-height:1.5">Edgy concert energy. Youth-forward.</p></div>
+      </div>
+    </div>
+    <div style="position:relative;display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(242,235,221,.16);padding-top:28px">
+      <span style="font-size:20px;color:#C3BBD0">Lock a direction → map the Wix structure → design the inner pages.</span>
+      <span class="mono" style="font-size:16px;letter-spacing:2px;color:#F0654A">● Love Lives Here</span>
+    </div>
+  </section>
+
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    const hideBars = (doc) => {
+      try {
+        if (doc.getElementById('__nobars')) return;
+        const st = doc.createElement('style');
+        st.id = '__nobars';
+        st.textContent = 'html{scrollbar-width:none}*::-webkit-scrollbar{width:0;height:0;display:none}';
+        (doc.head || doc.documentElement).appendChild(st);
+      } catch (e) {}
+    };
+    const scrollTo = (f) => {
+      const src = f.getAttribute('src') || '';
+      const hash = src.split('#')[1];
+      let tries = 0;
+      const tick = () => {
+        try {
+          const doc = f.contentDocument;
+          if (doc) {
+            hideBars(doc);
+            if (doc.documentElement) doc.documentElement.style.scrollBehavior = 'auto';
+            if (hash && hash !== 'top') {
+              const el = doc.getElementById(hash);
+              if (el && doc.scrollingElement) {
+                const y = el.getBoundingClientRect().top + (f.contentWindow.scrollY || 0);
+                doc.scrollingElement.scrollTop = y;
+                if (tries > 3) return;
+              }
+            } else if (doc.scrollingElement) {
+              doc.scrollingElement.scrollTop = 0;
+              if (tries > 3) return;
+            }
+          }
+        } catch (e) {}
+        if (tries++ < 50) setTimeout(tick, 140);
+      };
+      tick();
+    };
+    const setup = () => {
+      document.querySelectorAll('iframe').forEach((f) => {
+        f.addEventListener('load', () => scrollTo(f), { once: true });
+        scrollTo(f);
+      });
+    };
+    setTimeout(setup, 300);
+  }
+}
+</script>
+<script>
+(async () => {
+  if (!document.title || !document.title.trim()) document.title = "Pitch Deck";
+  // Prepend so page-supplied @page / break rules (deck-stage's margin:0,
+  // author CSS) keep source-order precedence over the baseline.
+  const baseCss = document.createElement('style');
+  baseCss.textContent = "@media print {\n  @page { margin: 0.5cm; }\n  figure, table { break-inside: avoid; }\n  *, *::before, *::after {\n    print-color-adjust: exact; -webkit-print-color-adjust: exact;\n    backdrop-filter: none !important; -webkit-backdrop-filter: none !important;\n    animation-delay: -99s !important; animation-duration: .001s !important;\n    animation-iteration-count: 1 !important; animation-fill-mode: both !important;\n    animation-play-state: running !important; transition-duration: 0s !important;\n  }\n}";
+  document.head.prepend(baseCss);
+  if (document.readyState === 'loading') {
+    await new Promise((r) => document.addEventListener('DOMContentLoaded', r, { once: true }));
+  }
+  let ds = document.querySelector('deck-stage');
+  // whenDefined never resolves when nothing registers the element, so only
+  // await it when a <deck-stage> tag exists (and race a timeout regardless).
+  if (ds && !customElements.get('deck-stage')) {
+    try {
+      await Promise.race([
+        customElements.whenDefined('deck-stage'),
+        new Promise((r) => setTimeout(r, 3000)),
+      ]);
+    } catch (e) {}
+    ds = document.querySelector('deck-stage');
+  }
+  // dc-runtime assigns window.DCLogic at init and mounts into #dc-root on
+  // DOMContentLoaded; settle on that subtree so React has rendered before
+  // print(). Non-DC pages fall through to weighing body.
+  const isDc = !ds && 'DCLogic' in window;
+  const settleRoot = ds || (isDc ? document.getElementById('dc-root') : null) || document.body;
+  if (settleRoot) {
+    // Weigh only content children — skip script/style/template so inline
+    // Babel/CSS doesn't register as stable "content" before the framework
+    // has mounted anything.
+    const MEDIA = 'img,svg,canvas,video,picture,iframe,embed,object';
+    const weigh = () => {
+      let text = 0, media = 0;
+      for (const c of settleRoot.children) {
+        const t = c.tagName;
+        if (t === 'SCRIPT' || t === 'STYLE' || t === 'TEMPLATE') continue;
+        text += (c.textContent || '').trim().length;
+        media += c.querySelectorAll(MEDIA).length + (c.matches(MEDIA) ? 1 : 0);
+      }
+      return text + media * 100;
+    };
+    // "Non-zero and stable" alone is not sufficient to mean rendered: generic
+    // body can carry a static shell while async main content is pending, and
+    // #dc-root can carry the root DC's static text while child refs are still
+    // .sc-placeholder boxes. Gate generic on readyState 'complete', and never
+    // accept stability while a dc-runtime placeholder is present.
+    const isGeneric = settleRoot === document.body;
+    const deadline = Date.now() + 15000;
+    let last = -1, stable = 0;
+    while (Date.now() < deadline) {
+      const n = weigh();
+      const ready =
+        (!isGeneric || document.readyState === 'complete') &&
+        !settleRoot.querySelector('.sc-placeholder');
+      if (n > 0 && n === last && ready) { if (++stable >= 2) break; } else { stable = 0; }
+      last = n;
+      await new Promise((r) => setTimeout(r, 250));
+    }
+  }
+  // Reveal content gated on scroll or visibility before printing. Lazy <img>,
+  // IntersectionObserver fade-ins, and collapsed <details> don't render while
+  // off-screen, so a long page would print with them blank or closed. Open
+  // every <details>, force native-lazy images eager, and scroll the document
+  // through its full height to trip lazy-load + IO; then wait (bounded) for the
+  // newly-triggered images. Inert for deck-stage (slides aren't scroll-gated).
+  try {
+    for (const d of document.querySelectorAll('details')) d.open = true;
+    for (const img of document.querySelectorAll('img[loading="lazy"]'))
+      img.loading = 'eager';
+    const scroller = document.scrollingElement || document.documentElement;
+    const full = Math.max(scroller.scrollHeight, document.body.scrollHeight);
+    const step = window.innerHeight || 800;
+    for (let y = 0; y <= full; y += step) {
+      window.scrollTo(0, y);
+      await new Promise((r) => requestAnimationFrame(r));
+    }
+    window.scrollTo(0, 0);
+    await Promise.race([
+      Promise.all(
+        [...document.images].map((img) =>
+          img.complete
+            ? null
+            : new Promise((res) => {
+                img.addEventListener('load', res, { once: true });
+                img.addEventListener('error', res, { once: true });
+              })
+        )
+      ),
+      new Promise((r) => setTimeout(r, 4000)),
+    ]);
+  } catch (e) {}
+  try { await document.fonts.ready; } catch (e) {}
+  // Jump every animation to its end state so print() never captures a slide
+  // mid-entrance. Ordering matters: the 0s-transition style must be live
+  // BEFORE data-deck-active is set so attribute-keyed transitions don't
+  // start a (now-0s) run from the pre-active base.
+  const st = document.createElement('style');
+  st.textContent = '*,*::before,*::after{animation-delay:-99s !important;animation-duration:.001s !important;animation-iteration-count:1 !important;animation-fill-mode:both !important;animation-play-state:running !important;transition-duration:0s !important}';
+  document.head.appendChild(st);
+  for (const d of document.querySelectorAll('deck-stage')) {
+    for (const c of d.children) {
+      const t = c.tagName;
+      if (t === 'SCRIPT' || t === 'STYLE' || t === 'TEMPLATE') continue;
+      c.setAttribute('data-deck-active', '');
+    }
+  }
+  // Re-append deck-stage's @page last so no author @page can add a margin and
+  // spill each full-bleed slide onto two sheets. Backstop for old copies.
+  if (ds) {
+    let pg = document.getElementById('deck-stage-print-page');
+    if (!pg) {
+      pg = document.createElement('style');
+      pg.textContent = '@page{size:' + (+ds.getAttribute('width') || 1920) +
+        'px ' + (+ds.getAttribute('height') || 1080) + 'px;margin:0}';
+    }
+    document.body.appendChild(pg);
+  }
+  try {
+    const sweep = () => {
+      for (const a of document.getAnimations()) {
+        try { a.finish(); } catch (e) {
+          try { a.currentTime = (a.effect && a.effect.getComputedTiming().duration) || 0; a.pause(); } catch (e2) {}
+        }
+      }
+    };
+    sweep();
+    await new Promise((r) => requestAnimationFrame(r));
+    sweep();
+    await new Promise((r) => requestAnimationFrame(r));
+  } catch (e) {}
+  // Relax break-inside on oversized elements. An element taller than a
+  // printable page can't honor break-inside: avoid — browsers either overflow
+  // it or push it whole to the next page, leaving a blank gap, then break it
+  // anyway at an arbitrary point. After the final layout (content revealed,
+  // animations jumped), find elements taller than a page that still compute
+  // break-inside: avoid and reset them to auto, so the browser breaks them at
+  // their children's boundaries instead (children keep their own avoid). PAGE_PX
+  // is a conservative portrait estimate at 96 CSS px/in — Letter/A4 usable
+  // height minus our 0.5in margins — so only clearly-oversized elements are
+  // touched and under-page elements still stay whole. Skipped for decks, whose
+  // slides are sized to the page.
+  try {
+    if (!document.querySelector('deck-stage')) {
+      const PAGE_PX = 1024;
+      // Our print defaults add a body padding inset only when we also zero the
+      // @page margin; computed style can't tell us (it reports screen media),
+      // so read the injected rule directly.
+      const defaults = document.querySelector('style[data-omelette-print-defaults]');
+      const pageInset = /body\s*\{[^}]*padding/.test(defaults ? defaults.textContent || '' : '');
+      const SEL = 'section,article,figure,table,pre,blockquote,[class~="card" i],[class~="page" i],[class~="sheet" i]';
+      for (const el of document.body.querySelectorAll(SEL)) {
+        if (el instanceof HTMLElement && el.offsetHeight > PAGE_PX) {
+          el.setAttribute('data-om-oversized', '');
+          // Fake-paged docs simulate sheets with over-tall break-after:page
+          // boxes; honoring the break spills half-blank pages and ends a
+          // colored box mid-sheet. Flow them, and (only when we own the page
+          // inset) drop the redundant padding/background via the rule below.
+          const cs = getComputedStyle(el);
+          if (cs.breakAfter === 'page' || cs.pageBreakAfter === 'always') {
+            el.setAttribute('data-om-fakepage', '');
+          }
+        }
+      }
+      const ost = document.createElement('style');
+      ost.textContent = '@media print{' +
+        '[data-om-oversized]{break-inside:auto !important;page-break-inside:auto !important}' +
+        '[data-om-fakepage]{break-after:auto !important;page-break-after:auto !important}' +
+        (pageInset ? '[data-om-fakepage]{padding:0 !important;background:none !important}' : '') +
+        '}';
+      document.head.appendChild(ost);
+    }
+  } catch (e) {}
+  // macOS Preview renders Skia-PDF Luminosity soft-masks as opaque grey boxes;
+  // swap the CSS that triggers them for Preview-safe forms.
+  try {
+    for (const el of document.body.querySelectorAll('*')) {
+      const cs = getComputedStyle(el);
+
+      if (cs.boxShadow !== 'none' && cs.filter === 'none') {
+        const outs = [], kept = [];
+        for (const s of cs.boxShadow.split(/,(?![^(]*[)])/)) {
+          const t = s.trim();
+          const m = t.match(/^(rgba?[(][^)]+[)]) (-?[0-9.]+px) (-?[0-9.]+px) ([0-9.]+px) -?[0-9.]+px$/);
+          if (m && parseFloat(m[4]) > 0) outs.push('drop-shadow(' + m[2] + ' ' + m[3] + ' ' + m[4] + ' ' + m[1] + ')');
+          else kept.push(t);
+        }
+        if (outs.length) {
+          el.style.setProperty('filter', outs.join(' '), 'important');
+          el.style.setProperty('box-shadow', kept.join(', ') || 'none', 'important');
+        }
+      }
+
+      const mask = cs.maskImage && cs.maskImage !== 'none' ? cs.maskImage : cs.webkitMaskImage;
+      if (mask && mask !== 'none' && cs.filter === 'none') el.style.setProperty('filter', 'opacity(1)', 'important');
+    }
+  } catch (e) {}
+  setTimeout(() => { try { window.print(); } catch (e) {} }, 200);
+})();
+</script>
+</body>
+</html>

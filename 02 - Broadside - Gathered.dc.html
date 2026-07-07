@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  @font-face{font-family:'Anton';font-style:normal;font-weight:400;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/anton/files/anton-latin-400-normal.woff2) format('woff2')}
+  @font-face{font-family:'Archivo';font-style:normal;font-weight:400;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/archivo/files/archivo-latin-400-normal.woff2) format('woff2')}
+  @font-face{font-family:'Archivo';font-style:normal;font-weight:500;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/archivo/files/archivo-latin-500-normal.woff2) format('woff2')}
+  @font-face{font-family:'Archivo';font-style:normal;font-weight:600;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/archivo/files/archivo-latin-600-normal.woff2) format('woff2')}
+  @font-face{font-family:'Archivo';font-style:normal;font-weight:700;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/archivo/files/archivo-latin-700-normal.woff2) format('woff2')}
+  @font-face{font-family:'Archivo';font-style:normal;font-weight:800;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/archivo/files/archivo-latin-800-normal.woff2) format('woff2')}
+  @font-face{font-family:'Space Mono';font-style:normal;font-weight:400;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/space-mono/files/space-mono-latin-400-normal.woff2) format('woff2')}
+  @font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/space-mono/files/space-mono-latin-700-normal.woff2) format('woff2')}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:#ECE3D0;color:#1A1613;font-family:'Archivo',sans-serif;-webkit-font-smoothing:antialiased}
+  ::selection{background:#E0531E;color:#ECE3D0}
+  a{color:inherit;text-decoration:none}
+  .grain{position:fixed;inset:0;z-index:9999;pointer-events:none;mix-blend-mode:multiply;opacity:.10;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:160px 160px}
+  @keyframes loadbar{from{width:0}to{width:100%}}
+  @keyframes loadglyph{0%{transform:translateY(10px);opacity:0}100%{transform:translateY(0);opacity:1}}
+  @keyframes backdropIn{from{opacity:0}to{opacity:1}}
+  @keyframes modalIn{from{opacity:0;transform:translateY(20px) scale(.96)}to{opacity:1;transform:none}}
+  @media(max-width:880px){
+    .nav-links{display:none !important}
+    .navrow{padding:12px 18px !important}
+    .sec{padding:48px 20px !important}
+    .g3{grid-template-columns:1fr !important}
+    .g2{grid-template-columns:1fr !important;gap:0 !important}
+    .cal2{grid-template-columns:1fr !important;gap:14px !important}
+    .gal{grid-template-columns:repeat(2,1fr) !important}
+    .hero{height:auto !important;padding-bottom:22px !important}
+    .hero-photo{position:relative !important;height:320px !important}
+    .hero-title{position:absolute !important;left:20px !important;right:20px !important;top:auto !important;bottom:20px !important;max-width:none !important}
+    .hero-meta{display:none !important}
+    .hero-couple{position:relative !important;left:auto !important;transform:none !important;width:100% !important;height:auto !important;margin:0 auto !important;max-width:430px !important;display:block !important}
+    .hero-couple img{position:relative !important;height:auto !important;width:100% !important}
+    .hero-cap{position:static !important;padding:18px 20px 0 !important}
+    .hero-sub{position:static !important;text-align:left !important;max-width:none !important;padding:12px 20px 0 !important}
+    .pastimg{height:340px !important}
+    .give-video{box-shadow:8px 8px 0 rgba(107,46,145,.5) !important}
+    .foot{flex-direction:column !important;gap:22px !important}
+  }
+  @media(max-width:520px){
+    .gal{grid-template-columns:1fr !important}
+    .cal-day span:first-child{font-size:16px !important}
+  }
+</style>
+</helmet>
+
+<div class="grain"></div>
+<div style="max-width:1280px;margin:0 auto;position:relative;background:#ECE3D0">
+
+  <!-- ticker -->
+  <div style="background:#1A1613;color:#ECE3D0;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:8px 28px;display:flex;justify-content:space-between">
+    <span>EST. HOUSTON, TX</span><span>VOL. MMXXV — ISSUE NO. 01</span><span style="color:#E0531E">● LOVE LIVES HERE</span>
+  </div>
+
+  <!-- nav -->
+  <header style="position:sticky;top:0;z-index:50;background:#ECE3D0;border-bottom:2px solid #1A1613">
+    <div class="navrow" style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:12px 28px">
+      <a href="#top" style="display:flex;align-items:center;gap:12px">
+        <img src="assets/logo-ge.png" alt="Greater Emmanuel" style="width:46px;height:46px;object-fit:contain;display:block">
+        <span style="display:flex;flex-direction:column;line-height:1.05">
+          <span style="font-family:'Anton';font-size:18px;letter-spacing:.5px">GREATER EMMANUEL</span>
+          <span style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:3px;color:#6B2E91;text-transform:uppercase">Family Worship Center</span>
+        </span>
+      </a>
+      <nav class="nav-links" style="display:flex;align-items:center;gap:26px;font-family:'Space Mono',monospace;font-size:12.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase">
+        <a href="#believe" style-hover="color:#E0531E">Believe</a>
+        <a href="#pastors" style-hover="color:#E0531E">Leaders</a>
+        <a href="#events" style-hover="color:#E0531E">Events</a>
+        <a href="#gallery" style-hover="color:#E0531E">Gallery</a>
+        <a href="#visit" style-hover="color:#E0531E">Visit</a>
+      </nav>
+      <a href="#give" style="background:#E0531E;color:#ECE3D0;font-family:'Anton';font-size:15px;letter-spacing:1px;padding:11px 22px" style-hover="background:#1A1613">GIVE →</a>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section id="top" class="hero" style="position:relative;height:820px;overflow:hidden;border-bottom:2px solid #1A1613">
+    <div style="position:absolute;inset:0;background:#ECE3D0"></div>
+    <!-- congregation plate (top) -->
+    <div class="hero-photo" style="position:absolute;top:0;left:0;right:0;height:57%;overflow:hidden;border-bottom:2px solid #1A1613">
+      <img src="assets/congregation.png" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center 42%;filter:grayscale(1) contrast(1.06)">
+      <div style="position:absolute;inset:0;background:#E0531E;mix-blend-mode:multiply;opacity:.60"></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,22,19,.42) 0%,rgba(26,22,19,0) 36%)"></div>
+      <!-- headline (over photo) -->
+      <div class="hero-title" style="position:absolute;left:28px;top:80px;z-index:3;max-width:400px">
+        <div style="font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#ECE3D0;margin-bottom:12px">Worship Experience —</div>
+        <h1 style="font-family:'Anton';font-size:clamp(58px,13vw,104px);line-height:.83;letter-spacing:-1px;text-transform:uppercase;color:#ECE3D0;text-shadow:0 2px 24px rgba(26,22,19,.45)">Love<br>Lives<br>Here</h1>
+      </div>
+    </div>
+
+    <!-- corner metadata -->
+    <div class="hero-meta" style="position:absolute;top:26px;left:28px;z-index:6;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#ECE3D0;line-height:1.7">
+      <div>CONCEPT</div><div style="opacity:.72">WORSHIP CENTER</div>
+    </div>
+    <div class="hero-meta" style="position:absolute;top:26px;right:28px;z-index:6;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#ECE3D0;text-align:right;line-height:1.7">
+      <div>2025 &nbsp;//&nbsp; DESIGN NO. 02</div><div style="opacity:.72">APOSTOLIC · PENTECOSTAL</div>
+    </div>
+
+    <!-- pastors couple cutout -->
+    <div class="hero-couple" style="position:absolute;bottom:0;left:50%;transform:translateX(-45%);width:740px;height:560px;z-index:2;display:flex;align-items:flex-end;justify-content:center">
+      <img src="assets/pastors-couple.png" style="display:block;width:100%;height:100%;object-fit:contain;object-position:bottom center;filter:grayscale(1) contrast(1.05) drop-shadow(7px 7px 0 rgba(46,110,115,.32))">
+    </div>
+
+    <!-- couple caption (tan zone, left) -->
+    <div class="hero-cap" style="position:absolute;left:28px;bottom:38px;z-index:4">
+      <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#2E6E73">✦ Senior Pastors</div>
+      <div style="font-family:'Anton';font-size:23px;text-transform:uppercase;color:#1A1613;margin-top:5px;line-height:.98">Bishop Titus &amp;<br>Lady Tammy</div>
+    </div>
+
+    <!-- subcopy + CTA (tan zone, right) -->
+    <div class="hero-sub" style="position:absolute;right:28px;bottom:38px;z-index:4;max-width:264px;text-align:right">
+      <p style="font-family:'Space Mono',monospace;font-size:12.5px;line-height:1.8;letter-spacing:.5px;text-transform:uppercase;color:#1A1613">A family of believers that magnify God's presence in triumphant worship. Sundays 10AM — pull up a seat.</p>
+      <a href="#visit" style="display:inline-flex;margin-top:16px;background:#1A1613;color:#ECE3D0;font-family:'Anton';font-size:15px;letter-spacing:1px;padding:13px 24px" style-hover="background:#E0531E">PLAN YOUR VISIT →</a>
+    </div>
+  </section>
+
+  <!-- ============ MARQUEE (purple) ============ -->
+  <div style="overflow:hidden;background:#6B2E91;color:#ECE3D0;border-bottom:2px solid #1A1613;padding:13px 0">
+    <div style="display:flex;gap:30px;white-space:nowrap;font-family:'Anton';font-size:22px;letter-spacing:1px;text-transform:uppercase">
+      <span>Triumphant Worship ✦</span><span style="color:#E8B04B">The Word Unfiltered ✦</span><span>A Family For All ✦</span><span style="color:#E8B04B">Houston, Texas ✦</span><span>Love Lives Here ✦</span><span style="color:#E8B04B">Sundays 10AM ✦</span>
+    </div>
+  </div>
+
+  <!-- ============ BELIEVE ============ -->
+  <section id="believe" class="sec" style="padding:72px 28px;border-bottom:2px solid #1A1613">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:46px">
+      <h2 style="font-family:'Anton';font-size:clamp(40px,7vw,92px);line-height:.84;text-transform:uppercase">What We<br>Believe</h2>
+      <span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#7A6F5E">FILED UNDER — DOCTRINE / 03 ENTRIES</span>
+    </div>
+    <div class="g3" style="display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid #1A1613">
+      <div style="padding:30px 26px 30px 0;border-right:2px solid #1A1613">
+        <div style="font-family:'Anton';font-size:84px;line-height:.8;color:#E0531E">01</div>
+        <h3 style="font-family:'Anton';font-size:26px;text-transform:uppercase;margin:16px 0 10px">Triumphant Worship</h3>
+        <p style="font-size:15.5px;line-height:1.6;color:#3A332B">We magnify God's presence with everything in us — voices lifted, hearts open, breakthrough expected every time we gather.</p>
+      </div>
+      <div style="padding:30px 26px;border-right:2px solid #1A1613">
+        <div style="font-family:'Anton';font-size:84px;line-height:.8;color:#2E6E73">02</div>
+        <h3 style="font-family:'Anton';font-size:26px;text-transform:uppercase;margin:16px 0 10px">The Word, Unfiltered</h3>
+        <p style="font-size:15.5px;line-height:1.6;color:#3A332B">The Bible is the inspired Word of God and our only authority for faith and life — preached with zeal and zero compromise.</p>
+      </div>
+      <div style="padding:30px 0 30px 26px">
+        <div style="font-family:'Anton';font-size:84px;line-height:.8;color:#6B2E91">03</div>
+        <h3 style="font-family:'Anton';font-size:26px;text-transform:uppercase;margin:16px 0 10px">A Family For All</h3>
+        <p style="font-size:15.5px;line-height:1.6;color:#3A332B">From every walk of life, we belong to one another. Love lives here — and there's room at the table for your whole household.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PASTORS ============ -->
+  <section id="pastors" style="position:relative;overflow:hidden;border-bottom:2px solid #1A1613;background:#1A1613;color:#ECE3D0">
+    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Anton';font-size:clamp(90px,20vw,300px);line-height:.8;letter-spacing:-6px;color:#E0531E;white-space:nowrap;z-index:1">THE WORD</div>
+    <div class="g2" style="position:relative;z-index:2;display:grid;grid-template-columns:1fr 1.05fr;gap:0;align-items:end">
+      <div class="pastimg" style="height:560px;overflow:hidden;background:#E0531E">
+        <img src="assets/pastors-formal.jpeg" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center 22%;mix-blend-mode:multiply;filter:grayscale(1) contrast(1.1) brightness(1.05)">
+      </div>
+      <div style="padding:54px 44px">
+        <div style="display:flex;gap:24px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#E8B04B;margin-bottom:18px">
+          <span>TITLE — SENIOR PASTORS</span><span style="color:#9A8E7C">DESIGN NO. 02</span>
+        </div>
+        <h2 style="font-family:'Anton';font-size:clamp(34px,4.2vw,56px);line-height:.94;text-transform:uppercase;margin-bottom:18px">Bishop Titus &amp;<br>Lady Tammy Stewart</h2>
+        <p style="font-size:16px;line-height:1.7;color:#C9BFAD;margin-bottom:16px">Bishop Titus B. Stewart is a "preacher's preacher" whose unorthodox creativity reaches people from every walk of life. He is passionate about building God's people in order to build God's Kingdom.</p>
+        <p style="font-size:16px;line-height:1.7;color:#C9BFAD;margin-bottom:28px">Alongside Lady Tammy Stewart, they lead Greater Emmanuel with vision, integrity, and humility.</p>
+        <a href="#" style="display:inline-flex;background:#E0531E;color:#ECE3D0;font-family:'Anton';font-size:15px;letter-spacing:1px;padding:13px 26px" style-hover="background:#ECE3D0;color:#1A1613">READ THEIR STORY →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EVENTS & CALENDAR ============ -->
+  <section id="events" class="sec" style="padding:72px 28px;border-bottom:2px solid #1A1613">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:32px">
+      <h2 style="font-family:'Anton';font-size:clamp(44px,8vw,104px);line-height:.82;text-transform:uppercase">Events<br>&amp; Calendar</h2>
+      <div style="display:flex;gap:18px;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase">
+        <span style="display:flex;align-items:center;gap:7px"><span style="width:10px;height:10px;border-radius:50%;background:#2E6E73"></span>Worship</span>
+        <span style="display:flex;align-items:center;gap:7px"><span style="width:10px;height:10px;border-radius:50%;background:#6B2E91"></span>Bible Study</span>
+        <span style="display:flex;align-items:center;gap:7px"><span style="width:10px;height:10px;border-radius:50%;background:#E0531E"></span>Special</span>
+      </div>
+    </div>
+
+    <div class="cal2" style="display:grid;grid-template-columns:1.5fr 1fr;gap:0;border:2px solid #1A1613">
+      <!-- calendar -->
+      <div style="padding:26px 28px;border-right:2px solid #1A1613">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
+          <button onClick="{{ cal.prev }}" style="all:unset;cursor:pointer;width:42px;height:42px;display:grid;place-items:center;border:2px solid #1A1613;font-family:'Anton';font-size:22px" style-hover="background:#E0531E;color:#ECE3D0;border-color:#E0531E">‹</button>
+          <div style="text-align:center">
+            <div style="font-family:'Anton';font-size:clamp(26px,4vw,38px);text-transform:uppercase;line-height:1">{{ cal.label }}</div>
+            <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#7A6F5E;margin-top:2px">Gatherings This Month</div>
+          </div>
+          <button onClick="{{ cal.next }}" style="all:unset;cursor:pointer;width:42px;height:42px;display:grid;place-items:center;border:2px solid #1A1613;font-family:'Anton';font-size:22px" style-hover="background:#E0531E;color:#ECE3D0;border-color:#E0531E">›</button>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-bottom:8px">
+          <div style="text-align:center;font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:#7A6F5E">Sun</div>
+          <div style="text-align:center;font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:#7A6F5E">Mon</div>
+          <div style="text-align:center;font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:#7A6F5E">Tue</div>
+          <div style="text-align:center;font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:#7A6F5E">Wed</div>
+          <div style="text-align:center;font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:#7A6F5E">Thu</div>
+          <div style="text-align:center;font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:#7A6F5E">Fri</div>
+          <div style="text-align:center;font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:#7A6F5E">Sat</div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:6px">
+          <sc-for list="{{ cal.cells }}" as="c" hint-placeholder-count="35">
+            <sc-if value="{{ c.empty }}" hint-placeholder-val="{{ false }}">
+              <div style="aspect-ratio:1/1;border:2px solid rgba(26,22,19,.10)"></div>
+            </sc-if>
+            <sc-if value="{{ c.day }}" hint-placeholder-val="{{ false }}">
+              <button class="cal-day" onClick="{{ c.onClick }}" style="all:unset;cursor:pointer;aspect-ratio:1/1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;border:2px solid #1A1613;background:{{ c.bg }};color:{{ c.fg }};transition:transform .12s" style-hover="transform:translateY(-2px)">
+                <span style="font-family:'Anton';font-size:19px;line-height:1">{{ c.day }}</span>
+                <span style="display:flex;gap:3px;height:8px;align-items:center">
+                  <sc-if value="{{ c.dotA }}" hint-placeholder-val="{{ false }}"><span style="width:7px;height:7px;border-radius:50%;background:{{ c.dotA }}"></span></sc-if>
+                  <sc-if value="{{ c.dotB }}" hint-placeholder-val="{{ false }}"><span style="width:7px;height:7px;border-radius:50%;background:{{ c.dotB }}"></span></sc-if>
+                  <sc-if value="{{ c.dotC }}" hint-placeholder-val="{{ false }}"><span style="width:7px;height:7px;border-radius:50%;background:{{ c.dotC }}"></span></sc-if>
+                </span>
+              </button>
+            </sc-if>
+          </sc-for>
+        </div>
+      </div>
+      <!-- day detail panel -->
+      <div style="background:#1A1613;color:#ECE3D0;padding:28px;display:flex;flex-direction:column">
+        <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#E8B04B;margin-bottom:8px">Selected Date —</div>
+        <div style="font-family:'Anton';font-size:28px;text-transform:uppercase;line-height:1;margin-bottom:20px">{{ cal.selLabel }}</div>
+        <sc-if value="{{ cal.hasSel }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <sc-for list="{{ cal.selEvents }}" as="e" hint-placeholder-count="2">
+              <div style="display:flex;gap:14px;border:2px solid #2E2822;padding:16px 16px;background:#221C17">
+                <div style="width:5px;flex-shrink:0;background:{{ e.barColor }}"></div>
+                <div style="flex:1">
+                  <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:{{ e.barColor }};margin-bottom:5px">{{ e.kindLabel }} · {{ e.time }}</div>
+                  <div style="font-family:'Anton';font-size:21px;text-transform:uppercase;line-height:1">{{ e.title }}</div>
+                  <div style="font-family:'Space Mono',monospace;font-size:11px;color:#9A8E7C;margin-top:5px">{{ e.min }}</div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ cal.msg }}" hint-placeholder-val="{{ false }}">
+          <p style="font-family:'Space Mono',monospace;font-size:12.5px;line-height:1.7;color:#9A8E7C">{{ cal.msg }}</p>
+        </sc-if>
+        <div style="margin-top:auto;padding-top:22px">
+          <a href="#" style="display:flex;align-items:center;justify-content:space-between;background:#E0531E;color:#ECE3D0;font-family:'Anton';font-size:15px;letter-spacing:1px;padding:14px 18px" style-hover="background:#6B2E91">FULL CALENDAR <span>→</span></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- featured flyer banner -->
+    <div style="margin-top:22px;border:2px solid #1A1613;background:#E0531E;color:#1A1613;padding:26px 30px;display:flex;align-items:center;justify-content:space-between;gap:26px;flex-wrap:wrap">
+      <div style="max-width:640px">
+        <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase">★ Featured Flyer — Marriage Ministry</span>
+        <h3 style="font-family:'Anton';font-size:clamp(30px,4.4vw,50px);line-height:.9;text-transform:uppercase;margin:8px 0 8px">MMV 1st Annual Cruise</h3>
+        <p style="font-size:15px;line-height:1.55">Worship, fellowship, and getaway on the open water — set sail with the Greater Emmanuel family this July.</p>
+      </div>
+      <a href="#" style="flex-shrink:0;display:inline-flex;align-items:center;gap:10px;background:#1A1613;color:#ECE3D0;font-family:'Anton';font-size:16px;letter-spacing:1px;padding:16px 26px" style-hover="background:#6B2E91">RESERVE A CABIN →</a>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY (interactive) ============ -->
+  <section id="gallery" class="sec" style="padding:72px 28px;border-bottom:2px solid #1A1613">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:34px">
+      <div style="display:flex;align-items:baseline;gap:18px;flex-wrap:wrap">
+        <h2 style="font-family:'Anton';font-size:clamp(40px,6vw,80px);line-height:.84;text-transform:uppercase">The Gallery</h2>
+        <span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#2E6E73">PLATES 01–06 · CLICK TO ENLARGE</span>
+      </div>
+      <a href="#" style="font-family:'Space Mono',monospace;font-size:12.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border-bottom:2px solid #1A1613;padding-bottom:4px">Watch Sermons →</a>
+    </div>
+    <div class="gal" style="display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:230px;gap:12px">
+      <sc-for list="{{ gallery }}" as="item" hint-placeholder-count="6">
+        <button onClick="{{ item.onClick }}" style="all:unset;cursor:pointer;position:relative;overflow:hidden;background:#1A1613;border:2px solid #1A1613;display:block;transition:transform .18s ease" style-hover="transform:translateY(-4px)">
+          <img src="{{ item.src }}" style="display:block;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.08)">
+          <span style="position:absolute;inset:0;background:{{ item.tint }};mix-blend-mode:multiply;opacity:.26;pointer-events:none"></span>
+          <span style="position:absolute;top:10px;left:10px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#ECE3D0;background:rgba(26,22,19,.55);padding:4px 8px">{{ item.tag }}</span>
+          <span style="position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 14px;background:linear-gradient(0deg,rgba(26,22,19,.92),rgba(26,22,19,0));color:#ECE3D0">
+            <span style="font-family:'Anton';font-size:16px;text-transform:uppercase;line-height:1">{{ item.cap }}</span>
+            <span style="width:26px;height:26px;flex-shrink:0;display:grid;place-items:center;background:#E0531E;color:#ECE3D0;font-family:'Anton';font-size:16px">+</span>
+          </span>
+        </button>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ============ GIVE — ASCENSION CAMPAIGN (purple accents) ============ -->
+  <section id="give" class="sec" style="position:relative;overflow:hidden;background:#E0531E;border-bottom:2px solid #1A1613;color:#1A1613;padding:64px 28px">
+    <img src="assets/logo-e.png" alt="" style="position:absolute;right:-60px;top:50%;transform:translateY(-50%);width:620px;opacity:.10;pointer-events:none;z-index:1">
+    <div class="g2" style="position:relative;z-index:2;display:grid;grid-template-columns:1.15fr 1fr;gap:44px;align-items:stretch">
+      <div>
+        <span style="font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase">[ THE CAPITAL CAMPAIGN ]</span>
+        <h2 style="font-family:'Anton';font-size:clamp(60px,10vw,140px);line-height:.8;text-transform:uppercase;margin:12px 0 6px;color:#1A1613">Ascension</h2>
+        <p style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#6B2E91;margin-bottom:20px">Rising to build what's next ✦ Greater Emmanuel</p>
+        <p style="font-size:17px;line-height:1.6;max-width:460px;font-weight:500;margin-bottom:28px">Ascension is our journey to expand the house — more room to worship, disciple, and serve Houston. Every seed sown carries us higher. Give securely online, by text, or in person.</p>
+
+        <div style="display:flex;gap:10px;margin-bottom:26px;max-width:460px;flex-wrap:wrap">
+          <div style="flex:1;min-width:120px;background:#1A1613;color:#ECE3D0;padding:14px 14px">
+            <div style="font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;color:#E8B04B">Phase 01</div>
+            <div style="font-family:'Anton';font-size:19px;text-transform:uppercase;margin-top:3px">Foundation</div>
+          </div>
+          <div style="flex:1;min-width:120px;background:#6B2E91;color:#ECE3D0;padding:14px 14px">
+            <div style="font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;color:#E8B04B">Phase 02</div>
+            <div style="font-family:'Anton';font-size:19px;text-transform:uppercase;margin-top:3px">The Build</div>
+          </div>
+          <div style="flex:1;min-width:120px;background:#ECE3D0;color:#1A1613;border:2px solid #1A1613;padding:14px 14px">
+            <div style="font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;color:#6B2E91">Phase 03</div>
+            <div style="font-family:'Anton';font-size:19px;text-transform:uppercase;margin-top:3px">Ascend</div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:12px;flex-wrap:wrap;max-width:460px">
+          <a href="#" style="flex:1;min-width:180px;display:flex;align-items:center;justify-content:space-between;background:#1A1613;color:#ECE3D0;font-family:'Anton';font-size:17px;letter-spacing:1px;padding:18px 22px" style-hover="background:#6B2E91">GIVE TO ASCENSION <span>→</span></a>
+          <a href="#" style="flex:1;min-width:180px;display:flex;align-items:center;justify-content:space-between;background:#ECE3D0;color:#1A1613;font-family:'Anton';font-size:17px;letter-spacing:1px;padding:18px 22px;border:2px solid #1A1613" style-hover="background:#6B2E91;color:#ECE3D0">TEXT "ASCEND" TO 77026 <span>→</span></a>
+        </div>
+      </div>
+
+      <button class="give-video" onClick="{{ playVideo }}" style="all:unset;cursor:pointer;position:relative;display:flex;flex-direction:column;background:#1A1613;border:2px solid #1A1613;box-shadow:14px 14px 0 rgba(107,46,145,.6);overflow:hidden">
+        <div style="position:relative;flex:1;min-height:300px;background-image:repeating-linear-gradient(135deg,#2a2036 0 14px,#1A1613 14px 28px)">
+          <span style="position:absolute;top:14px;left:14px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#9A8E7C">[ CAMPAIGN VIDEO — DROP MP4 ]</span>
+          <span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:88px;height:88px;border-radius:50%;background:#E0531E;display:grid;place-items:center;box-shadow:0 0 0 10px rgba(224,83,30,.22)">
+            <span style="width:0;height:0;border-left:26px solid #ECE3D0;border-top:16px solid transparent;border-bottom:16px solid transparent;margin-left:6px"></span>
+          </span>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px 18px;background:#1A1613;color:#ECE3D0;border-top:2px solid #6B2E91">
+          <div style="line-height:1.15">
+            <div style="font-family:'Anton';font-size:20px;text-transform:uppercase">Watch The Vision</div>
+            <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#9A8E7C;margin-top:3px">Ascension · 2 min film</div>
+          </div>
+          <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#E8B04B">▶ Play</span>
+        </div>
+      </button>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="visit" class="sec" style="padding:72px 28px;border-bottom:2px solid #1A1613">
+    <div class="g2" style="display:grid;grid-template-columns:1fr 1.1fr;gap:52px">
+      <div>
+        <span style="font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#E0531E">[ Plan Your Visit ]</span>
+        <h2 style="font-family:'Anton';font-size:clamp(40px,5.5vw,76px);line-height:.84;text-transform:uppercase;margin:14px 0 30px">We'd Love<br>To Meet You</h2>
+        <div style="display:flex;flex-direction:column;gap:0;border-top:2px solid #1A1613">
+          <div style="display:flex;gap:18px;padding:18px 0;border-bottom:2px solid #1A1613"><span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#7A6F5E;width:110px;flex-shrink:0;padding-top:3px">Gather</span><span style="font-size:16.5px;line-height:1.5">Sundays · 10:00 AM Worship<br>Wednesdays · 7:00 PM Bible Study</span></div>
+          <div style="display:flex;gap:18px;padding:18px 0;border-bottom:2px solid #1A1613"><span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#7A6F5E;width:110px;flex-shrink:0;padding-top:3px">Locate</span><span style="font-size:16.5px;line-height:1.5">3915 Kelley Street<br>Houston, TX 77026</span></div>
+          <div style="display:flex;gap:18px;padding:18px 0"><span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#7A6F5E;width:110px;flex-shrink:0;padding-top:3px">Connect</span><span style="font-size:16.5px;line-height:1.5">(713) 671-9994<br>info@greateremmanuel.org</span></div>
+        </div>
+      </div>
+      <div style="border:2px solid #1A1613;padding:34px;background:#ECE3D0">
+        <h3 style="font-family:'Anton';font-size:28px;text-transform:uppercase;margin-bottom:6px">Send a Message</h3>
+        <p style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#7A6F5E;margin-bottom:22px">FORM NO. 01 — WE REPLY WITHIN 48 HRS</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
+          <input placeholder="First Name" style="background:transparent;border:2px solid #1A1613;border-radius:0;padding:14px 15px;color:#1A1613;font-size:15px;font-family:'Space Mono',monospace;outline:none" style-focus="border-color:#E0531E">
+          <input placeholder="Last Name" style="background:transparent;border:2px solid #1A1613;border-radius:0;padding:14px 15px;color:#1A1613;font-size:15px;font-family:'Space Mono',monospace;outline:none" style-focus="border-color:#E0531E">
+        </div>
+        <input placeholder="Email Address" style="width:100%;background:transparent;border:2px solid #1A1613;border-radius:0;padding:14px 15px;color:#1A1613;font-size:15px;font-family:'Space Mono',monospace;outline:none;margin-bottom:12px" style-focus="border-color:#E0531E">
+        <select style="width:100%;background:transparent;border:2px solid #1A1613;border-radius:0;padding:14px 15px;color:#3A332B;font-size:15px;font-family:'Space Mono',monospace;outline:none;margin-bottom:12px" style-focus="border-color:#E0531E">
+          <option>I'm new — planning a visit</option>
+          <option>Prayer request</option>
+          <option>Get involved / volunteer</option>
+          <option>General question</option>
+        </select>
+        <textarea placeholder="Your message" rows="4" style="width:100%;background:transparent;border:2px solid #1A1613;border-radius:0;padding:14px 15px;color:#1A1613;font-size:15px;font-family:'Space Mono',monospace;outline:none;resize:vertical;margin-bottom:16px" style-focus="border-color:#E0531E"></textarea>
+        <button style="width:100%;background:#E0531E;color:#ECE3D0;font-family:'Anton';font-size:17px;letter-spacing:1px;padding:16px;border:2px solid #1A1613;cursor:pointer" style-hover="background:#1A1613">SEND MESSAGE →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="background:#1A1613;color:#ECE3D0;padding:44px 28px 36px">
+    <div class="foot" style="display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap">
+      <div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+          <span style="display:grid;place-items:center;width:46px;height:46px;background:#ECE3D0;border-radius:50%"><img src="assets/logo-ge.png" alt="Greater Emmanuel" style="width:34px;height:34px;object-fit:contain;display:block"></span>
+          <span style="font-family:'Anton';font-size:18px;letter-spacing:.5px">GREATER EMMANUEL FWC</span>
+        </div>
+        <p style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#9A8E7C;line-height:1.7">3915 Kelley St, Houston TX 77026<br>© 2025 — Love Lives Here</p>
+      </div>
+      <div style="display:flex;gap:22px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:1px;text-transform:uppercase">
+        <a href="#" style-hover="color:#E0531E">YouTube</a>
+        <a href="#" style-hover="color:#E0531E">Instagram</a>
+        <a href="#" style-hover="color:#E0531E">Facebook</a>
+      </div>
+      <div style="text-align:right">
+        <div style="width:180px;height:46px;margin-left:auto;background:repeating-linear-gradient(90deg,#ECE3D0 0 2px,transparent 2px 4px,#ECE3D0 4px 7px,transparent 7px 9px,#ECE3D0 9px 11px,transparent 11px 15px,#ECE3D0 15px 18px,transparent 18px 20px)"></div>
+        <p style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:2px;color:#9A8E7C;margin-top:8px">270 / 365 — ISSUE 01</p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- ============ LIGHTBOX ============ -->
+<sc-if value="{{ open }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ close }}" style="position:fixed;inset:0;z-index:10000;background:rgba(16,12,18,.94);display:flex;flex-direction:column;padding:26px 26px 20px">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;color:#ECE3D0;flex-shrink:0">
+      <span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#E8B04B">{{ cur.tag }} — {{ cur.cap }}</span>
+      <div style="display:flex;align-items:center;gap:18px">
+        <span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:2px;color:#9A8E7C">{{ counter }}</span>
+        <button onClick="{{ close }}" style="all:unset;cursor:pointer;width:40px;height:40px;display:grid;place-items:center;border:2px solid #ECE3D0;font-family:'Anton';font-size:20px;color:#ECE3D0" style-hover="background:#E0531E;border-color:#E0531E">✕</button>
+      </div>
+    </div>
+    <div onClick="{{ stop }}" style="flex:1;display:flex;align-items:center;justify-content:center;gap:20px;min-height:0;padding:18px 0">
+      <button onClick="{{ prev }}" style="all:unset;cursor:pointer;flex-shrink:0;width:56px;height:56px;display:grid;place-items:center;border:2px solid #ECE3D0;color:#ECE3D0;font-family:'Anton';font-size:26px" style-hover="background:#E0531E;border-color:#E0531E">‹</button>
+      <img src="{{ cur.src }}" style="max-width:calc(100% - 160px);max-height:100%;object-fit:contain;border:3px solid #ECE3D0;background:#1A1613">
+      <button onClick="{{ next }}" style="all:unset;cursor:pointer;flex-shrink:0;width:56px;height:56px;display:grid;place-items:center;border:2px solid #ECE3D0;color:#ECE3D0;font-family:'Anton';font-size:26px" style-hover="background:#E0531E;border-color:#E0531E">›</button>
+    </div>
+    <div onClick="{{ stop }}" style="flex-shrink:0;display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+      <sc-for list="{{ thumbs }}" as="t" hint-placeholder-count="6">
+        <button onClick="{{ t.onClick }}" style="all:unset;cursor:pointer;width:74px;height:54px;overflow:hidden;border:2px solid {{ t.border }};opacity:{{ t.op }}">
+          <img src="{{ t.src }}" style="width:100%;height:100%;object-fit:cover;filter:grayscale(1)">
+        </button>
+      </sc-for>
+    </div>
+  </div>
+</sc-if>
+
+<!-- ============ WELCOME MODAL ============ -->
+<sc-if value="{{ welcome }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ dismissWelcome }}" style="position:fixed;inset:0;z-index:10500;background:rgba(16,12,18,.72);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);display:flex;align-items:center;justify-content:center;padding:24px;animation:backdropIn .4s ease">
+    <div onClick="{{ stop }}" style="position:relative;max-width:520px;width:100%;background:#ECE3D0;border:2px solid #1A1613;box-shadow:16px 16px 0 rgba(107,46,145,.55);animation:modalIn .5s cubic-bezier(.2,.85,.25,1);overflow:hidden">
+      <div style="background:#1A1613;color:#ECE3D0;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:9px 20px;display:flex;justify-content:space-between;align-items:center">
+        <span style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:18px;background:#ECE3D0;border-radius:50%;display:grid;place-items:center"><img src="assets/logo-ge.png" style="width:14px;height:14px;object-fit:contain"></span>New Experience</span><span>Vol. MMXXV — Issue 01</span>
+      </div>
+      <div style="padding:38px 40px 40px">
+        <div style="font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#E0531E;margin-bottom:14px">Welcome In —</div>
+        <h2 style="font-family:'Anton';font-size:58px;line-height:.85;text-transform:uppercase;color:#1A1613;margin-bottom:18px">Love<br>Lives Here</h2>
+        <p style="font-size:16px;line-height:1.65;color:#3A332B;margin-bottom:28px;max-width:410px">You're among the first to step into the new Greater Emmanuel experience. Take a look around — meet our pastors, explore the gallery, and find your seat at the table.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <button onClick="{{ dismissWelcome }}" style="flex:1;min-width:180px;display:flex;align-items:center;justify-content:space-between;background:#E0531E;color:#ECE3D0;font-family:'Anton';font-size:16px;letter-spacing:1px;padding:16px 22px;border:2px solid #1A1613;cursor:pointer" style-hover="background:#1A1613">ENTER THE SITE <span>→</span></button>
+          <a href="#give" onClick="{{ dismissWelcome }}" style="flex:1;min-width:150px;display:flex;align-items:center;justify-content:center;background:transparent;color:#1A1613;font-family:'Anton';font-size:16px;letter-spacing:1px;padding:16px 22px;border:2px solid #1A1613" style-hover="background:#6B2E91;color:#ECE3D0;border-color:#6B2E91">ASCENSION</a>
+        </div>
+      </div>
+      <button onClick="{{ dismissWelcome }}" style="all:unset;cursor:pointer;position:absolute;top:48px;right:20px;width:34px;height:34px;display:grid;place-items:center;border:2px solid #1A1613;font-family:'Anton';font-size:16px;color:#1A1613" style-hover="background:#E0531E;color:#ECE3D0;border-color:#E0531E">✕</button>
+    </div>
+  </div>
+</sc-if>
+
+<!-- ============ LOADING SCREEN ============ -->
+<sc-if value="{{ loading }}" hint-placeholder-val="{{ true }}">
+  <div style="position:fixed;inset:0;z-index:11000;background:#ECE3D0;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:{{ loaderOpacity }};transition:opacity .55s ease">
+    <div style="position:absolute;top:24px;left:28px;right:28px;display:flex;justify-content:space-between;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#1A1613">
+      <span>EST. HOUSTON, TX</span><span style="color:#E0531E">● Loading</span><span>Issue No. 01</span>
+    </div>
+    <div style="animation:loadglyph .7s ease both;text-align:center">
+      <img src="assets/logo-ge.png" alt="Greater Emmanuel" style="width:70px;height:70px;object-fit:contain;display:block;margin:0 auto 18px">
+      <div style="font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#E0531E;margin-bottom:16px">The Worship Experience —</div>
+      <h1 style="font-family:'Anton';font-size:clamp(56px,11vw,112px);line-height:.8;letter-spacing:-1px;text-transform:uppercase;color:#1A1613">Greater<br>Emmanuel</h1>
+    </div>
+    <div style="width:320px;max-width:70vw;height:12px;margin-top:36px;border:2px solid #1A1613;background:#ECE3D0;overflow:hidden">
+      <div style="height:100%;background:#E0531E;animation:loadbar 1.6s cubic-bezier(.5,0,.2,1) forwards"></div>
+    </div>
+    <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#7A6F5E;margin-top:14px">Family Worship Center · Love Lives Here</div>
+  </div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showWelcome&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = {
+    loading: true, loaderFade: false, welcome: false, open: false, i: 0,
+    calYear: 2025, calMonth: 5, selKey: '2025-5-14',
+  };
+
+  MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  DOW = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+
+  special() {
+    return {
+      '2025-5-14': [{ time: '6:00 PM',  title: 'Faith Walk & Talk',    min: 'Singles Ministry',  kind: 'special' }],
+      '2025-5-21': [{ time: '7:30 PM',  title: 'Bowling Night',        min: 'Marriage Ministry', kind: 'special' }],
+      '2025-5-28': [{ time: '11:00 AM', title: 'Beautiful Bloom Tea',  min: "Women's Ministry",  kind: 'special' }],
+      '2025-6-18': [{ time: 'All Weekend', title: 'MMV 1st Annual Cruise', min: 'Marriage Ministry', kind: 'special' }],
+    };
+  }
+  kindColor(k) { return k === 'worship' ? '#2E6E73' : k === 'study' ? '#6B2E91' : '#E0531E'; }
+  kindLabel(k) { return k === 'worship' ? 'Worship' : k === 'study' ? 'Bible Study' : 'Special'; }
+
+  eventsFor(y, m, d) {
+    const dow = new Date(y, m, d).getDay();
+    const list = [];
+    if (dow === 0) list.push({ time: '10:00 AM', title: 'Worship Experience', min: 'In-Person + Online', kind: 'worship' });
+    if (dow === 3) list.push({ time: '7:00 PM',  title: 'Bible Study',        min: 'Midweek Refuel',    kind: 'study' });
+    const sp = this.special()[y + '-' + m + '-' + d];
+    if (sp) sp.forEach(e => list.push(e));
+    return list;
+  }
+
+  cells() {
+    const y = this.state.calYear, m = this.state.calMonth;
+    const first = new Date(y, m, 1).getDay();
+    const days = new Date(y, m + 1, 0).getDate();
+    const out = [];
+    for (let i = 0; i < first; i++) out.push({ empty: true, id: 'e' + i });
+    for (let d = 1; d <= days; d++) {
+      const key = y + '-' + m + '-' + d;
+      const evs = this.eventsFor(y, m, d);
+      const isSel = key === this.state.selKey;
+      const dots = evs.slice(0, 3).map(e => isSel ? '#ECE3D0' : this.kindColor(e.kind));
+      out.push({
+        empty: false, day: d, key, isSel,
+        bg: isSel ? '#E0531E' : '#ECE3D0',
+        fg: isSel ? '#ECE3D0' : '#1A1613',
+        dotA: dots[0] || null, dotB: dots[1] || null, dotC: dots[2] || null,
+        onClick: () => this.setState({ selKey: key }),
+      });
+    }
+    while (out.length % 7 !== 0) out.push({ empty: true, id: 't' + out.length });
+    return out;
+  }
+
+  changeMonth(delta) {
+    let m = this.state.calMonth + delta, y = this.state.calYear;
+    if (m < 0) { m = 11; y--; }
+    if (m > 11) { m = 0; y++; }
+    this.setState({ calMonth: m, calYear: y, selKey: null });
+  }
+
+  calData() {
+    const label = this.MONTHS[this.state.calMonth] + ' ' + this.state.calYear;
+    let selLabel = 'Pick a Date', selEvents = [], msg = 'Tap any highlighted day to see the gatherings planned.';
+    if (this.state.selKey) {
+      const [y, m, d] = this.state.selKey.split('-').map(Number);
+      const dt = new Date(y, m, d);
+      selLabel = this.DOW[dt.getDay()] + ', ' + this.MONTHS[m] + ' ' + d;
+      const evs = this.eventsFor(y, m, d);
+      selEvents = evs.map(e => ({ time: e.time, title: e.title, min: e.min, barColor: this.kindColor(e.kind), kindLabel: this.kindLabel(e.kind) }));
+      msg = evs.length ? '' : 'No gatherings scheduled — but you are always welcome. Join us Sundays 10AM & Wednesdays 7PM.';
+    }
+    return {
+      label, cells: this.cells(),
+      prev: () => this.changeMonth(-1),
+      next: () => this.changeMonth(1),
+      selLabel, selEvents, hasSel: selEvents.length > 0, msg,
+    };
+  }
+
+  componentDidMount() {
+    this._t1 = setTimeout(() => this.setState({ loaderFade: true }), 1550);
+    this._t2 = setTimeout(() => this.setState({
+      loading: false,
+      welcome: (this.props.showWelcome ?? true),
+    }), 2100);
+
+    this._key = (e) => {
+      if (e.key === 'Escape') {
+        if (this.state.open) this.setState({ open: false });
+        else if (this.state.welcome) this.setState({ welcome: false });
+      } else if (this.state.open && e.key === 'ArrowRight') this.step(1);
+      else if (this.state.open && e.key === 'ArrowLeft') this.step(-1);
+    };
+    window.addEventListener('keydown', this._key);
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this._t1);
+    clearTimeout(this._t2);
+    window.removeEventListener('keydown', this._key);
+  }
+
+  step(d) {
+    const n = this.galleryItems().length;
+    this.setState(s => ({ i: (s.i + d + n) % n }));
+  }
+
+  galleryItems() {
+    return [
+      { src: 'assets/congregation.png',     cap: 'The Gathering',    tag: 'PLATE 01', tint: '#2E6E73' },
+      { src: 'assets/worship-team.jpeg',    cap: 'Praise & Worship', tag: 'PLATE 02', tint: '#E0531E' },
+      { src: 'assets/bishop-preaching.jpeg',cap: 'The Word',         tag: 'PLATE 03', tint: '#6B2E91' },
+      { src: 'assets/pastors-seated.jpeg',  cap: 'First Family',     tag: 'PLATE 04', tint: '#E0531E' },
+      { src: 'assets/pastors-red.jpeg',     cap: 'Leadership',       tag: 'PLATE 05', tint: '#2E6E73' },
+      { src: 'assets/preaching-white.jpeg', cap: 'Ministry',         tag: 'PLATE 06', tint: '#E0531E' },
+    ];
+  }
+
+  renderVals() {
+    const items = this.galleryItems();
+    const cur = items[this.state.i] || items[0];
+    return {
+      loading: this.state.loading,
+      loaderOpacity: this.state.loaderFade ? 0 : 1,
+      welcome: this.state.welcome,
+      dismissWelcome: () => this.setState({ welcome: false }),
+      cal: this.calData(),
+      gallery: items.map((it, idx) => ({ ...it, onClick: () => this.setState({ open: true, i: idx }) })),
+      thumbs: items.map((it, idx) => ({
+        src: it.src,
+        onClick: () => this.setState({ i: idx }),
+        border: idx === this.state.i ? '#E0531E' : '#5A5048',
+        op: idx === this.state.i ? 1 : 0.5,
+      })),
+      open: this.state.open,
+      cur,
+      counter: (this.state.i + 1) + ' / ' + items.length,
+      close: () => this.setState({ open: false }),
+      prev: () => this.step(-1),
+      next: () => this.step(1),
+      stop: (e) => e.stopPropagation(),
+      playVideo: () => {},
+    };
+  }
+}
+</script>
+</body>
+</html>

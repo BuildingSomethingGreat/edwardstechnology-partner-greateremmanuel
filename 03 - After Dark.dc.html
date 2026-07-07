@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* embedded for static capture */
+  @font-face{font-family:'Anton';font-style:normal;font-weight:400;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/anton/files/anton-latin-400-normal.woff2) format('woff2')}
+  @font-face{font-family:'Archivo';font-style:normal;font-weight:400;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/archivo/files/archivo-latin-400-normal.woff2) format('woff2')}
+  @font-face{font-family:'Archivo';font-style:normal;font-weight:500;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/archivo/files/archivo-latin-500-normal.woff2) format('woff2')}
+  @font-face{font-family:'Archivo';font-style:normal;font-weight:600;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/archivo/files/archivo-latin-600-normal.woff2) format('woff2')}
+  @font-face{font-family:'Archivo';font-style:normal;font-weight:700;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/archivo/files/archivo-latin-700-normal.woff2) format('woff2')}
+  @font-face{font-family:'Archivo';font-style:normal;font-weight:800;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/archivo/files/archivo-latin-800-normal.woff2) format('woff2')}
+  @font-face{font-family:'Space Mono';font-style:normal;font-weight:400;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/space-mono/files/space-mono-latin-400-normal.woff2) format('woff2')}
+  @font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/space-mono/files/space-mono-latin-700-normal.woff2) format('woff2')}
+  @font-face{font-family:'Syne';font-style:normal;font-weight:700;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/syne/files/syne-latin-700-normal.woff2) format('woff2')}
+  @font-face{font-family:'Syne';font-style:normal;font-weight:800;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/syne/files/syne-latin-800-normal.woff2) format('woff2')}
+  @font-face{font-family:'Space Grotesk';font-style:normal;font-weight:400;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk/files/space-grotesk-latin-400-normal.woff2) format('woff2')}
+  @font-face{font-family:'Space Grotesk';font-style:normal;font-weight:500;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk/files/space-grotesk-latin-500-normal.woff2) format('woff2')}
+  @font-face{font-family:'Space Grotesk';font-style:normal;font-weight:700;font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk/files/space-grotesk-latin-700-normal.woff2) format('woff2')}
+    *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:#0B0712;color:#EDE9F5;font-family:'Space Grotesk',sans-serif;-webkit-font-smoothing:antialiased}
+  ::selection{background:#C6FF3D;color:#0B0712}
+  a{color:inherit;text-decoration:none}
+  .glow{text-shadow:0 0 38px rgba(141,99,255,.55)}
+</style>
+</helmet>
+
+<div style="max-width:1280px;margin:0 auto;position:relative">
+
+  <header style="position:sticky;top:0;z-index:50;background:rgba(11,7,18,.72);backdrop-filter:blur(16px);border-bottom:1px solid rgba(141,99,255,.22)">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px 28px">
+      <a href="#top" style="display:flex;align-items:center;gap:12px">
+        <span style="display:grid;place-items:center;width:40px;height:40px;border-radius:11px;background:linear-gradient(135deg,#8D63FF,#C6FF3D);color:#0B0712;font-family:'Syne';font-weight:800;font-size:18px">GE</span>
+        <span style="display:flex;flex-direction:column;line-height:1.05">
+          <span style="font-family:'Syne';font-weight:800;font-size:16px;letter-spacing:.5px">GREATER EMMANUEL</span>
+          <span style="font-size:9.5px;letter-spacing:3px;color:#8A7FA8;text-transform:uppercase">Family Worship Center</span>
+        </span>
+      </a>
+      <nav style="display:flex;align-items:center;gap:28px;font-size:14px;font-weight:500;color:#B9AEDA">
+        <a href="#believe" style-hover="color:#C6FF3D">Believe</a>
+        <a href="#pastors" style-hover="color:#C6FF3D">Leaders</a>
+        <a href="#events" style-hover="color:#C6FF3D">Events</a>
+        <a href="#gallery" style-hover="color:#C6FF3D">Media</a>
+        <a href="#visit" style-hover="color:#C6FF3D">Visit</a>
+      </nav>
+      <a href="#give" style="background:#C6FF3D;color:#0B0712;font-family:'Syne';font-weight:700;font-size:13.5px;letter-spacing:.5px;padding:11px 22px;border-radius:10px" style-hover="background:#d4ff5e">GIVE →</a>
+    </div>
+  </header>
+
+  <section id="top" style="position:relative;overflow:hidden;padding:84px 28px 90px">
+    <div style="position:absolute;top:-120px;right:-80px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(141,99,255,.45),transparent 65%);pointer-events:none"></div>
+    <div style="position:absolute;bottom:-160px;left:-120px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(198,255,61,.18),transparent 65%);pointer-events:none"></div>
+    <div style="position:relative">
+      <div style="display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(198,255,61,.4);border-radius:999px;padding:8px 18px;font-size:12.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#C6FF3D;margin-bottom:30px">● Live Sundays · 10AM CST</div>
+      <h1 class="glow" style="font-family:'Syne';font-weight:800;font-size:clamp(60px,12vw,170px);line-height:.85;letter-spacing:-2px;text-transform:uppercase">Love<br>Lives <span style="color:#C6FF3D">Here</span></h1>
+      <div style="display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end;margin-top:38px">
+        <p style="max-width:540px;font-size:18.5px;line-height:1.6;color:#C5BCE0">A family of believers magnifying God's presence in triumphant worship. Unapologetic. Unfiltered. Unstoppable. Come experience church with the lights on.</p>
+        <div style="display:flex;flex-direction:column;gap:12px;min-width:230px">
+          <a href="#visit" style="display:flex;align-items:center;justify-content:space-between;background:#8D63FF;color:#fff;font-family:'Syne';font-weight:700;font-size:15px;padding:16px 24px;border-radius:12px" style-hover="background:#7d50f5">Plan Your Visit <span>→</span></a>
+          <a href="#gallery" style="display:flex;align-items:center;justify-content:space-between;background:rgba(237,233,245,.06);border:1px solid rgba(237,233,245,.2);color:#EDE9F5;font-family:'Syne';font-weight:700;font-size:15px;padding:16px 24px;border-radius:12px" style-hover="background:rgba(237,233,245,.12)">Watch Online <span>▶</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div style="overflow:hidden;border-top:1px solid rgba(141,99,255,.22);border-bottom:1px solid rgba(141,99,255,.22);background:rgba(141,99,255,.05);padding:16px 0">
+    <div style="display:flex;gap:36px;white-space:nowrap;font-family:'Syne';font-weight:700;font-size:20px;text-transform:uppercase;letter-spacing:1px;color:#8A7FA8">
+      <span>Triumphant Worship ✦</span><span style="color:#C6FF3D">The Word Unfiltered ✦</span><span>A Family For All ✦</span><span style="color:#8D63FF">Apostolic · Pentecostal ✦</span><span>Houston, TX ✦</span><span style="color:#C6FF3D">Love Lives Here ✦</span><span>Triumphant Worship ✦</span><span style="color:#8D63FF">The Word Unfiltered ✦</span>
+    </div>
+  </div>
+
+  <section id="believe" style="padding:88px 28px">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:50px">
+      <h2 style="font-family:'Syne';font-weight:800;font-size:clamp(34px,5.5vw,72px);line-height:.95;text-transform:uppercase;max-width:780px">What We're <span style="color:#8D63FF">All</span> About</h2>
+      <span style="font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#8A7FA8">[ 01 / Believe ]</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
+      <div style="background:linear-gradient(180deg,rgba(141,99,255,.14),rgba(141,99,255,.03));border:1px solid rgba(141,99,255,.3);border-radius:18px;padding:32px" style-hover="border-color:rgba(198,255,61,.6)">
+        <span style="font-family:'Syne';font-weight:800;font-size:46px;color:#8D63FF">01</span>
+        <h3 style="font-family:'Syne';font-weight:700;font-size:23px;text-transform:uppercase;margin:12px 0 10px">Triumphant Worship</h3>
+        <p style="font-size:15px;line-height:1.6;color:#B9AEDA">We magnify God's presence with everything in us — voices up, hands high, breakthrough expected every single time.</p>
+      </div>
+      <div style="background:linear-gradient(180deg,rgba(198,255,61,.1),rgba(198,255,61,.02));border:1px solid rgba(198,255,61,.3);border-radius:18px;padding:32px" style-hover="border-color:rgba(198,255,61,.7)">
+        <span style="font-family:'Syne';font-weight:800;font-size:46px;color:#C6FF3D">02</span>
+        <h3 style="font-family:'Syne';font-weight:700;font-size:23px;text-transform:uppercase;margin:12px 0 10px">The Word, Unfiltered</h3>
+        <p style="font-size:15px;line-height:1.6;color:#B9AEDA">The Bible is the inspired Word of God and our only authority — preached with confidence, zeal, and zero compromise.</p>
+      </div>
+      <div style="background:linear-gradient(180deg,rgba(141,99,255,.14),rgba(141,99,255,.03));border:1px solid rgba(141,99,255,.3);border-radius:18px;padding:32px" style-hover="border-color:rgba(198,255,61,.6)">
+        <span style="font-family:'Syne';font-weight:800;font-size:46px;color:#8D63FF">03</span>
+        <h3 style="font-family:'Syne';font-weight:700;font-size:23px;text-transform:uppercase;margin:12px 0 10px">A Family For All</h3>
+        <p style="font-size:15px;line-height:1.6;color:#B9AEDA">Every walk of life, one table. Love lives here — and there's a seat with your name on it. No exceptions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pastors" style="padding:0 28px 88px">
+    <div style="position:relative;border-radius:24px;overflow:hidden;min-height:520px;display:flex;align-items:flex-end">
+      <div style="position:absolute;inset:0;background-image:url('assets/preaching-white.jpeg');background-size:cover;background-position:center 22%"></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(110deg,rgba(11,7,18,.94) 0%,rgba(11,7,18,.7) 42%,rgba(11,7,18,.15) 100%)"></div>
+      <div style="position:relative;padding:48px 44px;max-width:620px">
+        <span style="font-size:13px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#C6FF3D">[ 02 / Leaders ]</span>
+        <h2 style="font-family:'Syne';font-weight:800;font-size:clamp(34px,5vw,58px);line-height:.96;text-transform:uppercase;margin:16px 0 6px">Bishop Titus &amp; Lady Tammy Stewart</h2>
+        <p style="font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#8A7FA8;margin-bottom:20px">Senior Pastors</p>
+        <p style="font-size:16px;line-height:1.65;color:#D5CEE8;margin-bottom:26px">A "preacher's preacher" whose unorthodox creativity reaches people from every walk of life. Together, Bishop Titus and Lady Tammy lead Greater Emmanuel with vision, integrity, and humility — building God's people to build God's Kingdom.</p>
+        <a href="#" style="display:inline-flex;background:#C6FF3D;color:#0B0712;font-family:'Syne';font-weight:700;font-size:14.5px;padding:14px 28px;border-radius:11px" style-hover="background:#d4ff5e">Read Their Story →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="events" style="padding:0 28px 88px">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:42px">
+      <h2 style="font-family:'Syne';font-weight:800;font-size:clamp(38px,6vw,84px);line-height:.9;text-transform:uppercase">Events &amp;<br><span style="color:#8D63FF">Flyers</span></h2>
+      <a href="#" style="font-size:14px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#C6FF3D;border-bottom:2px solid #C6FF3D;padding-bottom:4px">Full Calendar →</a>
+    </div>
+    <div style="display:grid;grid-template-columns:1.15fr 1fr;gap:20px">
+      <div style="position:relative;border-radius:20px;overflow:hidden;min-height:440px;background:linear-gradient(145deg,#8D63FF,#5B2FD6);padding:34px;display:flex;flex-direction:column;justify-content:space-between;color:#fff">
+        <div style="position:absolute;top:-60px;right:-40px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(198,255,61,.4),transparent 70%)"></div>
+        <div style="position:relative;display:flex;justify-content:space-between;align-items:start">
+          <span style="background:#C6FF3D;color:#0B0712;font-family:'Syne';font-weight:700;font-size:12.5px;letter-spacing:1px;text-transform:uppercase;padding:8px 14px;border-radius:8px">★ Featured</span>
+          <span style="font-family:ui-monospace,monospace;font-size:11px;letter-spacing:1px;color:rgba(255,255,255,.65)">[ DROP ARTWORK ]</span>
+        </div>
+        <div style="position:relative">
+          <p style="font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#C6FF3D;margin-bottom:12px">Marriage Ministry · Set Sail</p>
+          <h3 style="font-family:'Syne';font-weight:800;font-size:clamp(38px,5vw,60px);line-height:.92;text-transform:uppercase">MMV 1st Annual Cruise</h3>
+          <p style="font-size:15px;line-height:1.55;color:rgba(255,255,255,.9);margin:16px 0 24px;max-width:380px">Worship, fellowship, and getaway on the open water. Set sail with the Greater Emmanuel family.</p>
+          <a href="#" style="display:inline-flex;background:#0B0712;color:#fff;font-family:'Syne';font-weight:700;font-size:14px;padding:14px 26px;border-radius:11px" style-hover="background:#000">Reserve a Cabin →</a>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;gap:18px;align-items:center;background:rgba(141,99,255,.07);border:1px solid rgba(141,99,255,.25);border-radius:15px;padding:20px 22px" style-hover="border-color:rgba(198,255,61,.55)">
+          <div style="text-align:center;flex-shrink:0;width:60px;border-right:1px solid rgba(141,99,255,.3);padding-right:14px"><div style="font-family:'Syne';font-weight:800;font-size:30px;color:#C6FF3D;line-height:1">14</div><div style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#8A7FA8">Jun</div></div>
+          <div style="flex:1"><h4 style="font-family:'Syne';font-weight:700;font-size:18px;text-transform:uppercase">Faith Walk &amp; Talk</h4><p style="font-size:13px;color:#8A7FA8;margin-top:2px">Singles Ministry · 6:00 PM</p></div>
+          <span style="font-size:20px;color:#8D63FF">→</span>
+        </div>
+        <div style="display:flex;gap:18px;align-items:center;background:rgba(141,99,255,.07);border:1px solid rgba(141,99,255,.25);border-radius:15px;padding:20px 22px" style-hover="border-color:rgba(198,255,61,.55)">
+          <div style="text-align:center;flex-shrink:0;width:60px;border-right:1px solid rgba(141,99,255,.3);padding-right:14px"><div style="font-family:'Syne';font-weight:800;font-size:30px;color:#C6FF3D;line-height:1">21</div><div style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#8A7FA8">Jun</div></div>
+          <div style="flex:1"><h4 style="font-family:'Syne';font-weight:700;font-size:18px;text-transform:uppercase">Bowling Night</h4><p style="font-size:13px;color:#8A7FA8;margin-top:2px">Marriage Ministry · 7:30 PM</p></div>
+          <span style="font-size:20px;color:#8D63FF">→</span>
+        </div>
+        <div style="display:flex;gap:18px;align-items:center;background:rgba(141,99,255,.07);border:1px solid rgba(141,99,255,.25);border-radius:15px;padding:20px 22px" style-hover="border-color:rgba(198,255,61,.55)">
+          <div style="text-align:center;flex-shrink:0;width:60px;border-right:1px solid rgba(141,99,255,.3);padding-right:14px"><div style="font-family:'Syne';font-weight:800;font-size:30px;color:#C6FF3D;line-height:1">28</div><div style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#8A7FA8">Jun</div></div>
+          <div style="flex:1"><h4 style="font-family:'Syne';font-weight:700;font-size:18px;text-transform:uppercase">Beautiful Bloom Tea Party</h4><p style="font-size:13px;color:#8A7FA8;margin-top:2px">Women's Ministry · 11:00 AM</p></div>
+          <span style="font-size:20px;color:#8D63FF">→</span>
+        </div>
+        <div style="display:flex;gap:18px;align-items:center;background:rgba(198,255,61,.06);border:1px solid rgba(198,255,61,.3);border-radius:15px;padding:20px 22px" style-hover="border-color:rgba(198,255,61,.6)">
+          <div style="text-align:center;flex-shrink:0;width:60px;border-right:1px solid rgba(198,255,61,.3);padding-right:14px"><div style="font-family:'Syne';font-weight:800;font-size:20px;color:#C6FF3D;line-height:1.1">SUN</div><div style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#8A7FA8">10AM</div></div>
+          <div style="flex:1"><h4 style="font-family:'Syne';font-weight:700;font-size:18px;text-transform:uppercase">Worship Experience</h4><p style="font-size:13px;color:#8A7FA8;margin-top:2px">Weekly · In-Person & Online</p></div>
+          <span style="font-size:20px;color:#C6FF3D">→</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" style="padding:0 28px 88px">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:34px">
+      <h2 style="font-family:'Syne';font-weight:800;font-size:clamp(34px,5vw,64px);line-height:.92;text-transform:uppercase">The <span style="color:#C6FF3D">Feed</span></h2>
+      <a href="#" style="font-size:14px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#C6FF3D;border-bottom:2px solid #C6FF3D;padding-bottom:4px">Watch Sermons →</a>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;grid-auto-rows:175px;gap:12px">
+      <div style="grid-column:span 2;grid-row:span 2;border-radius:16px;overflow:hidden"><img src="assets/worship-team.jpeg" style="width:100%;height:100%;object-fit:cover"></div>
+      <div style="border-radius:16px;overflow:hidden"><img src="assets/bishop-preaching.jpeg" style="width:100%;height:100%;object-fit:cover"></div>
+      <div style="border-radius:16px;overflow:hidden"><img src="assets/pastors-seated.jpeg" style="width:100%;height:100%;object-fit:cover;object-position:center 15%"></div>
+      <div style="grid-column:span 2;border-radius:16px;overflow:hidden;position:relative">
+        <img src="assets/pastors-red.jpeg" style="width:100%;height:100%;object-fit:cover;object-position:center 18%">
+        <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(11,7,18,.65),transparent);display:flex;align-items:flex-end;padding:16px"><span style="font-family:'Syne';font-weight:700;font-size:15px;text-transform:uppercase">+ View Full Gallery</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="give" style="padding:0 28px 88px">
+    <div style="position:relative;overflow:hidden;border-radius:24px;background:linear-gradient(120deg,#C6FF3D,#a8e62a);padding:60px 48px;display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:center">
+      <div>
+        <span style="font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(11,7,18,.6)">[ Give ]</span>
+        <h2 style="font-family:'Syne';font-weight:800;font-size:clamp(38px,5.5vw,72px);line-height:.9;text-transform:uppercase;color:#0B0712;margin:14px 0 16px">Fund The<br>Movement</h2>
+        <p style="font-size:17px;line-height:1.55;color:#1c1530;max-width:430px;font-weight:500">Your generosity fuels ministry that reaches Houston and beyond. Give securely online, by text, or in person.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:13px">
+        <a href="#" style="display:flex;align-items:center;justify-content:space-between;background:#0B0712;color:#fff;font-family:'Syne';font-weight:700;font-size:16px;padding:20px 26px;border-radius:13px" style-hover="background:#000">Give Online <span>→</span></a>
+        <a href="#" style="display:flex;align-items:center;justify-content:space-between;background:rgba(11,7,18,.1);color:#0B0712;font-family:'Syne';font-weight:700;font-size:16px;padding:20px 26px;border-radius:13px;border:1.5px solid rgba(11,7,18,.3)" style-hover="background:rgba(11,7,18,.18)">Text "GIVE" to 77026 <span>→</span></a>
+        <p style="font-size:13px;color:#1c1530;text-align:center;margin-top:4px;font-weight:500">Tithes · Offerings · Building Fund · Missions</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="visit" style="padding:0 28px 60px">
+    <div style="display:grid;grid-template-columns:1fr 1.1fr;gap:52px">
+      <div>
+        <span style="font-size:13px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#C6FF3D">[ Visit ]</span>
+        <h2 style="font-family:'Syne';font-weight:800;font-size:clamp(34px,5vw,60px);line-height:.95;text-transform:uppercase;margin:14px 0 28px">Pull Up.<br>You Belong Here.</h2>
+        <div style="display:flex;flex-direction:column;gap:22px">
+          <div><p style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#8A7FA8;margin-bottom:5px">Gather With Us</p><p style="font-size:17px;color:#EDE9F5">Sundays · 10:00 AM Worship<br>Wednesdays · 7:00 PM Bible Study</p></div>
+          <div><p style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#8A7FA8;margin-bottom:5px">Find Us</p><p style="font-size:17px;color:#EDE9F5">3915 Kelley Street, Houston, TX 77026</p></div>
+          <div><p style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#8A7FA8;margin-bottom:5px">Connect</p><p style="font-size:17px;color:#EDE9F5">(713) 671-9994 · info@greateremmanuel.org</p></div>
+        </div>
+      </div>
+      <div style="background:rgba(141,99,255,.07);border:1px solid rgba(141,99,255,.28);border-radius:20px;padding:34px">
+        <h3 style="font-family:'Syne';font-weight:700;font-size:24px;text-transform:uppercase;margin-bottom:22px">Send Us a Message</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-bottom:13px">
+          <input placeholder="First Name" style="background:rgba(11,7,18,.5);border:1px solid rgba(141,99,255,.3);border-radius:11px;padding:15px 16px;color:#EDE9F5;font-size:15px;font-family:inherit;outline:none" style-focus="border-color:#C6FF3D">
+          <input placeholder="Last Name" style="background:rgba(11,7,18,.5);border:1px solid rgba(141,99,255,.3);border-radius:11px;padding:15px 16px;color:#EDE9F5;font-size:15px;font-family:inherit;outline:none" style-focus="border-color:#C6FF3D">
+        </div>
+        <input placeholder="Email Address" style="width:100%;background:rgba(11,7,18,.5);border:1px solid rgba(141,99,255,.3);border-radius:11px;padding:15px 16px;color:#EDE9F5;font-size:15px;font-family:inherit;outline:none;margin-bottom:13px" style-focus="border-color:#C6FF3D">
+        <select style="width:100%;background:rgba(11,7,18,.5);border:1px solid rgba(141,99,255,.3);border-radius:11px;padding:15px 16px;color:#B9AEDA;font-size:15px;font-family:inherit;outline:none;margin-bottom:13px" style-focus="border-color:#C6FF3D">
+          <option>I'm new — planning a visit</option>
+          <option>Prayer request</option>
+          <option>Get involved / volunteer</option>
+          <option>General question</option>
+        </select>
+        <textarea placeholder="Your message" rows="4" style="width:100%;background:rgba(11,7,18,.5);border:1px solid rgba(141,99,255,.3);border-radius:11px;padding:15px 16px;color:#EDE9F5;font-size:15px;font-family:inherit;outline:none;resize:vertical;margin-bottom:18px" style-focus="border-color:#C6FF3D"></textarea>
+        <button style="width:100%;background:#C6FF3D;color:#0B0712;font-family:'Syne';font-weight:700;font-size:15.5px;padding:17px;border:none;border-radius:12px;cursor:pointer" style-hover="background:#d4ff5e">Send Message →</button>
+      </div>
+    </div>
+  </section>
+
+  <footer style="padding:44px 28px 40px;border-top:1px solid rgba(141,99,255,.22)">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:12px">
+        <span style="display:grid;place-items:center;width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#8D63FF,#C6FF3D);color:#0B0712;font-family:'Syne';font-weight:800;font-size:16px">GE</span>
+        <span style="font-family:'Syne';font-weight:800;font-size:16px">GREATER EMMANUEL FWC</span>
+      </div>
+      <div style="display:flex;gap:24px;font-size:14px;color:#8A7FA8">
+        <a href="#" style-hover="color:#C6FF3D">YouTube</a>
+        <a href="#" style-hover="color:#C6FF3D">Instagram</a>
+        <a href="#" style-hover="color:#C6FF3D">Facebook</a>
+      </div>
+      <p style="font-size:13px;color:#8A7FA8">© 2025 Greater Emmanuel FWC · Love Lives Here</p>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+</body>
+</html>
