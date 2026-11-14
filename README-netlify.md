@@ -40,6 +40,13 @@ Netlify auto-detects `netlify.toml`: it serves the static `.dc.html` pages and
 builds the function in `netlify/functions/`. The form calls `/api/subscribe`,
 which redirects to the function.
 
+## Events calendar
+The home page calendar reads `/api/events` (`netlify/functions/events.js`), which
+pulls from the church's Clover calendar — the same feed behind the old
+greaterefwc.com/events page — so staff keep adding events in Clover as before.
+No keys are needed. To point at a different Clover calendar, set
+`CLOVER_CALENDAR_URL`. The Airtable `Events` table is no longer used.
+
 ## Notes
 - The form includes a hidden honeypot field for basic spam protection. For more,
   add Cloudflare Turnstile.
