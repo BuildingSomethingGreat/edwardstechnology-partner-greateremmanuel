@@ -19,3 +19,111 @@
   from = "/api/events"
   to = "/.netlify/functions/events"
   status = 200
+
+# ---------------------------------------------------------------------------
+# The Gathered theme is the live home page (index.html). Its old concept URL
+# now points home.
+# ---------------------------------------------------------------------------
+[[redirects]]
+  from = "/02 - Broadside - Gathered.dc.html"
+  to = "/"
+  status = 301
+
+# ---------------------------------------------------------------------------
+# Old Clover Sites URLs → matching section of the new one-page site, so
+# existing Google results and shared links keep working after the switch.
+# ---------------------------------------------------------------------------
+[[redirects]]
+  from = "/connect"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/explore/what-we-believe"
+  to = "/#believe"
+  status = 301
+
+[[redirects]]
+  from = "/explore/bishop-titus-stewart"
+  to = "/#pastors"
+  status = 301
+
+[[redirects]]
+  from = "/explore/lady-tammy-stewart"
+  to = "/#pastors"
+  status = 301
+
+[[redirects]]
+  from = "/explore/plan-a-visit"
+  to = "/#visit"
+  status = 301
+
+[[redirects]]
+  from = "/explore/*"
+  to = "/#believe"
+  status = 301
+
+[[redirects]]
+  from = "/events"
+  to = "/#events"
+  status = 301
+
+[[redirects]]
+  from = "/mmv-1st-annual-cruise"
+  to = "/#events"
+  status = 301
+
+[[redirects]]
+  from = "/media"
+  to = "/#gallery"
+  status = 301
+
+[[redirects]]
+  from = "/media/*"
+  to = "/#gallery"
+  status = 301
+
+[[redirects]]
+  from = "/give"
+  to = "/#give"
+  status = 301
+
+[[redirects]]
+  from = "/new-member"
+  to = "/#visit"
+  status = 301
+
+[[redirects]]
+  from = "/new-member/*"
+  to = "/#visit"
+  status = 301
+
+# ---------------------------------------------------------------------------
+# Internal reference docs (e.g. the old-website capture) live in the repo but
+# shouldn't be served on the public site.
+# ---------------------------------------------------------------------------
+[[redirects]]
+  from = "/docs/*"
+  to = "/"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/README-netlify.md"
+  to = "/"
+  status = 404
+  force = true
+
+# ---------------------------------------------------------------------------
+# Keep the design-concept pages (other themes, pitch deck, theme picker) out
+# of search results. They stay reachable by direct link.
+# ---------------------------------------------------------------------------
+[[headers]]
+  for = "/*.dc.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/themes.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
