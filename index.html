@@ -99,6 +99,8 @@
   #visit span{overflow-wrap:anywhere}
   .mnav-link:active .mnav-label{color:#E0531E}
   @media(min-width:881px){.mnav{display:none !important}}
+  /* Narrow desktops: the pastors caption beside the cutout would run into the intro copy, so lift the copy above it. */
+  @media(min-width:881px) and (max-width:1400px){.hero-sub{bottom:132px !important}}
   @media(max-width:880px){
     .nav-links{display:none !important}
     .nav-toggle{display:flex !important}
@@ -115,13 +117,14 @@
     .hero{height:auto !important;padding-bottom:0 !important;display:flex !important;flex-direction:column !important}
     .hero-photo{position:relative !important;height:320px !important;border-bottom:2px solid #1A1613 !important}
     .hero-shade{display:none !important}
-    .hero-kick{color:#2E6E73 !important;text-shadow:none !important}
-    .hero-names,.hero-copy{color:#1A1613 !important;text-shadow:none !important}
+    .hero-kick,.hero-names{text-shadow:none !important}
+    .hero-copy{color:#1A1613 !important;text-shadow:none !important}
     .hero-cta{background:#1A1613 !important;color:#ECE3D0 !important}
     .hero-title{position:absolute !important;left:20px !important;right:20px !important;top:auto !important;bottom:20px !important;max-width:none !important}
+    .hero-h1{font-size:clamp(68px,18vw,130px) !important;line-height:.83 !important;letter-spacing:-1px !important}
     .hero-meta{display:none !important}
-    .hero-cap{order:1;position:relative !important;left:auto !important;bottom:auto !important;padding:24px 20px 0 !important}
-    .hero-sub{order:2;position:relative !important;right:auto !important;bottom:auto !important;text-align:left !important;max-width:none !important;padding:12px 20px 0 !important}
+    .hero-cap{position:absolute !important;left:auto !important;right:14px !important;bottom:22px !important;z-index:6 !important;text-align:right;background:#1A1613;padding:10px 13px 11px !important;box-shadow:5px 5px 0 rgba(224,83,30,.85)}
+    .hero-sub{order:2;position:relative !important;right:auto !important;bottom:auto !important;text-align:left !important;max-width:none !important;padding:26px 20px 0 !important}
     .hero-couple{order:3;position:relative !important;left:auto !important;bottom:auto !important;transform:none !important;width:100% !important;max-width:none !important;height:auto !important;margin:22px 0 0 !important;display:block !important;overflow:hidden !important}
     /* The PNG has wide transparent margins (the couple fills ~49% of its width, centred at ~47%).
        Scale it up so the couple spans ~90% of the screen (capped on tablets), centre them, and sit them on the bottom edge. */
@@ -186,9 +189,9 @@
       <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,22,19,.42) 0%,rgba(26,22,19,0) 36%)"></div>
       <div class="hero-shade" style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(26,22,19,.92) 0%,rgba(26,22,19,.72) 22%,rgba(26,22,19,.28) 42%,rgba(26,22,19,0) 58%)"></div>
       <!-- headline (over photo) -->
-      <div class="hero-title" style="position:absolute;left:28px;top:60px;z-index:3;max-width:400px">
+      <div class="hero-title" style="position:absolute;left:28px;bottom:0;z-index:3">
         <div style="font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#ECE3D0;margin-bottom:12px">Worship Experience —</div>
-        <h1 style="font-family:'Anton';font-size:clamp(58px,13vw,104px);line-height:.83;letter-spacing:-1px;text-transform:uppercase;color:#ECE3D0;text-shadow:0 2px 24px rgba(26,22,19,.45)">Love<br>Lives<br>Here</h1>
+        <h1 class="hero-h1" style="font-family:'Anton';font-size:clamp(120px,15.4vw,300px);line-height:.86;letter-spacing:-.01em;text-transform:uppercase;color:#ECE3D0;text-shadow:0 2px 24px rgba(26,22,19,.45)">Love<br>Lives<br>Here</h1>
       </div>
     </div>
 
@@ -198,18 +201,18 @@
     </div>
 
     <!-- pastors couple cutout -->
-    <div class="hero-couple" style="position:absolute;bottom:0;left:50%;transform:translateX(-45%);width:740px;height:560px;z-index:2;display:flex;align-items:flex-end;justify-content:center">
+    <div class="hero-couple" style="position:absolute;bottom:0;left:50%;transform:translateX(-45%);width:740px;height:560px;z-index:4;display:flex;align-items:flex-end;justify-content:center">
       <img src="assets/pastors-couple.png" style="display:block;width:100%;height:100%;object-fit:contain;object-position:bottom center;filter:grayscale(1) contrast(1.05) drop-shadow(7px 7px 0 rgba(46,110,115,.32))">
     </div>
 
     <!-- couple caption (over photo, left) -->
-    <div class="hero-cap" style="position:absolute;left:28px;bottom:38px;z-index:4">
+    <div class="hero-cap" style="position:absolute;left:calc(50% + 218px);bottom:38px;z-index:5">
       <div class="hero-kick" style="font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#E8B04B;text-shadow:0 1px 12px rgba(26,22,19,.7)">✦ Senior Pastors</div>
       <div class="hero-names" style="font-family:'Anton';font-size:23px;text-transform:uppercase;color:#ECE3D0;margin-top:5px;line-height:.98;text-shadow:0 1px 14px rgba(26,22,19,.7)">Bishop Titus &amp;<br>Lady Tammy</div>
     </div>
 
     <!-- subcopy + CTA (over photo, right) -->
-    <div class="hero-sub" style="position:absolute;right:28px;bottom:38px;z-index:4;max-width:264px;text-align:right">
+    <div class="hero-sub" style="position:absolute;right:28px;bottom:38px;z-index:5;max-width:264px;text-align:right">
       <p class="hero-copy" style="font-family:'Space Mono',monospace;font-size:12.5px;line-height:1.8;letter-spacing:.5px;text-transform:uppercase;color:#ECE3D0;text-shadow:0 1px 12px rgba(26,22,19,.75)">A family of believers that magnify God's presence in triumphant worship. Sundays 10AM — pull up a seat.</p>
       <a class="hero-cta" href="#visit" style="display:inline-flex;margin-top:16px;background:#E0531E;color:#ECE3D0;font-family:'Anton';font-size:15px;letter-spacing:1px;padding:13px 24px" style-hover="background:#ECE3D0;color:#1A1613">PLAN YOUR VISIT →</a>
     </div>
