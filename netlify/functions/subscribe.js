@@ -158,7 +158,7 @@ function confirmationHtml({ firstName }) {
           <a href="https://pushpay.com/g/greaterefwc" style="display:inline-block;background:#E0531E;color:#ECE3D0;font-family:Arial,sans-serif;font-weight:800;font-size:14px;letter-spacing:1px;text-transform:uppercase;text-decoration:none;padding:14px 26px;border:2px solid #1A1613">Give Online &rarr;</a>
         </td></tr>
         <tr><td style="background:#1A1613;padding:18px 28px;font-family:Arial,sans-serif;font-size:11px;line-height:1.7;color:#ECE3D0">
-          Bishop Titus &amp; Lady Tammy Stewart, Senior Pastors<br>(713) 671-9994 &middot; info@greateremmanuel.org
+          Bishop Titus &amp; Lady Tammy Stewart, Senior Pastors<br>713-635-2501 &middot; info@greateremmanuel.org
         </td></tr>
       </table>
       <div style="font-family:Arial,sans-serif;font-size:10px;color:#7A6F5E;margin-top:14px">You received this because you contacted Greater Emmanuel via our website.</div>
