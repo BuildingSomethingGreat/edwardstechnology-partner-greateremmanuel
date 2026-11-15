@@ -35,7 +35,7 @@ A capture of everything on the church's previous website (built on **Clover Site
 
 ### Differences from the new site worth checking
 
-- **Phone:** the old site says **713-635-2501**; the new design shows (713) 671-9994.
+- **Phone:** 713-635-2501 (confirmed by the church on 2026-11-15; the new site uses it).
 - **Bible study:** the old site and calendar say **Tuesdays**; the new design's Visit section says Wednesdays.
 - **Email:** the old site lists no general church email. The new design's `info@greateremmanuel.org` doesn't appear anywhere on it. The only email found is NewMembers.GreaterE@gmail.com.
 - **Sunday schedule:** the old site also lists the 8:45 AM DEVELOP classes, which the new site doesn't mention.

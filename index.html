@@ -109,6 +109,8 @@
     .g3{grid-template-columns:1fr !important}
     /* Beliefs stack on mobile: no divider lines, every entry flush left. */
     .beliefs{border-top:0 !important;row-gap:36px}
+    .vision{font-size:clamp(38px,11vw,72px) !important}
+    .mission-s{font-size:clamp(30px,8.6vw,56px) !important;line-height:1 !important}
     .beliefs>div{padding:0 !important;border:0 !important}
     .g2{grid-template-columns:1fr !important;gap:0 !important}
     .cal2{grid-template-columns:1fr !important;gap:14px !important}
@@ -250,6 +252,33 @@
     </div>
   </section>
 
+  <!-- ============ VISION ============ -->
+  <section id="vision" class="sec" style="padding:92px 28px 100px;border-bottom:2px solid #1A1613;overflow:hidden">
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:34px">
+      <span style="font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#E0531E;white-space:nowrap">[ Vision Statement ]</span>
+      <span style="flex:1;height:2px;background:#1A1613"></span>
+    </div>
+    <h2 class="vision" style="font-family:'Anton';font-size:clamp(46px,8.6vw,168px);line-height:.9;letter-spacing:-.005em;text-transform:uppercase;color:#1A1613">
+      <span class="vl" style="display:block">A <span style="color:#E0531E">Kingdom</span> Church,</span>
+      <span class="vl" style="display:block">where <span style="color:#2E6E73">purpose</span> is found,</span>
+      <span class="vl" style="display:block"><span style="color:#6B2E91">lives</span> are changed</span>
+      <span class="vl" style="display:block">and <span style="color:#E0531E">love</span> abounds.</span>
+    </h2>
+  </section>
+
+  <!-- ============ MISSION ============ -->
+  <section id="mission" class="sec" style="padding:92px 28px 100px;border-bottom:2px solid #3A332B;background:#1A1613;color:#ECE3D0;overflow:hidden">
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:34px">
+      <span style="font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#E8B04B;white-space:nowrap">[ Mission Statement ]</span>
+      <span style="flex:1;height:2px;background:#ECE3D0;opacity:.35"></span>
+    </div>
+    <h2 class="mission-s" style="font-family:'Anton';font-size:clamp(34px,4.9vw,94px);line-height:.98;letter-spacing:-.003em;text-transform:uppercase;max-width:1700px">
+      To <span style="color:#E0531E">love God</span> and <span style="color:#E0531E">love people.</span>
+      To <span style="color:#E8B04B">reach</span> each person with love and bring them in with grace and truth.
+      To <span style="color:#E0531E">teach</span> and <span style="color:#E8B04B">equip</span> souls, preparing them for kingdom living.
+    </h2>
+  </section>
+
   <!-- ============ PASTORS ============ -->
   <section id="pastors" style="position:relative;overflow:hidden;border-bottom:2px solid #1A1613;background:#1A1613;color:#ECE3D0">
     <div class="g2" style="position:relative;z-index:2;display:grid;grid-template-columns:1fr 1.05fr;gap:0;align-items:end">
@@ -389,9 +418,9 @@
         <span style="font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#E0531E">[ Plan Your Visit ]</span>
         <h2 style="font-family:'Anton';font-size:clamp(40px,5.5vw,76px);line-height:.84;text-transform:uppercase;margin:14px 0 30px">We'd Love<br>To Meet You</h2>
         <div style="display:flex;flex-direction:column;gap:0;border-top:2px solid #1A1613">
-          <div style="display:flex;gap:18px;padding:18px 0;border-bottom:2px solid #1A1613"><span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#7A6F5E;width:110px;flex-shrink:0;padding-top:3px">Gather</span><span style="font-size:16.5px;line-height:1.5">Sundays · 10:00 AM Worship<br>Wednesdays · 7:00 PM Bible Study</span></div>
+          <div style="display:flex;gap:18px;padding:18px 0;border-bottom:2px solid #1A1613"><span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#7A6F5E;width:110px;flex-shrink:0;padding-top:3px">Gather</span><span style="font-size:16.5px;line-height:1.5">Sundays · 10:00 AM Worship<br>Mondays · Family Night<br>Tuesdays · 7:00 PM Made Alive Biblical Teaching<br>Wednesdays · 7:00 PM Music &amp; Sacred Arts Rehearsals</span></div>
           <div style="display:flex;gap:18px;padding:18px 0;border-bottom:2px solid #1A1613"><span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#7A6F5E;width:110px;flex-shrink:0;padding-top:3px">Locate</span><span style="font-size:16.5px;line-height:1.5">3915 Kelley Street<br>Houston, TX 77026</span></div>
-          <div style="display:flex;gap:18px;padding:18px 0"><span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#7A6F5E;width:110px;flex-shrink:0;padding-top:3px">Connect</span><span style="font-size:16.5px;line-height:1.5">(713) 671-9994<br>info@greateremmanuel.org</span></div>
+          <div style="display:flex;gap:18px;padding:18px 0"><span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#7A6F5E;width:110px;flex-shrink:0;padding-top:3px">Connect</span><span style="font-size:16.5px;line-height:1.5"><a href="tel:+17136352501">713-635-2501</a><br>info@greateremmanuel.org</span></div>
         </div>
       </div>
       <div style="border:2px solid #1A1613;padding:34px;background:#ECE3D0">
@@ -547,20 +576,37 @@ class Component extends DCLogic {
   MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
   DOW = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 
-  // All events come from the church calendar feed via /api/events (see loadEvents).
-  // If the feed can't be reached, eventsFor() falls back to Sunday worship only.
+  // Dated events come from the church calendar feed via /api/events (see loadEvents).
+  // The weekly services below are set here by hand, because the feed is missing
+  // some of them and stops repeating its recurring events after a year.
+  // Keyed by day of week (0 = Sunday). `match` finds the feed's copy of the same
+  // service; `replace` swaps the feed's wording for ours (its link is kept).
+  WEEKLY = {
+    0: [{ time: '10:00 AM', title: 'Morning Worship Service', kind: 'worship', match: /worship/i }],
+    1: [{ time: 'Weekly', title: 'Family Night', kind: 'special', match: /family night/i, replace: true }],
+    2: [{ time: '7:00 PM', title: 'Made Alive Biblical Teaching', kind: 'study', match: /made alive/i, replace: true }],
+    3: [{ time: '7:00 PM', title: 'Music & Sacred Arts Rehearsals', kind: 'special', match: /rehears|sacred arts/i, replace: true }],
+  };
   special() {
     return this.state.events || {};
+  }
+  // Minutes after midnight for sorting; times without a clock sort first.
+  timeMins(t) {
+    const m = /(\d+):(\d+)\s*(AM|PM)/i.exec(t || '');
+    return m ? (+m[1] % 12) * 60 + +m[2] + (/pm/i.test(m[3]) ? 720 : 0) : -1;
   }
   kindColor(k) { return k === 'worship' ? '#2E6E73' : k === 'study' ? '#6B2E91' : '#E0531E'; }
   kindLabel(k) { return k === 'worship' ? 'Worship' : k === 'study' ? 'Study' : 'Special'; }
 
   eventsFor(y, m, d) {
-    if (this.state.feedOk) return this.special()[y + '-' + m + '-' + d] || [];
-    // Feed unavailable: show the one gathering that never moves.
-    return new Date(y, m, d).getDay() === 0
-      ? [{ time: '10:00 AM', title: 'Morning Worship Service', min: '', kind: 'worship' }]
-      : [];
+    const evs = this.state.feedOk ? (this.special()[y + '-' + m + '-' + d] || []).slice() : [];
+    for (const w of this.WEEKLY[new Date(y, m, d).getDay()] || []) {
+      const mine = { time: w.time, title: w.title, min: '', kind: w.kind, link: '' };
+      const i = evs.findIndex(e => w.match.test(e.title));
+      if (i < 0) evs.push(mine);
+      else if (w.replace) evs[i] = { ...mine, min: evs[i].min, link: evs[i].link };
+    }
+    return evs.sort((a, b) => this.timeMins(a.time) - this.timeMins(b.time));
   }
 
   cells() {
@@ -612,7 +658,7 @@ class Component extends DCLogic {
       }
       this.setState({ events: map, feedOk: true });
     } catch (_) {
-      // Offline / feed down — calendar falls back to Sunday worship only.
+      // Offline / feed down — calendar shows the weekly services only.
     }
   }
 
@@ -742,12 +788,13 @@ class Component extends DCLogic {
 
     // 1) Fade-in text. Tag headings / copy, staggering siblings slightly.
     const targets = document.querySelectorAll(
-      '.hero-title > *, .hero-cap, .hero-sub, section h2, section h3, section p, section .g3 > *, #visit .g2 > div:first-child > div > div, .give-card'
+      '.hero-title > *, .hero-cap, .hero-sub, section h2, section h3, section p, section .g3 > *, #visit .g2 > div:first-child > div > div, .give-card, .vision .vl'
     );
     const perParent = new Map();
     const tagged = [];
     targets.forEach((el) => {
       if (el.closest('.cal2') || el.closest('.mnav')) return;                 // live / interactive areas
+      if (el.classList.contains('vision')) return;                           // its lines fade in one by one
       if (el.parentElement && el.parentElement.closest('[data-rv]')) return;  // parent already fades in
       const i = perParent.get(el.parentElement) || 0;
       perParent.set(el.parentElement, i + 1);
