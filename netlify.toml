@@ -90,12 +90,12 @@
 
 [[redirects]]
   from = "/new-member"
-  to = "/#visit"
+  to = "/#new-members"
   status = 301
 
 [[redirects]]
   from = "/new-member/*"
-  to = "/#visit"
+  to = "/#new-members"
   status = 301
 
 # ---------------------------------------------------------------------------
